@@ -13,3 +13,37 @@ body {
 .navbar-brand {
   color: white !important;
 }
+
+.slide-enter {
+  transform: translateY(-100%);
+  transition: .3s cubic-bezier(0, 1, 0.5, 1);
+}
+.slide-enter.slide-enter-active {
+    transform: translateY(0%);
+}
+
+
+.slide-exit {
+  transform: translateY(0%);
+  transition: .3s ease-in-out;
+}
+.slide-exit.slide-exit-active {
+  transform: translateY(-100%);
+}
+.dropdown .dropdown-menu {
+  -webkit-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -moz-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -ms-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -o-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  transition: .5s cubic-bezier(0, 1, 0.5, 1);
+
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.dropdown-menu.show {
+  max-height: 200px;
+  opacity: 1;
+}

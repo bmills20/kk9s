@@ -6,8 +6,10 @@ import {
   Form,
   FormControl,
   Button,
+  Container,
+  Collapse,
 } from "react-bootstrap";
-import { CSSTransitionGroup } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 import "./MenuNavBar.css";
 
 class SubMenu extends React.Component{
@@ -51,12 +53,14 @@ export default class MenuNavBar extends React.Component {
             <Nav.Link href="/">Inicio</Nav.Link>
             <Nav.Link href="/page1">Page 1</Nav.Link>
             <Nav.Link href="/page2">Page 2</Nav.Link>
-            <NavDropdown show={this.state.showDropDown} onMouseLeave={this.handleLeave} onMouseEnter={this.handleHover} title="Admin" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/page1">Page 1</NavDropdown.Item>
-              <NavDropdown.Item href="/page2">Page 2</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/page1">Page 3</NavDropdown.Item>
-            </NavDropdown>
+              <NavDropdown show={this.state.showDropDown} onMouseLeave={this.handleLeave} onMouseEnter={this.handleHover} title="Admin" id="basic-nav-dropdown"> 
+                <div className="dropSeparator">  
+                  <NavDropdown.Item href="/page1">Page 1</NavDropdown.Item>
+                  <NavDropdown.Item href="/page2">Page 2</NavDropdown.Item>
+                  <NavDropdown.Item href="/page1">Page 3</NavDropdown.Item>
+                </div>
+              </NavDropdown>
+            
           </Nav>
           <Form inline>
             <FormControl
