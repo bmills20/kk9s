@@ -2,3 +2,15 @@ body{
     color: black;
     background-color: white;
 }
+
+.mt-6{
+    margin-top: 4rem !important;
+}
+
+.mt-7{
+    margin-top: 5rem !important;
+}
+
+.mt-8{
+    margin-top: 6rem !important;
+}

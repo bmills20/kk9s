@@ -22,6 +22,11 @@ body {
     transform: translateY(0%);
 }
 
+.siteLogo {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+}
 
 .slide-exit {
   transform: translateY(0%);
