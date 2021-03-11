@@ -1,3 +1,13 @@
+@font-face {
+    font-family: firasans-bold;
+    src: url(../Fira_Sans/FiraSans-Bold.ttf);
+  }
+
+@font-face {
+    font-family: firasans-italic;
+    src: url(../Fira_Sans/FiraSans-Italic.ttf);
+}
+
 body, html{
     color: white;
     background-color: white;
@@ -23,8 +33,14 @@ body, html{
 
 /* Center the splash text horizontally and vertically on page */
 .main-content{
+    font-family: firasans-bold;
+    font-weight: 700 !important;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+
+.main-content > p{
+    font-family: firasans-italic;
 }

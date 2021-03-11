@@ -1,5 +1,4 @@
 import React from "react";
-import LoremIpsum from "../Components/LoremIpsum";
 import "./Home.css";
 
 export default function Home() {
