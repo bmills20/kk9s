@@ -31,13 +31,11 @@ function MenuNavBar(){
         document.documentElement.scrollTop > 299 ||
         document.body.scrollTop > 299
       ) {
-        console.log("top");
         setNavbarColor("");
       } else if (
         document.documentElement.scrollTop < 300 ||
         document.body.scrollTop < 300
       ) {
-        console.log("bottom");
         setNavbarColor("navbar-transparent");
       }
     };

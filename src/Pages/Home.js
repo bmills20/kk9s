@@ -18,11 +18,6 @@ export default function Home() {
           "How can I stop my puppy from crying all-night and peeing everywhere?"
         </p>
         <p className="lead text-center">"What do I do? Help!"</p>
-        <div>
-          <Container>
-            <h1>Test</h1>
-          </Container>
-        </div>
       </div>
     </div>
   );
