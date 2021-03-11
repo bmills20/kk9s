@@ -1,0 +1,57 @@
+{
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "bootswatch": "^4.6.0",
+    "classnames": "^2.2.6",
+    "group": "^1.0.2",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.5.1",
+    "react-dom": "^17.0.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.1",
+    "react-transition": "^1.0.3",
+    "react-transition-group": "^4.4.1"
+  },
+  "name": "kk9s",
+  "version": "1.0.0",
+  "description": "Code for kk9s.com",
+  "homepage": "http://braxtonmills.com/kk9s",
+  "main": "App.js",
+  "devDependencies": {},
+  "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -b master -d build",
+    "build": "react-scripts build",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmills20/kk9s.git"
+  },
+  "keywords": [
+    "react-bootstrap",
+    "kk9s",
+    "javascript",
+    "react"
+  ],
+  "author": "Braxton Mills",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmills20/kk9s/issues"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
