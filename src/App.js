@@ -11,7 +11,7 @@ import "./App.css";
 export default class App extends React.Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div className="page-container">
           <MenuNavBar />
           <main role="main" /*className="container"*/>
