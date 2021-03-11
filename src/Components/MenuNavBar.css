@@ -6,6 +6,10 @@ body {
   background-color: #112947 !important;
 }
 
+.navbar-transparent {
+  background-color: transparent;
+}
+
 .nav-link {
   color: white !important;
 }

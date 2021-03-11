@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   Nav,
@@ -11,6 +11,7 @@ import {
 } from "react-bootstrap";
 import { CSSTransition } from 'react-transition-group';
 import "./MenuNavBar.css";
+import classnames from "classnames";
 
 class SubMenu extends React.Component{
   render(){
@@ -29,7 +30,8 @@ export default class MenuNavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showDropDown: false
+      showDropDown: false,
+      navbarColor: "navbar-transparent"
     }
   }
 
@@ -43,9 +45,43 @@ export default class MenuNavBar extends React.Component {
     this.setState({ showDropDown: false });
   }
 
+  IndexNavbar() {
+    //const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
+    //const [navbarCollapse, setNavbarCollapse] = React.useState(false);
+  
+    /*const toggleNavbarCollapse = () => {
+      setNavbarCollapse(!navbarCollapse);
+      document.documentElement.classList.toggle("nav-open");
+    };*/
+  
+    React.useEffect(() => {
+      const updateNavbarColor = () => {
+        if (
+          document.documentElement.scrollTop > 299 ||
+          document.body.scrollTop > 299
+        ) {
+          console.log("above");
+          //setNavbarColor("");
+        } else if (
+          document.documentElement.scrollTop < 300 ||
+          document.body.scrollTop < 300
+        ) {
+          console.log("below");
+          //setNavbarColor("navbar-transparent");
+        }
+      };
+  
+      window.addEventListener("scroll", updateNavbarColor);
+  
+      return function cleanup() {
+        window.removeEventListener("scroll", updateNavbarColor);
+        };
+    });
+  }
+
   render(){
     return (
-      <Navbar fixed="top" variant="dark" expand="lg">
+      <Navbar fixed="top" variant="dark" expand="lg" className={classnames("navbar", this.navbarColor)}>
         <img src="kinga-white.png" className="siteLogo"/>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
