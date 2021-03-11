@@ -45,7 +45,7 @@ export default class MenuNavBar extends React.Component {
 
   render(){
     return (
-      <Navbar fixed="top" bg="light" expand="lg">
+      <Navbar fixed="top" variant="dark" expand="lg">
         <img src="kinga-white.png" className="siteLogo"/>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

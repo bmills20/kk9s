@@ -1,6 +1,12 @@
-body{
-    color: black;
+body, html{
+    color: white;
     background-color: white;
+    height: 100%;
+    background:url("./photoshoot.JPG") rgba(0, 0, 0, 0.6);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
 }
 
 .mt-6{
@@ -13,4 +19,12 @@ body{
 
 .mt-8{
     margin-top: 6rem !important;
+}
+
+/* Center the splash text horizontally and vertically on page */
+.main-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
