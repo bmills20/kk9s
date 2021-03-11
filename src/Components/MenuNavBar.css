@@ -3,11 +3,23 @@ body {
 }
 
 .navbar {
-  background-color: #112947 !important;
+  -webkit-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -moz-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -ms-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -o-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  transition: .5s cubic-bezier(0, 1, 0.5, 1);
+
+  background-color: #112947;
 }
 
 .navbar-transparent {
-  background-color: transparent;
+  -webkit-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -moz-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -ms-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -o-transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  transition: .5s cubic-bezier(0, 1, 0.5, 1);
+
+  background-color: transparent !important;
 }
 
 .nav-link {
