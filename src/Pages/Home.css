@@ -8,12 +8,16 @@
     src: url(../Fira_Sans/FiraSans-Italic.ttf);
 }
 
-body, html{
+@font-face {
+    font-family: firasans;
+    src: url(../Fira_Sans/FiraSans-Regular.ttf);
+}
+
+body{
     color: white;
-    background-color: white;
     height: 100vh;
-    background:url("./photoshoot.JPG") rgba(0, 0, 0, 0.6);
-    background-position: 50% 50%;
+    background:url("../images/photoshoot2-flipped.png"), radial-gradient(ellipse at center top, transparent 20%,black);
+    background-position: 50% 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
@@ -31,13 +35,22 @@ body, html{
     margin-top: 6rem !important;
 }
 
-/* Center the splash text horizontally and vertically on page */
 .main-content{
-    font-family: firasans-bold;
+    text-shadow: 2px 2px 15px black;
+    margin-bottom: 10vh;
+}
+
+/* Center the splash text horizontally and vertically on page */
+.main-content h1{
+    font-family: firasans-bold, sans-serif;
     font-weight: 700 !important;
+    letter-spacing: 0.01em;
 
 }
 
+.main-content h2{
+    font-family: firasans, sans-serif;
+}
 .main-content > p{
     font-family: firasans-italic;
 }
@@ -46,7 +59,9 @@ body, html{
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:flex-end;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .about {
@@ -60,4 +75,19 @@ body, html{
     justify-content: center;
     align-items: center;
     background-color: white;
+}
+
+Button.splashButton {
+    font-family: firasans;
+    font-size: 24px;
+    background-color: #112947;
+    border-color: #112947;
+    display: flex;
+    align-items: center;
+}
+
+.splashCard{
+    color: white;
+    background-color: rgba(17,41,71,0.5);
+    max-width: 300px;
 }

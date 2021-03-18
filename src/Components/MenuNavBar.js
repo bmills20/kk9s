@@ -12,6 +12,7 @@ import {
 import { CSSTransition } from 'react-transition-group';
 import "./MenuNavBar.css";
 import classnames from "classnames";
+import kingaWhite from "./kinga-white.png"
 
 function MenuNavBar(){
   const [showDropDown, setShowDropDown] = useState(false);
@@ -51,14 +52,16 @@ function MenuNavBar(){
 
   return (
     <Navbar fixed="top" variant="dark" expand="lg" className={classnames("navbar", navbarColor)}>
-      <img src="kinga-white.png" className="siteLogo"/>
+      <img src={kingaWhite} className="siteLogo"/>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="ml-auto">
-          <Nav.Link href="/">Page 0</Nav.Link>
-          <Nav.Link href="/page1">Page 1</Nav.Link>
-          <Nav.Link href="/page2">Page 2</Nav.Link>
-            <NavDropdown show={showDropDown} onMouseLeave={handleLeave} onMouseEnter={handleHover} title="Admin" id="basic-nav-dropdown"> 
+          <Nav.Link href="/">ABOUT</Nav.Link>
+          <Nav.Link href="/page1">APPROACH</Nav.Link>
+          <Nav.Link href="/page2">SERVICES</Nav.Link>
+          <Nav.Link href="/page2">PARTNERS</Nav.Link>
+          <Nav.Link href="/page2">CONTACT</Nav.Link>
+            <NavDropdown show={showDropDown} onMouseLeave={handleLeave} onMouseEnter={handleHover} title="ADMIN" id="basic-nav-dropdown"> 
               <div className="dropSeparator">  
                 <NavDropdown.Item href="/page1">Page 1</NavDropdown.Item>
                 <NavDropdown.Item href="/page2">Page 2</NavDropdown.Item>
