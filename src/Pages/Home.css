@@ -16,7 +16,7 @@
 body{
     color: white;
     height: 100vh;
-    background:url("../images/photoshoot2-flipped.png"), radial-gradient(ellipse at center top, transparent 20%,black);
+    background:url("../images/photoshoot2-flipped.png"), linear-gradient(rgba(0,0,0,0) 40%, black), radial-gradient(ellipse at center top, transparent 20%,black);
     background-position: 50% 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -36,7 +36,7 @@ body{
 }
 
 .main-content{
-    text-shadow: 2px 2px 15px black;
+    /*text-shadow: 2px 2px 15px black;*/
     margin-bottom: 10vh;
 }
 
