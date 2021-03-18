@@ -1,6 +1,7 @@
 import "./Home.css";
 import React from "react";
 import { Container, Button } from "react-bootstrap";
+import { motion } from "framer-motion";
 
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
       <div className="main-content">
         <h1 className="text-center">Getting a new puppy or dog?</h1>
         <h2 className="text-center">...or have a stubborn one and need help?</h2>
-        <Button variant="primary" className="splashButton mx-auto">Get Started</Button>
+        <Button variant="primary" className="splashButton mx-auto">GET STARTED</Button>
         {/* <p className="lead text-left">
           "Can my old dog learn how to behave?"
         </p>

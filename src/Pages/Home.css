@@ -13,6 +13,10 @@
     src: url(../Fira_Sans/FiraSans-Regular.ttf);
 }
 
+:root{
+    --default-color: #112947;
+}
+
 body{
     color: white;
     height: 100vh;
@@ -78,10 +82,11 @@ body{
 }
 
 Button.splashButton {
-    font-family: firasans;
+    font-family: firasans-light;
     font-size: 24px;
-    background-color: #112947;
-    border-color: #112947;
+    letter-spacing: 0.1rem;
+    background-color: RGBA(0,0,0,0);
+    border-color: white;
     display: flex;
     align-items: center;
 }
