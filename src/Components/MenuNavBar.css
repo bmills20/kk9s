@@ -28,11 +28,14 @@ body {
 }
 
 .nav-link {
+  z-index: 15;
   font-family: firasans-light;
-  margin: auto 0.5em;
-  padding: auto 1em;
-  font-size: 1.3em;
-  color: white !important;
+  margin: 0.5em;
+  position: relative;
+  padding: 1em;
+  font-size: 1.25em;
+  color: white /* !important */;
+  cursor: pointer;
 }
 
 .navbar-brand {
@@ -76,4 +79,38 @@ body {
 .dropdown-menu.show {
   max-height: 200px;
   opacity: 1;
+}
+
+.horizontal-nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.underline {
+  /* fix box width */
+  width: calc(100% - 2em);
+  height: 3px;
+  border-radius: 0px;
+  background: black;
+  /* Remember: relative/absolutely positioned nodes 
+  will be used in reference with each other for calculations.
+  
+  Since the navbar nav-link is absolute (not relative),
+  use absolute positioning on the underline for the right
+  width % calculation. */
+  position: absolute;
+  bottom: 15px;
+  z-index: 10;
+}
+
+.no-underline {
+    /* set invisible underline */
+    width: 0;
+    height: 3px;
+    border-radius: 0px;
+    background: black;
+    position: absolute;
+    bottom: 15px;
+    z-index: 5;
 }

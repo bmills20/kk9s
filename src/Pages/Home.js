@@ -16,19 +16,19 @@ const textLines = {
   rest: { opacity: 0, y: 50 },
   show: { opacity: 1, y: 0,
     transition: {duration:1}}
-}
+};
 
 const buttonInitial = {
   rest: { scale: 0.1, opacity: 0 },
   show: { scale: 1, opacity: 1,
     transition: {duration:1}}
-}
+};
 
  const mainContent = {
   rest: { opacity: 0 },
   show: { opacity: 1,
-    transition: {staggerChildren: 1.75}}
-} 
+    transition: {delay: 1, staggerChildren: 1.75}}
+};
 
 export default function Home() {
   return (
