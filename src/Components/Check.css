@@ -1,0 +1,7 @@
+.checkTrans {
+     transform-origin: 300px 280px !important;
+ }
+
+.checkTransWhite {
+     transform-origin: 300px 300px !important;
+ }

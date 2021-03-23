@@ -6,10 +6,11 @@ import { motion } from "framer-motion";
 const button = {
   rest: { scale: 0.1, opacity: 0 },
   show: { scale: 1, opacity: 1,
-    transition: {repeat: 0, duration:0.2} },
+    transition: {delay: 4.5, repeat: 0, duration:0.5} },
   hover: { scale: 1.1,
     transition: {duration:0.2} },
-  pressed: { scale: 0.95 }
+  hoverExit: { scale: 1.0},
+  pressed: {scale: 0.95 }
 };
 
 const textLines = {
@@ -21,19 +22,20 @@ const textLines = {
 const buttonInitial = {
   rest: { scale: 0.1, opacity: 0 },
   show: { scale: 1, opacity: 1,
-    transition: {duration:1}}
+    transition: {delay: 2, duration:1}}
 };
 
  const mainContent = {
   rest: { opacity: 0 },
   show: { opacity: 1,
-    transition: {delay: 1, staggerChildren: 1.75}}
+    transition: {delay: 2, staggerChildren: 3}}
 };
 
 export default function Home() {
   return (
     <div className="splash">
-      <motion.div variants={mainContent} initial="rest" animate="show" className="main-content">
+      <div className="main-content">
+      <motion.div variants={mainContent} initial="rest" animate="show">
         <motion.h1 
           className="text-center"
           variants={textLines}
@@ -46,19 +48,21 @@ export default function Home() {
           >
             ...or have a stubborn one and need help?
         </motion.h2>
-        <motion.div variants={buttonInitial}>
+
+      </motion.div>
+      <motion.div variants={buttonInitial}>
           <motion.button
             className="splashButton mx-auto text-center"
             variants={button} 
             initial="rest"
             animate="show"
-            whileHover="hover"
+            whileHover={{ scale: 1.1 }}
             whileTap="pressed"
             >
           
           GET STARTED</motion.button>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }

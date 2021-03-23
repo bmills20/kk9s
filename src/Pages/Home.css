@@ -13,6 +13,11 @@
     src: url(../Fira_Sans/FiraSans-Regular.ttf);
 }
 
+@font-face {
+    font-family: firasans-light;
+    src: url(../Fira_Sans/FiraSans-Light.ttf);
+  }
+
 :root{
     --default-color: #112947;
 }
@@ -69,16 +74,18 @@ body{
 }
 
 .about {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    font-family: firasans-light;
     color: black;
-    margin: 0;
-    padding: 0;
     min-height: 100%;
-    min-width: 100%;
+    max-width: 60%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: white;
+    font-size: 1.25rem;
+    justify-content: space-between;
 }
 
 Button.splashButton {
@@ -99,4 +106,46 @@ Button.splashButton {
     color: white;
     background-color: rgba(17,41,71,0.5);
     max-width: 300px;
+}
+
+.circlePic {
+    width: 100%;
+    max-width: 225px;
+    max-height: 225px;
+    height: auto;
+    margin-bottom: 10%;
+    filter: drop-shadow(30px 10px 5px #112947);
+    -webkit-filter: drop-shadow(10px 10px 5px #112947);
+}
+
+.aboutHeader {
+    margin-top: 5%;
+    font-family: firasans-bold;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.aboutPara {
+    margin-top: 5%;
+    margin-right: 15%;
+    color: #565656;
+}
+
+h1.text-left {
+    font-family: firasans-bold;
+}
+
+.checkmark-container {
+    margin-top: -2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+p.text-left {
+    font-family: firasans-light;
+    color: #565656;
 }
