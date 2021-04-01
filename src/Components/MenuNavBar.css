@@ -13,8 +13,13 @@ body {
   -ms-transition: .5s cubic-bezier(0, 1, 0.5, 1);
   -o-transition: .5s cubic-bezier(0, 1, 0.5, 1);
   transition: .5s cubic-bezier(0, 1, 0.5, 1);
-
+  max-height: 100px;
   background-color: #112947;
+
+}
+
+.nav-links{
+  margin-bottom: 0.3rem;
 }
 
 .navbar-transparent {
@@ -52,8 +57,9 @@ body {
 
 .siteLogo {
   width: 100%;
-  max-width: 350px;
+  max-width: 270px;
   height: auto;
+  
 }
 
 .slide-exit {

@@ -35,10 +35,10 @@ export default function About() {
     
     <div className="about mx-auto">
         <Container className="mx-auto">
-          <h1 className="text-left">ABOUT</h1>
+          <h1 className="text-left aboutHeader">ABOUT</h1>
           <div className="aboutContainer">
             <p className="text-left aboutPara">
-                Kinga’s K9s’ behavioral training provides you with solutions to all your dog problems, big and small.  Kinga develops puppies into well-behaved companions and solves some of the most challenging dog behaviors like separation anxiety and aggression.
+            Kinga’s K9s’ behavioral training provides you with solutions to all your dog problems, big and small.  As the founder, Kinga Niecko-Samuel has more than 14 years’ experience helping clients develop and nurture good canine behaviors.  Kinga develops puppies into well-behaved companions and solves some of the most challenging dog behaviors like separation anxiety and aggression.  Kinga is a certified trainer by the Council of Professional Dog Trainers (CPDT), and also partners with MK9S Service Dogs, an organization that trains and certifies service dogs for Veterans. With Kinga’s help you can be confident that you will be prepared for a new arrival, break any bad dog habits and enforce and maintain good behavior in your dog.
             </p>
             
             <img src={kingaCircle} className="circlePic"/>

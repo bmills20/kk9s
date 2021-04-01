@@ -105,7 +105,7 @@ function MenuNavBar(){
         <Navbar.Collapse id="basic-navbar-nav">
           <motion.Nav className="ml-auto horizontal-nav">
             <AnimateSharedLayout>
-              <ol className="ml-auto horizontal-nav">
+              <ol className="ml-auto horizontal-nav nav-links">
                 {
                   pageNames.map(({title, color}, i) => (
                     <motion.li
@@ -140,14 +140,14 @@ function MenuNavBar(){
             <Nav.Link href="/page1">APPROACH</Nav.Link>
             <Nav.Link href="/page2">SERVICES</Nav.Link>
             <Nav.Link href="/page2">PARTNERS</Nav.Link>
-            <Nav.Link href="/page2">CONTACT</Nav.Link> */}
+            <Nav.Link href="/page2">CONTACT</Nav.Link> 
               <NavDropdown show={showDropDown} onMouseLeave={handleLeave} onMouseEnter={handleHover} title="ADMIN" id="basic-nav-dropdown"> 
                 <div className="dropSeparator">  
                   <NavDropdown.Item href="/page1">Page 1</NavDropdown.Item>
                   <NavDropdown.Item href="/page2">Page 2</NavDropdown.Item>
                   <NavDropdown.Item href="/page1">Page 3</NavDropdown.Item>
                 </div>
-              </NavDropdown>
+              </NavDropdown>*/}
           </motion.Nav>
         </Navbar.Collapse>
       </Navbar>
