@@ -114,8 +114,8 @@ Button.splashButton {
     max-height: 295px;
     height: auto;
     margin-bottom: 10%;
-    margin-top: 0%;
-    margin-right: 5%;
+    margin-top: 10%;
+    margin-right: 0%;
     filter: drop-shadow(30px 10px 5px #112947);
     -webkit-filter: drop-shadow(10px 10px 5px #112947);
 }
@@ -123,6 +123,7 @@ Button.splashButton {
 .aboutHeader {
     margin-top: 5%;
     font-family: firasans-bold;
+    font-size: 2.0em;
 }
 
 .aboutContainer {
@@ -133,13 +134,9 @@ Button.splashButton {
 
 .aboutPara {
     margin-top: 1%;
-    margin-right: 7%;
-    font-size: 1em;
+    margin-right: 8%;
+    font-size: 0.90em;
     color: #565656;
-}
-
-.aboutHeader {
-    font-size: 2.5em;
 }
 
 h1.text-left {
@@ -147,10 +144,20 @@ h1.text-left {
 }
 
 .checkmark-container {
-    margin-top: -2rem;
+    margin-top: -15rem !important;
     display: flex;
     margin-top: 1vh;
     flex-direction: column;
+    font-size: 1em;
+}
+
+.checkmark-container .text-left{
+    /* maybe play with font weight of checkbox text */
+    margin-bottom: 0.5rem;
+}
+
+svg.check-scaled {
+    margin-right: 0.75rem;
 }
 
 p.text-left {

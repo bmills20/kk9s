@@ -12,7 +12,10 @@ import {
 import { motion, AnimateSharedLayout } from "framer-motion";
 import "./MenuNavBar.css";
 import classnames from "classnames";
-import kingaWhite from "./kinga-white.png"
+import kingaWhite from "./kinga-white.png";
+import * as Scroll from "react-scroll";
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+
 
 const navbarInitial = {
   rest: { opacity: 0 },
@@ -51,23 +54,28 @@ function MenuNavBar(){
   const pageNames = [
     {
       title: "ABOUT",
-      color: "#FFF"
+      color: "#FFF",
+      to: "aboutDest"
     },
     {
       title: "APPROACH",
-      color: "#FFF"
+      color: "#FFF",
+      to: ""
     },
     {
       title: "SERVICES",
-      color: "#FFF"
+      color: "#FFF",
+      to: ""
     },
     {
       title: "PARTNERS",
-      color: "#FFF"
+      color: "#FFF",
+      to: ""
     },
     {
       title: "CONTACT",
-      color: "#FFF"
+      color: "#FFF",
+      to: ""
     }
   ];
 
@@ -107,18 +115,30 @@ function MenuNavBar(){
             <AnimateSharedLayout>
               <ol className="ml-auto horizontal-nav nav-links">
                 {
-                  pageNames.map(({title, color}, i) => (
-                    <motion.li
-                      animate
-                      key = {i}
-                      className={"nav-link"}
-                      variants={navbarHover}
-                      initial="rest"
-                      whileHover="show"
-                      onTap={() => {
-                        setSelectedNav(i);
-                      }}
-                    >
+                  pageNames.map(({title, color, to}, i) => (
+                  
+                    <Link
+                      to={to} // which page to scroll to 
+                      smooth={true} // define scrolling behavior
+                      duration={500} //control scrolling speed 1000 = 1s
+                      offset={-50}
+                      >
+                      <motion.li
+                        animate
+                        key = {i}
+                        className={"nav-link"}
+                        variants={navbarHover}
+                        initial="rest"
+                        whileHover="show"
+                        onTap={() => {
+                          setSelectedNav(i);
+                          if(i === 0){
+                            /* console.log("true");
+                            scroll.scrollTo(100);
+                            console.log(scroll.scrollTo(100)) */
+                          }
+                        }}
+                      >
                       {/* If the mapped nav-link is the currently
                           selected link, apply the underline class to it */}
 
@@ -129,8 +149,9 @@ function MenuNavBar(){
                           style={{ backgroundColor: color }}
                         />
                       )}
-                    {title}
-                    </motion.li>
+                        {title}
+                      </motion.li>
+                    </Link>
                   ))
                 }
               </ol>

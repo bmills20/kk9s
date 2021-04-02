@@ -8,9 +8,11 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import { motion, useMotionValue, useTransform, useAnimation } from "framer-motion";
+import * as Scroll from 'react-scroll';
 import "./Check.css";
 
 
+const ScrollLink = Scroll.ScrollLink
 
 var tickVariants = {
   pressed: { scale: 0.5},
@@ -46,8 +48,8 @@ export var Check = () => {
       animate={controls}
       whileHover="hover"
       viewBox="94 94 250 250"
-      width="2rem"
-      height="2rem"
+      width="2.8rem"
+      height="2.8rem"
       className="check-scaled"
       whileTap="pressed"
     >
