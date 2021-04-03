@@ -1,0 +1,85 @@
+@font-face {
+    font-family: firasans-bold;
+    src: url(../Fira_Sans/FiraSans-Bold.ttf);
+  }
+
+@font-face {
+    font-family: firasans-italic;
+    src: url(../Fira_Sans/FiraSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: firasans;
+    src: url(../Fira_Sans/FiraSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: firasans-light;
+    src: url(../Fira_Sans/FiraSans-Light.ttf);
+  }
+
+:root{
+    --default-color: #112947;
+}
+
+body{
+    color: white;
+    height: 100vh;
+    background-color: white;
+}
+
+.mt-6{
+    margin-top: 4rem !important;
+}
+
+.mt-7{
+    margin-top: 5rem !important;
+}
+
+.mt-8{
+    margin-top: 6rem !important;
+}
+
+.main-content{
+    /*text-shadow: 2px 2px 15px black;*/
+    margin-bottom: 10vh;
+}
+
+/* Center the splash text horizontally and vertically on page */
+.main-content h1{
+    font-family: firasans-bold, sans-serif;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+
+}
+
+.main-content h2{
+    font-family: firasans, sans-serif;
+}
+.main-content > p{
+    font-family: firasans-italic;
+}
+
+.splash {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.about {
+    margin-top: 4%;
+    margin-bottom: 10%;
+    font-family: firasans-light;
+    color: black;
+    min-height: 100%;
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    font-size: 1.25rem;
+    justify-content: space-between;
+}

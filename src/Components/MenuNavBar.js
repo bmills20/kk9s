@@ -10,6 +10,7 @@ import {
   Collapse,
 } from "react-bootstrap";
 import { motion, AnimateSharedLayout } from "framer-motion";
+import { BrowserRouter, Route, Link as DomLink } from "react-router-dom";
 import "./MenuNavBar.css";
 import classnames from "classnames";
 import kingaWhite from "./kinga-white.png";
@@ -52,6 +53,11 @@ function MenuNavBar(){
 
   // Navbar link array
   const pageNames = [
+    {
+      title: "HOME",
+      color: "#FFF",
+      to: "aboutDest"
+    },
     {
       title: "ABOUT",
       color: "#FFF",
@@ -108,7 +114,9 @@ function MenuNavBar(){
 
   return (
       <Navbar fixed="top" variant="dark" expand="lg" className={classnames("navbar", navbarColor)}>
-        <img src={kingaWhite} className="siteLogo"/>
+        <DomLink className="dom-link" to={"/"}> 
+          <img src={kingaWhite} className="siteLogo"/>
+        </DomLink> 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <motion.Nav className="ml-auto horizontal-nav">
@@ -116,42 +124,48 @@ function MenuNavBar(){
               <ol className="ml-auto horizontal-nav nav-links">
                 {
                   pageNames.map(({title, color, to}, i) => (
-                  
-                    <Link
-                      to={to} // which page to scroll to 
-                      smooth={true} // define scrolling behavior
-                      duration={500} //control scrolling speed 1000 = 1s
-                      offset={-50}
-                      >
-                      <motion.li
-                        animate
-                        key = {i}
-                        className={"nav-link"}
-                        variants={navbarHover}
-                        initial="rest"
-                        whileHover="show"
-                        onTap={() => {
-                          setSelectedNav(i);
-                          if(i === 0){
-                            /* console.log("true");
-                            scroll.scrollTo(100);
-                            console.log(scroll.scrollTo(100)) */
-                          }
-                        }}
-                      >
-                      {/* If the mapped nav-link is the currently
-                          selected link, apply the underline class to it */}
+                    
+                      <Link
+                        to={to} // which page to scroll to 
+                        smooth={true} // define scrolling behavior
+                        duration={500} //control scrolling speed 1000 = 1s
+                        offset={-50}
+                        >
+                        <motion.li
+                          animate
+                          key = {i}
+                          className={"nav-link"}
+                          variants={navbarHover}
+                          initial="rest"
+                          whileHover="show"
+                          onTap={() => {
+                            setSelectedNav(i);
+                            if(i === 0){
+                              /* console.log("true");
+                              scroll.scrollTo(100);
+                              console.log(scroll.scrollTo(100)) */
+                            }
+                          }}
+                        >
+                        {/* If the mapped nav-link is the currently
+                            selected link, apply the underline class to it */}
 
-                      {i === selectedNav && (
-                        <motion.div
-                          layoutId="underline"
-                          className="underline"
-                          style={{ backgroundColor: color }}
-                        />
-                      )}
-                        {title}
-                      </motion.li>
-                    </Link>
+                        {i === selectedNav && (
+                          <motion.div
+                            layoutId="underline"
+                            className="underline"
+                            style={{ backgroundColor: color }}
+                          />
+                        )}
+                        {/*Convert to lowercase later*/}
+                        {/*Convert to lowercase later*/}
+                        {/*Convert to lowercase later*/}
+                        {/*Convert to lowercase later*/}
+                        <DomLink className="dom-link" to={`../pages/${title}`}>
+                          {title}
+                        </DomLink>
+                        </motion.li>
+                      </Link>
                   ))
                 }
               </ol>

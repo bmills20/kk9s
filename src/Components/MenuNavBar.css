@@ -43,6 +43,15 @@ body {
   cursor: pointer;
 }
 
+.dom-link { 
+  color: white /* !important */;
+  cursor: pointer;
+}
+
+.dom-link:hover{
+  color:white;
+}
+
 .navbar-brand {
   color: white !important;
 }

@@ -6,7 +6,9 @@ import Home from "./Pages/Home";
 import Page1 from "./Pages/Page1";
 import Page2 from "./Pages/Page2";
 import About from "./Pages/About";
+import Approach from "./Pages/Approach";
 import "./App.css";
+import Main from "./index.js"
 
 export default class App extends React.Component {
   render() {
@@ -17,8 +19,7 @@ export default class App extends React.Component {
           <main role="main" /*className="container"*/>
             <Route exact path="/" component={Home}></Route>
             <Route exact path="/" component={About}></Route>
-            <Route exact path="/page1" component={Page1}></Route>
-            <Route exact path="/page2" component={Page2}></Route>
+            <Route exact path="/pages/approach" component={Approach}></Route>
           </main>
           <Footer />
           </div>

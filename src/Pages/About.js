@@ -27,15 +27,16 @@ const divInitial = {
 const picInitial = {
   rest: { scale: 0.1, opacity: 0 },
   show: { scale: 1, opacity: 1,
-    transition: {delay: 2, duration:1}},
-  float: {scale: 1, opacity: 1, y: [7, -7, 7], 
-    transition: {repeat: Infinity, duration: 5}}
+    transition: {duration:1}},
+  float: {scale: 1, repeat: Infinity, opacity: 1, y: [7, -7, 7], 
+    transition: {duration: 5}}
 };
 
 var Checkmark = () => <Check/>
 
 export default function About() {
   var controls = useAnimation();
+  var picControls = useAnimation();
   const [picAnim, setPicAnim] = useState(false);
   var [divref, inView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
   var [picRef, picInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
@@ -44,10 +45,21 @@ export default function About() {
     if (inView) {
       controls.start("checked");
     }
-    if (picInView) {
-      controls.start("show");
-    }
   }, [controls, inView]);
+
+  // Upon scrolling down to the about section, use async and promises to begin
+  // the 3 animation variant sequence
+  useEffect(() => {
+    const sequence = async () => {
+      if (picInView) {
+        await picControls.start(picInitial.show);
+        await picControls.start(picInitial.float);
+      }
+    };
+    sequence();
+  }, [picControls, picInView])
+
+
   return (
     <Element id="aboutDest" name="aboutDest">
       <motion.div intial="rest" animate="show" variants={divInitial} className="about mx-auto">
@@ -55,9 +67,9 @@ export default function About() {
             <h1 className="text-left aboutHeader">ABOUT</h1>
             <div className="aboutContainer">
               <p className="text-left aboutPara">
-              Kinga’s K9s’ behavioral training provides you with solutions to all your dog problems, big and small.  As the founder, Kinga Niecko-Samuel has more than 14 years’ experience helping clients develop and nurture good canine behaviors.  Kinga develops puppies into well-behaved companions and solves some of the most challenging dog behaviors like separation anxiety and aggression.  Kinga is a certified trainer by the Council of Professional Dog Trainers (CPDT), and also partners with MK9S Service Dogs, an organization that trains and certifies service dogs for Veterans. With Kinga’s help you can be confident that you will be prepared for a new arrival, break any bad dog habits and enforce and maintain good behavior in your dog.
+              Kinga’s K9s’ behavioral training provides you with solutions to all your dog problems, big and small.  As the founder, Kinga Niecko-Samuel has more than 14 years’ experience helping clients develop and nurture good canine behaviors.  Kinga develops puppies into well-behaved companions and solves some of the most challenging dog behaviors like separation anxiety and aggression.  Kinga is a certified trainer by the Council of Professional Dog Trainers (CPDT) and also partners with MK9S Service Dogs, an organization that trains and certifies service dogs for veterans. With Kinga’s help, you can be confident that you will be prepared for a new arrival, break any bad dog habits, and enforce and maintain good behavior in your dog.
               </p>
-              <motion.img ref={picRef} initial="rest" animate={ (picAnim && inView) ? "float" : "show"} onAnimationComplete={picAnim ? null : () => setPicAnim(true)} variants={picInitial} src={kingaCircle} className="circlePic" />
+              <motion.img ref={picRef} variants={picInitial} initial={"rest"} animate={ picControls } src={kingaCircle} className="circlePic" />
                 
               {console.log(picInView)}
             </div>
