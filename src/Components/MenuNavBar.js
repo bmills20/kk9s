@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Navbar,
   Nav,
@@ -10,7 +10,7 @@ import {
   Collapse,
 } from "react-bootstrap";
 import { motion, AnimateSharedLayout } from "framer-motion";
-import { BrowserRouter, Route, Link as DomLink } from "react-router-dom";
+import { BrowserRouter, Route, useHistory, Link as DomLink } from "react-router-dom";
 import "./MenuNavBar.css";
 import classnames from "classnames";
 import kingaWhite from "./kinga-white.png";
@@ -41,6 +41,7 @@ function MenuNavBar(){
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
   const [selectedNav, setSelectedNav] = useState(0);
   const [hoveredNav, setHoveredNav] = useState(-1);
+  let history = useHistory();
 
   // dropdown hover handling
   const handleHover = (event) => {
@@ -56,7 +57,7 @@ function MenuNavBar(){
     {
       title: "HOME",
       color: "#FFF",
-      to: "aboutDest"
+      to: "homeTop"
     },
     {
       title: "ABOUT",
@@ -85,26 +86,58 @@ function MenuNavBar(){
     }
   ];
 
+
+
+  // react-scroll events
+  useEffect(() => {
+    Events.scrollEvent.register('begin', function(to, element) {
+      console.log('begin');
+    });
+    Events.scrollEvent.register('end', function(to, element) {
+      console.log("end");
+    });
+
+    scrollSpy.update();
+  
+  }, []) // passing an empty array as second argument triggers the callback in useEffect only after the initial render thus replicating `componentDidMount` lifecycle behaviour
+    
+  useEffect(() => {
+    Events.scrollEvent.remove('begin');
+    Events.scrollEvent.remove('end');
+}, []) //componentWillUnmount
+
   // Change from transparent to color once you scroll past
   // a certain y coord
 
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
+        ["/kk9s/pages/approach", "/kk9s/pages/services", "/kk9s/pages/partners", "/kk9s/pages/contact"]
+          .includes(window.location.pathname)
+    ) { 
+        setNavbarColor("");
+    }
+
+      else if (
         document.documentElement.scrollTop > 299 ||
         document.body.scrollTop > 299
-      ) {
-        setNavbarColor("");
+
+      ) { setNavbarColor("");
+
       } else if (
-        document.documentElement.scrollTop < 300 ||
-        document.body.scrollTop < 300
-      ) {
-        setNavbarColor("navbar-transparent");
-      }
+          document.documentElement.scrollTop < 300 ||
+          document.body.scrollTop < 300
+
+      ) { setNavbarColor("navbar-transparent");
+
+      } 
     };
 
     // scroll listener
     window.addEventListener("scroll", updateNavbarColor);
+
+    // click listener for color changes
+    window.addEventListener("click", updateNavbarColor);
 
     // cleanup scroll listener on exit
     return function cleanup() {
@@ -126,10 +159,11 @@ function MenuNavBar(){
                   pageNames.map(({title, color, to}, i) => (
                     
                       <Link
-                        to={to} // which page to scroll to 
+                        to={((window.location.pathname === "/kk9s/pages/HOME" || window.location.pathname === "/kk9s/") ? to : "")} // which page to scroll to 
                         smooth={true} // define scrolling behavior
                         duration={500} //control scrolling speed 1000 = 1s
                         offset={-50}
+                        spy={true}
                         >
                         <motion.li
                           animate
@@ -140,10 +174,15 @@ function MenuNavBar(){
                           whileHover="show"
                           onTap={() => {
                             setSelectedNav(i);
-                            if(i === 0){
-                              /* console.log("true");
-                              scroll.scrollTo(100);
-                              console.log(scroll.scrollTo(100)) */
+                            console.log(title.length,"lenb4");
+                            // History tracker for retaining animations
+                            history.push(title.toLocaleLowerCase().toString());
+                            console.log(history.length,"len");
+
+                            // If user clicks on anything other than the homepage or the about page
+                            // Set the navbar color to blue (take away transparent class)
+                            if((i !== 0 && i !== 1) && navbarColor === "navbar-transparent"){
+                              setNavbarColor("");
                             }
                           }}
                         >
@@ -157,11 +196,10 @@ function MenuNavBar(){
                             style={{ backgroundColor: color }}
                           />
                         )}
-                        {/*Convert to lowercase later*/}
-                        {/*Convert to lowercase later*/}
-                        {/*Convert to lowercase later*/}
-                        {/*Convert to lowercase later*/}
-                        <DomLink className="dom-link" to={`../pages/${title}`}>
+                        <DomLink className="dom-link" to={
+                            (title==="HOME") ? "" 
+                          : (title==="ABOUT") ? ""
+                          : `../pages/${title.toLocaleLowerCase()}`}>
                           {title}
                         </DomLink>
                         </motion.li>
@@ -170,19 +208,6 @@ function MenuNavBar(){
                 }
               </ol>
             </AnimateSharedLayout>
-            
-            {/* <Nav.Link href="/">ABOUT</Nav.Link>
-            <Nav.Link href="/page1">APPROACH</Nav.Link>
-            <Nav.Link href="/page2">SERVICES</Nav.Link>
-            <Nav.Link href="/page2">PARTNERS</Nav.Link>
-            <Nav.Link href="/page2">CONTACT</Nav.Link> 
-              <NavDropdown show={showDropDown} onMouseLeave={handleLeave} onMouseEnter={handleHover} title="ADMIN" id="basic-nav-dropdown"> 
-                <div className="dropSeparator">  
-                  <NavDropdown.Item href="/page1">Page 1</NavDropdown.Item>
-                  <NavDropdown.Item href="/page2">Page 2</NavDropdown.Item>
-                  <NavDropdown.Item href="/page1">Page 3</NavDropdown.Item>
-                </div>
-              </NavDropdown>*/}
           </motion.Nav>
         </Navbar.Collapse>
       </Navbar>

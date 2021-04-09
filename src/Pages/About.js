@@ -71,7 +71,6 @@ export default function About() {
               </p>
               <motion.img ref={picRef} variants={picInitial} initial={"rest"} animate={ picControls } src={kingaCircle} className="circlePic" />
                 
-              {console.log(picInView)}
             </div>
             <motion.div ref={divref} variants={certifications} initial="unchecked" animate={controls} className="checkmark-container">
                 <motion.p className="text-left" variants={certLines}><Checkmark />CPDT Certified</motion.p>
