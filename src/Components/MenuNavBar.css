@@ -42,6 +42,14 @@ body {
   color: white /* !important */;
   cursor: pointer;
 }
+.nav-link:hover{
+  text-decoration: none !important;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
 
 .dom-link { 
   color: white /* !important */;

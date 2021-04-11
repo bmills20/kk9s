@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import "bootswatch/dist/darkly/bootstrap.min.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import "./Pages/Home.css";
 import { BrowserRouter, Switch, Route, Link as DomLink } from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About";

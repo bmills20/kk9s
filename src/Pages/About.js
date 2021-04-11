@@ -61,7 +61,7 @@ export default function About() {
 
 
   return (
-    <Element id="aboutDest" name="aboutDest">
+    <Element id="aboutDest" className="aboutDest" name="aboutDest">
       <motion.div intial="rest" animate="show" variants={divInitial} className="about mx-auto">
           <Container className="mx-auto">
             <h1 className="text-left aboutHeader">ABOUT</h1>
@@ -74,7 +74,7 @@ export default function About() {
             </div>
             <motion.div ref={divref} variants={certifications} initial="unchecked" animate={controls} className="checkmark-container">
                 <motion.p className="text-left" variants={certLines}><Checkmark />CPDT Certified</motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark />14 Years of Experience</motion.p>
+                <motion.p className="text-left" variants={certLines} ><Checkmark />14+ Years of Experience</motion.p>
                 <motion.p className="text-left" variants={certLines} ><Checkmark />Specializes in behavioral in-home training</motion.p>
                 <motion.p className="text-left" variants={certLines} ><Checkmark />Partners to train service dogs for veterans</motion.p>
 

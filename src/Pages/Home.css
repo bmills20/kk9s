@@ -18,14 +18,24 @@
     src: url(../Fira_Sans/FiraSans-Light.ttf);
   }
 
+@font-face {
+    font-family: firasans-lightitalic;
+    src: url(../Fira_Sans/FiraSans-ExtraLightItalic.ttf);
+}
+
+
+
 :root{
     --default-color: #112947;
+    --accent-color: #31cde6;
 }
 
 body{
-    color: white;
+    
+    
     height: 100vh;
     background:url("../images/photoshoot2-flipped.png"), linear-gradient(rgba(0,0,0,0) 40%, black), radial-gradient(ellipse at center top, transparent 20%,black);
+    background-color: #f9f9f9;
     background-position: 50% 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -60,6 +70,13 @@ body{
 .main-content h2{
     font-family: firasans, sans-serif;
 }
+
+.main-content h3{
+    font-family: firasans-lightitalic, sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
 .main-content > p{
     font-family: firasans-italic;
 }
@@ -83,9 +100,103 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: #f9f9f9;
     font-size: 1.25rem;
     justify-content: space-between;
+}
+
+.landingServices {
+    margin-top: 4%;
+    margin-bottom: 10%;
+    margin-right: 10%;
+    margin-left: 10%;
+    font-family: firasans-light;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    background-color: #f9f9f9;
+    font-size: 1.25rem;
+    justify-content: space-between;
+}
+
+
+
+.landing-prices {
+    
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.landing-prices-features {
+    color: rgb(83, 83, 83);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.landing-image {
+    max-width: 80%;
+    height: auto;
+    margin: 1rem 1rem;
+}
+
+.btn-services {
+    /*background: linear-gradient(to left, #32A1AA,#00F9FF)
+     background-color: pink;
+ */
+ 
+    background-color: var(--accent-color); /* 33e3ff alternate */ 
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+}
+
+.landing-prices-features {
+    padding: 0 10px;
+    margin: auto 2rem;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.landing-prices-features li{
+    margin: 1rem auto;
+    font-size: 1rem;
+}
+
+.landing-prices h3{
+    color: black;
+    font-family: firasans;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    position: relative;
+}
+
+.landing-prices-title::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 1px;
+    bottom: -7px;
+    left: 25%;
+    margin: 0 auto;
+    background: var(--accent-color);
+}
+
+.servicesCol .list-group-item{
+    background-color: lightgrey !important;
+}
+
+.servicesCol {
+    flex-direction: column;
 }
 
 Button.splashButton {

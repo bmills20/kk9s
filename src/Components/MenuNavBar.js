@@ -99,7 +99,8 @@ function MenuNavBar(){
 
     scrollSpy.update();
   
-  }, []) // passing an empty array as second argument triggers the callback in useEffect only after the initial render thus replicating `componentDidMount` lifecycle behaviour
+  }, []) // passing an empty array as second argument triggers the callback in 
+        //useEffect only after the initial render thus replicating `componentDidMount` lifecycle behavior
     
   useEffect(() => {
     Events.scrollEvent.remove('begin');
@@ -159,7 +160,7 @@ function MenuNavBar(){
                   pageNames.map(({title, color, to}, i) => (
                     
                       <Link
-                        to={((window.location.pathname === "/kk9s/pages/HOME" || window.location.pathname === "/kk9s/") ? to : "")} // which page to scroll to 
+                        to={to} // which page to scroll to 
                         smooth={true} // define scrolling behavior
                         duration={500} //control scrolling speed 1000 = 1s
                         offset={-50}
@@ -174,10 +175,9 @@ function MenuNavBar(){
                           whileHover="show"
                           onTap={() => {
                             setSelectedNav(i);
-                            console.log(title.length,"lenb4");
                             // History tracker for retaining animations
-                            history.push(title.toLocaleLowerCase().toString());
-                            console.log(history.length,"len");
+                            // history.push(title.toLocaleLowerCase().toString());
+                            
 
                             // If user clicks on anything other than the homepage or the about page
                             // Set the navbar color to blue (take away transparent class)
@@ -197,11 +197,12 @@ function MenuNavBar(){
                           />
                         )}
                         <DomLink className="dom-link" to={
-                            (title==="HOME") ? "" 
+                            (title==="HOME") ? "/" 
                           : (title==="ABOUT") ? ""
                           : `../pages/${title.toLocaleLowerCase()}`}>
                           {title}
                         </DomLink>
+                        
                         </motion.li>
                       </Link>
                   ))

@@ -35,26 +35,28 @@ var Checkmark2 = () => <Check/>
 
 export default function Approach() {
   return (
-    <Element id="aboutDest" name="aboutDest">
-      <motion.div intial="rest" animate="show" variants={divInitial} className="about mx-auto">
-          <Container className="mx-auto">
-            <h1 className="text-left aboutHeader">ABOUT</h1>
-            <div className="aboutContainer">
-              <p className="text-left aboutPara">
-              Kinga’s K9s’ behavioral training provides you with solutions to all your dog problems, big and small.  As the founder, Kinga Niecko-Samuel has more than 14 years’ experience helping clients develop and nurture good canine behaviors.  Kinga develops puppies into well-behaved companions and solves some of the most challenging dog behaviors like separation anxiety and aggression.  Kinga is a certified trainer by the Council of Professional Dog Trainers (CPDT) and also partners with MK9S Service Dogs, an organization that trains and certifies service dogs for veterans. With Kinga’s help, you can be confident that you will be prepared for a new arrival, break any bad dog habits, and enforce and maintain good behavior in your dog.
+      <motion.div style={{backgroundColor: "white", background: "none"}} intial="rest" animate="show" variants={divInitial} className="approach mx-auto">
+          <Container className="mx-auto ">
+            <h1 className="text-left aboutHeader">APPROACH</h1>
+              <p className="text-left">
+              The key to having a well-behaved dog is to understand that every interaction you have with your dog is a learning opportunity.
+              Our training sessions (in-home or field) are set up with this goal in mind:  Train your dog to not only know commands, but more importantly, to obey them when asked!
+              A key element in training your dog is teaching you, as the owner to achieve that same level of obedience from your companion.
+              </p>
+              <p className="text-left">
+                Dogs learn behaviors through associations (positive and negative) and receive messages from humans through the tiniest micro-movements.
+                Kinga’s K-9s uses a balanced approach to training your dog with positive reinforcement of good behaviors and blocking unwanted or undesired behaviors.
+                We mark appropriate behaviors with treats, verbal praise and play rewards and block unwanted behaviors through verbal corrections and appropriate use of the leash.
+                We teach you, how your body language, tone, and daily routine affect your dog’s behavior and how to use that knowledge to appropriately guide your dog’s behavior in and out of the house.
+              </p>
+              <p className="text-left">As the first step, we identify the primary driver that motivates your dog to follow commands.
+              Identifying your dog’s primary driver directly improves training success.
+              We teach basic commands, recommend training tools, treats and equipment and specialize in hard to solve behavioral problems to include, but not limited to:
               </p>
               <motion.img  className="circlePic" />
                 
-            </div>
-            <motion.div className="checkmark-container">
-                <motion.p className="text-left" variants={certLines}><Checkmark2 />CPDT Certified</motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark2 />14 Years of Experience</motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark2 />Specializes in behavioral in-home training</motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark2 />Partners to train service dogs for veterans</motion.p>
-
-            </motion.div>
+            
           </Container>
       </motion.div>
-    </Element>
   );
 }
