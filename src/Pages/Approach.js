@@ -31,8 +31,7 @@ const certifications = {
 
 
 
-class Approach extends React.Component {
-  render(){
+export default function Approach() {
   return (
 /*       <motion.div style={{backgroundColor: "white", background: "none"}} intial="rest" animate="show" variants={divInitial} className="approach mx-auto">
  */          <Container className="mx-auto ">
@@ -59,5 +58,3 @@ class Approach extends React.Component {
 /*       </motion.div>
  */  );
 }
-}
-export default Approach;
