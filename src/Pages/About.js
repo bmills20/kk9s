@@ -14,8 +14,8 @@ const certifications = {
 };
 
 const certLines = {
-  unchecked: { opacity: 0, y: 1150 },
-  checked: { opacity: 1, y: 0,
+  unchecked: { opacity: 0, x: -250 },
+  checked: { opacity: 1, x: 0,
     transition: {duration:1, ease: "circOut"}}
 };
 
@@ -27,9 +27,7 @@ const divInitial = {
 const picInitial = {
   rest: { scale: 0.1, opacity: 0 },
   show: { scale: 1, opacity: 1,
-    transition: {duration:1}},
-  float: {scale: 1, repeat: Infinity, opacity: 1, y: [7, -7, 7], 
-    transition: {duration: 5}}
+    transition: {duration:1}}
 };
 
 var Checkmark = () => <Check/>
@@ -38,13 +36,16 @@ export default function About() {
   var controls = useAnimation();
   var picControls = useAnimation();
   const [picAnim, setPicAnim] = useState(false);
-  var [divref, inView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
+  var [divref, inView] = useInView({threshold: 1.0, delay: 500, trackVisibility: true});
   var [picRef, picInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
 
   useEffect(() => {
-    if (inView) {
-      controls.start("checked");
-    }
+    const checkSequence = async () => {
+      if (inView) {
+        await controls.start("checked");
+      }
+    };
+    checkSequence();
   }, [controls, inView]);
 
   // Upon scrolling down to the about section, use async and promises to begin
@@ -53,7 +54,6 @@ export default function About() {
     const sequence = async () => {
       if (picInView) {
         await picControls.start(picInitial.show);
-        await picControls.start(picInitial.float);
       }
     };
     sequence();

@@ -8,7 +8,7 @@ import { Element, Link } from "react-scroll";
 const button = {
   rest: { scale: 0.1, opacity: 0 },
   show: { scale: 1, opacity: 1,
-    transition: {delay: 4.5, duration:0.5} },
+    transition: {delay: 5, duration:0.5} },
   hover: { scale: 1.1, opacity: 1,
     transition: {duration:0.2} },
   hoverExit: { scale: 1,
@@ -24,13 +24,15 @@ const textLines = {
 };
 
 const firstLine = {
-  rest: { opacity: 0, y: 50,
+  restInitial: {opacity: 0, y: 25, 
+    transition: {delay: 3}},
+  rest: { opacity: 0, y: 17,
     transition: {duration: 0.5} },
   show: { opacity: 1, y: 0,
     transition: {duration:2}},
   showStop: { opacity: 1, y: 0,
     transition: {duration:2}},
-  next: { opacity: 0, y: -50,
+  next: { opacity: 0, y: -17,
     transition: {duration: 0.5}}
 }
 
@@ -42,6 +44,7 @@ const firstLine = {
 
 export default function Home() {
   var [questionLine, setQuestionLine] = useState(0);
+  var [firstRun, setFirstRun] = useState(true);
   var buttonControls = useAnimation();
   var questionControls = useAnimation();
   const [buttonHovered, setButtonHovered] = useState(false);
@@ -55,7 +58,12 @@ export default function Home() {
 
   useEffect(() => {
     const sequence = async () => {
+      console.log(firstRun);
       while(true){
+        if(firstRun){
+          await questionControls.start(firstLine.restInitial);
+          setFirstRun(false);
+        }
         await questionControls.start(firstLine.rest);
         await questionControls.start(firstLine.show);
         await questionControls.start(firstLine.showStop);
@@ -63,9 +71,7 @@ export default function Home() {
         setQuestionLine(questionLine + 1);
         if(questionLine >= 3){
           setQuestionLine(0);
-        }
-        console.log(questionLine);
-        
+        }        
       }
     };
     sequence();
@@ -131,6 +137,7 @@ export default function Home() {
         </motion.h2>
         <motion.h3
           className="text-center"
+          initial={"restInitial"}
           variants={firstLine}
           animate={questionControls}
           >

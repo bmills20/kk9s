@@ -199,7 +199,7 @@ function MenuNavBar(){
                         <DomLink className="dom-link" to={
                             (title==="HOME") ? "/" 
                           : (title==="ABOUT") ? ""
-                          : `../pages/${title.toLocaleLowerCase()}`}>
+                          : `/${title.toLocaleLowerCase()}`}>
                           {title}
                         </DomLink>
                         

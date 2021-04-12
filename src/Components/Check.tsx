@@ -15,16 +15,14 @@ import "./Check.css";
 const ScrollLink = Scroll.ScrollLink
 
 var tickVariants = {
-  pressed: { scale: 0.5},
+  unchecked: { scale: 0.5, pathLength: 0 },
   checked: { scale: 0.5, pathLength: 1,
-    transition: {delay: 1.5} },
-  unchecked: { scale: 0.5, pathLength: 0 }
+    transition: {delay: 3} }
 };
 
 var boxVariants = {
-  pressed: { scale: 0.45},
-  checked: { scale: 0.5, stroke: "#112947" },
-  unchecked: { scale: 0.5, stroke: "#ddd"}
+  unchecked: { scale: 0.5, stroke: "#ddd"},
+  checked: { scale: 0.5, stroke: "#112947" }
 };
 
 export var Check = () => {
@@ -51,7 +49,6 @@ export var Check = () => {
       width="2.8rem"
       height="2.8rem"
       className="check-scaled"
-      whileTap="pressed"
     >
       <motion.path
         d="M 72 136 C 72 100.654 100.654 72 136 72 L 304 72 C 339.346 72 368 100.654 368 136 L 368 304 C 368 339.346 339.346 368 304 368 L 136 368 C 100.654 368 72 339.346 72 304 Z"

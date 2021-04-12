@@ -2,7 +2,6 @@ import "./AltPages.css";
 import React from "react";
 import { Container, Button } from "react-bootstrap";
 import { motion, useAnimation } from "framer-motion";
-import {Check} from "../Components/Check";
 import { Element } from "react-scroll";
 
 const certifications = {
@@ -30,13 +29,13 @@ const certifications = {
       transition: {duration: 5}}
   };
 
-var Checkmark2 = () => <Check/>
 
 
-export default function Approach() {
+class Approach extends React.Component {
+  render(){
   return (
-      <motion.div style={{backgroundColor: "white", background: "none"}} intial="rest" animate="show" variants={divInitial} className="approach mx-auto">
-          <Container className="mx-auto ">
+/*       <motion.div style={{backgroundColor: "white", background: "none"}} intial="rest" animate="show" variants={divInitial} className="approach mx-auto">
+ */          <Container className="mx-auto ">
             <h1 className="text-left aboutHeader">APPROACH</h1>
               <p className="text-left">
               The key to having a well-behaved dog is to understand that every interaction you have with your dog is a learning opportunity.
@@ -57,6 +56,8 @@ export default function Approach() {
                 
             
           </Container>
-      </motion.div>
-  );
+/*       </motion.div>
+ */  );
 }
+}
+export default Approach;
