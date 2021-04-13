@@ -8,13 +8,13 @@ body {
 }
 
 .navbar {
-  -webkit-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
-  -moz-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
-  -ms-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
-  -o-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
-  transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
+  -webkit-transition: background-color 1s ;
+  -moz-transition: background-color 1s ;
+  -ms-transition: background-color 1s ;
+  -o-transition: background-color 1s ;
+  transition: background-color 1s ;
   max-height: 100px;
-  background-color: #112947;
+  background-color: rgba(17, 41, 71, 1) !important;
 
 }
 
@@ -23,13 +23,7 @@ body {
 }
 
 .navbar-transparent {
-  -webkit-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
-  -moz-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
-  -ms-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
-  -o-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
-  transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
-
-  background-color: transparent !important;
+  background-color: rgba(17, 41, 71, 0) !important;
 }
 
 .nav-link {

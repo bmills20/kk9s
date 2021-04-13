@@ -10,7 +10,7 @@ import {
   Collapse,
 } from "react-bootstrap";
 import { motion, AnimateSharedLayout } from "framer-motion";
-import { BrowserRouter, Route, useHistory, Link as DomLink } from "react-router-dom";
+import { BrowserRouter, Route, useHistory, useLocation, Link as DomLink } from "react-router-dom";
 import "./MenuNavBar.css";
 import classnames from "classnames";
 import kingaWhite from "./kinga-white.png";
@@ -42,6 +42,7 @@ function MenuNavBar(){
   const [selectedNav, setSelectedNav] = useState(0);
   const [hoveredNav, setHoveredNav] = useState(-1);
   let history = useHistory();
+  var locations = useLocation();
 
   // dropdown hover handling
   const handleHover = (event) => {
@@ -110,49 +111,36 @@ function MenuNavBar(){
   // Change from transparent to color once you scroll past
   // a certain y coord
 
-  /* React.useEffect(() => {
+  React.useEffect(() => {
     const updateNavbarColor = () => {
-      if (
-        ["/kk9s/pages/approach", "/kk9s/pages/services", "/kk9s/pages/partners", "/kk9s/pages/contact"]
-          .includes(window.location.pathname)
-    ) { 
-        setNavbarColor("");
-    }
-      else if (
-        ["/kk9s/", ""]
-          .includes(window.location.pathname)
-      ) {
-          setNavbarColor("navbar-transparent");
-      }
-      else if (
-        document.documentElement.scrollTop > 299 ||
-        document.body.scrollTop > 299
+      if("/" === locations.pathname){
+        if (
+          document.documentElement.scrollTop > 299 ||
+          document.body.scrollTop > 299
 
-      ) { setNavbarColor("");
+        ) { setNavbarColor("");
 
-      } else if (
-          document.documentElement.scrollTop < 300 ||
-          document.body.scrollTop < 300
+        } else if (
+            document.documentElement.scrollTop < 300 ||
+            document.body.scrollTop < 300
 
-      ) { setNavbarColor("navbar-transparent");
+        ) { setNavbarColor("navbar-transparent");
 
       } 
-    };
+    }
+  };
 
     // scroll listener
     window.addEventListener("scroll", updateNavbarColor);
-
-    // click listener for color changes
-    window.addEventListener("click", updateNavbarColor);
 
     // cleanup scroll listener on exit
     return function cleanup() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
-  }); */
+  });
 
   return (
-      <Navbar fixed="top" variant="dark" expand="lg" className={classnames("navbar", navbarColor)}>
+      <Navbar fixed="top" variant="dark" expand="lg" className={navbarColor}>
         <DomLink className="dom-link" to={"/"}> 
           <img src={kingaWhite} className="siteLogo"/>
         </DomLink> 
@@ -184,7 +172,6 @@ function MenuNavBar(){
                             history.push((title==="HOME") ? "/" 
                             : (title==="ABOUT") ? ""
                             : `/pages/${title.toLocaleLowerCase()}`);
-                            () => updateNavbarColor
 
                             // If user clicks on anything other than the homepage or the about page
                             // Set the navbar color to blue (take away transparent class)
