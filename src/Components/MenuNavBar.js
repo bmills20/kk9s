@@ -176,7 +176,9 @@ function MenuNavBar(){
                           onTap={() => {
                             setSelectedNav(i);
                             // History tracker for retaining animations
-                            // history.push(title.toLocaleLowerCase().toString());
+                            history.push((title==="HOME") ? "/" 
+                            : (title==="ABOUT") ? ""
+                            : `/pages/${title.toLocaleLowerCase()}`);
                             
 
                             // If user clicks on anything other than the homepage or the about page
@@ -198,7 +200,7 @@ function MenuNavBar(){
                         )}
                         <DomLink className="dom-link" to={
                             (title==="HOME") ? "/" 
-                          : (title==="ABOUT") ? ""
+                          : (title==="ABOUT") ? "/"
                           : `/pages/${title.toLocaleLowerCase()}`}>
                           {title}
                         </DomLink>

@@ -3,7 +3,9 @@ import React, {useEffect, useState} from "react";
 import { Container, Button } from "react-bootstrap";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useHistory, useLocation } from "react-router-dom";
 import { Element, Link } from "react-scroll";
+import getSession from "./getSession"
 
 const button = {
   rest: { scale: 0.1, opacity: 0 },
@@ -42,23 +44,26 @@ const firstLine = {
     transition: {delay: 2, staggerChildren: 3}}
 };
 
+
+
 export default function Home() {
+  const showAnimation = getSession();
   var [questionLine, setQuestionLine] = useState(0);
   var [firstRun, setFirstRun] = useState(true);
   var buttonControls = useAnimation();
   var questionControls = useAnimation();
   const [buttonHovered, setButtonHovered] = useState(false);
   var [buttonRef, buttonInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: false});
+  
   const questionArray = [
     "Can my old dog learn how to behave?",
     "How can I help my dog meet new people and other canine friends?",
     "How can I stop my puppy from crying all-night and peeing everywhere?",
     "What do I do? Help!"
-  ]
+  ];
 
   useEffect(() => {
     const sequence = async () => {
-      console.log(firstRun);
       while(true){
         if(firstRun){
           await questionControls.start(firstLine.restInitial);
@@ -122,7 +127,7 @@ export default function Home() {
 
     <div name="home" className="splash">
       <div className="main-content">
-      <motion.div variants={mainContent} initial="rest" animate="show">
+      <motion.div variants={mainContent} initial={showAnimation ? "rest" : "show"} animate="show">
         <motion.h1 
           className="text-center"
           variants={textLines}
@@ -152,6 +157,7 @@ export default function Home() {
             variants={button} 
             initial={"rest"}
             animate={buttonControls}
+            /* onTap={() => console.log(showAnimation)} */
             onHoverStart={() => buttonControls.start(button.hover)}
             onHoverEnd={() =>
               buttonControls.start(button.hoverExit) 
