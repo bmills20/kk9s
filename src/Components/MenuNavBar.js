@@ -87,8 +87,6 @@ function MenuNavBar(){
     }
   ];
 
-
-
   // react-scroll events
   useEffect(() => {
     Events.scrollEvent.register('begin', function(to, element) {
@@ -111,7 +109,7 @@ function MenuNavBar(){
   // Change from transparent to color once you scroll past
   // a certain y coord
 
-  React.useEffect(() => {
+  useEffect(() => {
     const updateNavbarColor = () => {
       if("/" === locations.pathname){
         if (
@@ -128,10 +126,17 @@ function MenuNavBar(){
 
       } 
     }
+    else {
+      setNavbarColor("");
+    }
   };
+  
 
     // scroll listener
     window.addEventListener("scroll", updateNavbarColor);
+
+    // load listener
+    window.addEventListener("load", updateNavbarColor);
 
     // cleanup scroll listener on exit
     return function cleanup() {
@@ -139,9 +144,25 @@ function MenuNavBar(){
     };
   });
 
+  // Change selected nav on reload
+  useEffect(() => {
+    const updateNavbarRefresh = () => {
+      if("/" !== locations.pathname){
+        const currentPage = locations.pathname.split("/")[2].toUpperCase();
+        (currentPage === "HOME") ? setSelectedNav(0)
+          : (currentPage === "APPROACH") ? setSelectedNav(2)
+          : (currentPage === "PARTNERS") ? setSelectedNav(4)
+          : setSelectedNav(0)
+      }
+        
+      
+    }
+    window.addEventListener("load", updateNavbarRefresh);
+  }); 
+
   return (
       <Navbar fixed="top" variant="dark" expand="lg" className={navbarColor}>
-        <DomLink className="dom-link" to={"/"}> 
+        <DomLink className="dom-link" to={"/"} onClick={() => {setNavbarColor("navbar-transparent"); setSelectedNav(0); }}> 
           <img src={kingaWhite} className="siteLogo"/>
         </DomLink> 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

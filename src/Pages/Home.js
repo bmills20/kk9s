@@ -46,7 +46,7 @@ export default function Home() {
     restInitial: {opacity: 0, y: 25, 
       transition: showAnimation ? { delay: 3 } : { delay: 0 }},
     rest: { opacity: 0, y: 17,
-      transition: {duration: 0.5} },
+      transition: showAnimation ? {duration: 0.5} : { duration: 0} },
     show: { opacity: 1, y: 0,
       transition: {duration:2}},
     showStop: { opacity: 1, y: 0,

@@ -20,6 +20,8 @@
 
 :root{
     --default-color: #112947;
+    --accent-color: #31cde6;
+    --background-color: #f9f9f9;
 }
 
 .mt-6{
@@ -73,7 +75,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white !important;
+    background-color: var(--background-color) !important;
     font-size: 1.25rem;
     justify-content: space-between;
 }
