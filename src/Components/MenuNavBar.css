@@ -8,11 +8,11 @@ body {
 }
 
 .navbar {
-  -webkit-transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  -moz-transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  -ms-transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  -o-transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -webkit-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
+  -moz-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
+  -ms-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
+  -o-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
+  transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
   max-height: 100px;
   background-color: #112947;
 
@@ -23,11 +23,11 @@ body {
 }
 
 .navbar-transparent {
-  -webkit-transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  -moz-transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  -ms-transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  -o-transition: .5s cubic-bezier(0, 1, 0.5, 1);
-  transition: .5s cubic-bezier(0, 1, 0.5, 1);
+  -webkit-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
+  -moz-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
+  -ms-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
+  -o-transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
+  transition: background-color .5s cubic-bezier(0, 1, 0.5, 1);
 
   background-color: transparent !important;
 }

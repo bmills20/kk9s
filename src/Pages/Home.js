@@ -5,7 +5,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useHistory, useLocation } from "react-router-dom";
 import { Element, Link } from "react-scroll";
-import getSession from "./getSession"
+import getSession from "./getSession";
 
 const button = {
   rest: { scale: 0.1, opacity: 0 },
@@ -25,19 +25,6 @@ const textLines = {
     transition: {duration:1}}
 };
 
-const firstLine = {
-  restInitial: {opacity: 0, y: 25, 
-    transition: {delay: 3}},
-  rest: { opacity: 0, y: 17,
-    transition: {duration: 0.5} },
-  show: { opacity: 1, y: 0,
-    transition: {duration:2}},
-  showStop: { opacity: 1, y: 0,
-    transition: {duration:2}},
-  next: { opacity: 0, y: -17,
-    transition: {duration: 0.5}}
-}
-
  const mainContent = {
   rest: { opacity: 0 },
   show: { opacity: 1,
@@ -55,6 +42,19 @@ export default function Home() {
   const [buttonHovered, setButtonHovered] = useState(false);
   var [buttonRef, buttonInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: false});
   
+  const firstLine = {
+    restInitial: {opacity: 0, y: 25, 
+      transition: showAnimation ? { delay: 3 } : { delay: 0 }},
+    rest: { opacity: 0, y: 17,
+      transition: {duration: 0.5} },
+    show: { opacity: 1, y: 0,
+      transition: {duration:2}},
+    showStop: { opacity: 1, y: 0,
+      transition: {duration:2}},
+    next: { opacity: 0, y: -17,
+      transition: {duration: 0.5}}
+  }
+
   const questionArray = [
     "Can my old dog learn how to behave?",
     "How can I help my dog meet new people and other canine friends?",
@@ -155,7 +155,7 @@ export default function Home() {
           <motion.button
             className="splashButton mx-auto text-center"
             variants={button} 
-            initial={"rest"}
+            initial={showAnimation ? "rest" : "show"}
             animate={buttonControls}
             /* onTap={() => console.log(showAnimation)} */
             onHoverStart={() => buttonControls.start(button.hover)}

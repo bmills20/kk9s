@@ -10,6 +10,7 @@ import { useInView } from "react-intersection-observer";
 import { motion, useMotionValue, useTransform, useAnimation } from "framer-motion";
 import * as Scroll from 'react-scroll';
 import "./Check.css";
+import getSession from "../Pages/getSession";
 
 
 const ScrollLink = Scroll.ScrollLink
@@ -27,6 +28,7 @@ var boxVariants = {
 
 export var Check = () => {
   var controls = useAnimation();
+  const showAnimation = getSession();
   var [ref, inView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
   var [isChecked, setIsChecked] = useState(false);
   var pathLength = useMotionValue(0);
@@ -42,9 +44,8 @@ export var Check = () => {
   return (
     <motion.svg
       ref={ref}
-      initial="unchecked"
+      initial={showAnimation ? "unchecked" : "checked"}
       animate={controls}
-      whileHover="hover"
       viewBox="94 94 250 250"
       width="2.8rem"
       height="2.8rem"

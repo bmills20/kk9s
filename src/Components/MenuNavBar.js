@@ -110,7 +110,7 @@ function MenuNavBar(){
   // Change from transparent to color once you scroll past
   // a certain y coord
 
-  React.useEffect(() => {
+  /* React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
         ["/kk9s/pages/approach", "/kk9s/pages/services", "/kk9s/pages/partners", "/kk9s/pages/contact"]
@@ -118,7 +118,12 @@ function MenuNavBar(){
     ) { 
         setNavbarColor("");
     }
-
+      else if (
+        ["/kk9s/", ""]
+          .includes(window.location.pathname)
+      ) {
+          setNavbarColor("navbar-transparent");
+      }
       else if (
         document.documentElement.scrollTop > 299 ||
         document.body.scrollTop > 299
@@ -144,7 +149,7 @@ function MenuNavBar(){
     return function cleanup() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
-  });
+  }); */
 
   return (
       <Navbar fixed="top" variant="dark" expand="lg" className={classnames("navbar", navbarColor)}>
@@ -179,12 +184,15 @@ function MenuNavBar(){
                             history.push((title==="HOME") ? "/" 
                             : (title==="ABOUT") ? ""
                             : `/pages/${title.toLocaleLowerCase()}`);
-                            
+                            () => updateNavbarColor
 
                             // If user clicks on anything other than the homepage or the about page
                             // Set the navbar color to blue (take away transparent class)
                             if((i !== 0 && i !== 1) && navbarColor === "navbar-transparent"){
                               setNavbarColor("");
+                            }
+                            else if((i === 0 || i === 1) && navbarColor === ""){
+                              setNavbarColor("navbar-transparent");
                             }
                           }}
                         >
