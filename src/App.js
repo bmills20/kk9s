@@ -9,6 +9,9 @@ import About from "./Pages/About";
 import LandingServices from "./Pages/LandingServices"
 import Approach from "./Pages/Approach";
 import Main from "./index.js"
+import homeStyles from "./Pages/Home.css";
+import altPages from "./Pages/AltPages.css"
+
 
 export default class App extends React.Component {
   render() {
@@ -17,10 +20,10 @@ export default class App extends React.Component {
         <div className="page-container">
           <MenuNavBar />
           <main role="main" /*className="container"*/>
-            <Route exact path="/" component={Home}></Route>
-            <Route exact path="/" component={About}></Route>
-            <Route exact path="/" component={LandingServices}></Route>
-            <Route exact path="/pages/approach" component={Approach}></Route>
+            <div><Route exact path="/" component={Home}></Route></div>
+            <div><Route exact path="/" component={About}></Route></div>
+            <div><Route exact path="/" component={LandingServices}></Route></div>
+            <div className="approach-wrapper"><Route exact path="/pages/approach" component={Approach}></Route></div>
           </main>
           <Footer />
           </div>
