@@ -23,6 +23,10 @@
     src: url(../Fira_Sans/FiraSans-ExtraLightItalic.ttf);
 }
 
+@font-face {
+    font-family: firasans-medium;
+    src: url(../Fira_Sans/FiraSans-Medium.ttf);
+  }
 
 
 :root{
@@ -253,7 +257,7 @@ Button.splashButton {
 }
 
 h1.text-left {
-    font-family: firasans-bold;
+    font-family: firasans-medium;
 }
 
 .checkmark-container {
