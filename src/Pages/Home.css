@@ -178,10 +178,10 @@ body{
     background-size: 300% 100%;
 }
 
-.landing-prices-features {
-    padding: 0 10px;
-    margin: auto 1rem;
-    border-bottom: 1px solid var(--accent-color);
+.services-column h5:last-of-type {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .landing-prices-features li{
@@ -196,18 +196,6 @@ body{
     margin-top: 25px;
     position: relative;
     font-size: 1.5rem;
-}
-
-.landing-prices-title::before{
-    content: '';
-    position: absolute;
-    width: 25%;
-    height: 1px;
-    bottom: -7px;
-    left: 37.5%;
-    right: 37.5%;
-    margin: 0 auto;
-    background: var(--accent-color);
 }
 
 .servicesCol .list-group-item{
@@ -225,7 +213,7 @@ body{
     justify-content: center;
 }
 
-.services-container .col-lg-5 {
+.services-container .services-column {
     margin-left: 1rem;
     margin-right: 1rem;
     flex-grow: 0;
@@ -234,12 +222,57 @@ body{
     text-align: center;
     background-color: white;
     padding: 2rem;
-    border:1px solid rgba(0, 0, 0, 0.2)
+    border:1px solid rgba(0, 0, 0, 0.2);
 }
 
-.services-container .col-lg-5 p {
+.services-container .services-column li {
     font-size: 1rem;
+    list-style: none;
+    text-align: left;
+    margin: 0 0 1rem 0;
 }
+
+.services-container .services-column li ol li {
+    margin-top: 1rem;
+}
+
+
+.services-container .services-column li::before {
+    /*
+    The desired width gets defined in two places: The element width, and background size.
+    The height only gets defined once, in background size.
+    */
+    position: absolute;
+    display: block;
+    content: '\2022'; /* bullet point, for screen readers */
+    text-indent: -999999px; /* move the bullet point out of sight */
+    left: 2.5em;
+    width: 2em; /* desired width of the image */
+    height: 2em; /* unrelated to image height; this is so it gets snipped */
+    background-repeat: no-repeat;
+    background-image: url("../images/checkmark.svg");
+    background-size: 1em 1em;
+    background-position: 0 .3em;  
+}
+
+.services-container .services-column li ol li::before {
+    position: absolute;
+    display: block;
+    content: '\2022'; /* bullet point, for screen readers */
+    text-indent: -999999px; /* move the bullet point out of sight */
+    left: 5em;
+    width: 2em; /* desired width of the image */
+    height: 2em; /* unrelated to image height; this is so it gets snipped */
+    background-repeat: no-repeat;
+    background-image: url("../images/checkmark.svg");
+    background-size: 1em 1em;
+    background-position: 0 .3em;
+}
+
+.services-container .services-column p:first-of-type {
+    margin-top: 2rem;
+}
+
 
 Button.splashButton {
     color: white;
