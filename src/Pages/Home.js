@@ -41,6 +41,15 @@ export default function Home() {
   var questionControls = useAnimation();
   const [buttonHovered, setButtonHovered] = useState(false);
   var [buttonRef, buttonInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: false});
+  const [mounted, setMounted] = useState(false)
+
+  if(!mounted){
+    document.body.className="home-body";
+  }
+
+  useEffect(() =>{
+    setMounted(true)
+  },[])
   
   const firstLine = {
     restInitial: {opacity: 0, y: 25, 

@@ -111,7 +111,8 @@ function MenuNavBar(){
 
   useEffect(() => {
     const updateNavbarColor = () => {
-      if("/" === locations.pathname){
+      if(("/" === locations.pathname) || ("/pages/approach/")){
+        console.log(location.pathname);
         if (
           document.documentElement.scrollTop > 299 ||
           document.body.scrollTop > 299
@@ -196,10 +197,10 @@ function MenuNavBar(){
 
                             // If user clicks on anything other than the homepage or the about page
                             // Set the navbar color to blue (take away transparent class)
-                            if((i !== 0 && i !== 1) && navbarColor === "navbar-transparent"){
+                            if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
                               setNavbarColor("");
                             }
-                            else if((i === 0 || i === 1) && navbarColor === ""){
+                            else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
                               setNavbarColor("navbar-transparent");
                             }
                           }}
