@@ -159,31 +159,6 @@ body{
     margin: 1rem 1rem;
 }
 
-.btn-services {
-    /*background: linear-gradient(to left, #32A1AA,#00F9FF)
-     background-color: pink;
- */
- 
-    background-color: var(--accent-color); /* 33e3ff alternate */ 
-    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
-    width: 8em;
-    font-size: 16px;
-    font-weight: 600;
-    color: #fff;
-    cursor: pointer;
-    margin: 0;
-    height: 3em;
-    text-align:center;
-    border: none;
-    background-size: 300% 100%;
-}
-
-.services-column h5:last-of-type {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .landing-prices-features li{
     margin: 1rem auto;
     font-size: 1rem;
@@ -196,14 +171,6 @@ body{
     margin-top: 25px;
     position: relative;
     font-size: 1.5rem;
-}
-
-.servicesCol .list-group-item{
-    background-color: lightgrey !important;
-}
-
-.servicesCol {
-    flex-direction: column;
 }
 
 .services-container {
@@ -223,6 +190,45 @@ body{
     background-color: white;
     padding: 2rem;
     border:1px solid rgba(0, 0, 0, 0.2);
+}
+
+.services-container .services-column h3:first-of-type {
+    font-family: firasans;
+}
+
+.services-container .services-column h5.text-muted{
+    font-family: firasans-lightitalic;
+}
+
+.services-container .services-column h5:last-of-type {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.services-container .services-column .btn-services {
+    /*background: linear-gradient(to left, #32A1AA,#00F9FF)
+     background-color: pink;
+ */
+    position: absolute;
+    bottom: -1.25rem;
+    right: 0;
+    left: 0;
+    background-color: var(--accent-color); /* 33e3ff alternate */ 
+    /* box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5); */
+    width: 8em;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    margin: 0 auto 0 auto;
+    height: 3em;
+    text-align:center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background-size: 300% 100%;
+    
 }
 
 .services-container .services-column li {
@@ -278,7 +284,7 @@ Button.splashButton {
     color: white;
     padding: .375rem .75rem;
     border-style: solid;
-    border-radius: 5px;
+    border-radius: 1px;
     font-family: firasans-light;
     font-size: 24px;
     letter-spacing: 0.1rem;
