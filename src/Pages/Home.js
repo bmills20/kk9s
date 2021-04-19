@@ -91,35 +91,6 @@ export default function Home() {
     sequence();
   }, [questionControls, questionLine])
 
-  // Upon scrolling down to the about section, use async and promises to begin
-  // the 3 animation variant sequence
-  /* useEffect(() => {
-    const sequence = async () => {
-      if (picInView) {
-        await picControls.start(picInitial.show);
-        await picControls.start(picInitial.float);
-      }
-    };
-    sequence();
-  }, [picControls, picInView]) */
-
-  /* useEffect(() => {
-    const keepAnimations = () => {
-      if(window.oldURL) {
-        console.log("old",window.oldURL);
-      }
-      else {
-        console.log("nope");
-      }
-    }
-
-    window.addEventListener("hashchange", console.log("test"));
-  }); */
-
-  // listener for keeping persistent animations on home page
-  // when user comes back to home after visiting another page
-
-
   // Upon hovering over get started button, use async and promises to begin
   // the animation variant sequence
   useEffect(() => {

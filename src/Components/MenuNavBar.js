@@ -73,7 +73,7 @@ function MenuNavBar(){
     {
       title: "SERVICES",
       color: "#FFF",
-      to: ""
+      to: "servicesDest"
     },
     {
       title: "PARTNERS",
@@ -112,7 +112,6 @@ function MenuNavBar(){
   useEffect(() => {
     const updateNavbarColor = () => {
       if(("/" === locations.pathname) || ("/pages/approach/")){
-        console.log(location.pathname);
         if (
           document.documentElement.scrollTop > 299 ||
           document.body.scrollTop > 299
@@ -193,6 +192,7 @@ function MenuNavBar(){
                             // History tracker for retaining animations
                             history.push((title==="HOME") ? "/" 
                             : (title==="ABOUT") ? ""
+                            : (title==="SERVICES") ? ""
                             : `/pages/${title.toLocaleLowerCase()}`);
 
                             // If user clicks on anything other than the homepage or the about page
@@ -218,6 +218,7 @@ function MenuNavBar(){
                         <DomLink className="dom-link" to={
                             (title==="HOME") ? "/" 
                           : (title==="ABOUT") ? "/"
+                          : (title==="SERVICES") ? "/"
                           : `/pages/${title.toLocaleLowerCase()}`}>
                           {title}
                         </DomLink>
