@@ -1,68 +1,88 @@
 import "./AltPages.css";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Container, Button } from "react-bootstrap";
-import { motion } from "framer-motion";
+import greatfalls from "../images/logos/greatfalls.png";
+import ccpdt from "../images/logos/ccpdt.png";
+import apdt from "../images/logos/APDT.jpeg";
+import homewardtrails from "../images/logos/homewardtrails.jpeg";
+import lostdog from "../images/logos/lostdog.jpeg";
+import luckydog from "../images/logos/luckydog.png";
+import mk9s from "../images/logos/mk9s.jpeg";
 
-const button = {
-  rest: { scale: 0.1, opacity: 0 },
-  show: { scale: 1, opacity: 1,
-    transition: {delay: 4.5, repeat: 0, duration:0.5} },
-  hover: { scale: 1.1,
-    transition: {duration:0.2} },
-  hoverExit: { scale: 1.0},
-  pressed: {scale: 0.95 }
-};
+export default function Partners() {
+  const [mounted, setMounted] = useState(false)
 
-const textLines = {
-  rest: { opacity: 0, y: 50 },
-  show: { opacity: 1, y: 0,
-    transition: {duration:1}}
-};
+  if(!mounted){
+    document.body.className="approach-body";
+  }
 
-const buttonInitial = {
-  rest: { scale: 0.1, opacity: 0 },
-  show: { scale: 1, opacity: 1,
-    transition: {delay: 2, duration:1}}
-};
-
- const mainContent = {
-  rest: { opacity: 0 },
-  show: { opacity: 1,
-    transition: {delay: 2, staggerChildren: 3}}
-};
-
-export default function Approach() {
+  useEffect(() =>{
+    setMounted(true)
+  },[])
   return (
-    <div className="splash">
-      <div className="main-content">
-      <motion.div variants={mainContent} initial="rest" animate="show">
-        <motion.h1 
-          className="text-center"
-          variants={textLines}
-          >
-            Getting a new puppy or dog?
-        </motion.h1>
-        <motion.h2 
-          className="text-center"
-          variants={textLines}
-          >
-            ...or have a stubborn one and need help?
-        </motion.h2>
-
-      </motion.div>
-      <motion.div variants={buttonInitial}>
-          <motion.button
-            className="splashButton mx-auto text-center"
-            variants={button} 
-            initial="rest"
-            animate="show"
-            whileHover={{ scale: 1.1 }}
-            whileTap="pressed"
-            >
-          
-          GET STARTED</motion.button>
-        </motion.div>
+    <Container className="partners-container">
+      <h1>Partners</h1>
+      <div className="partners-logos">
+        <ul>
+          <li>
+            <div className="logo-container">
+              <img src={ccpdt} />
+              <div className="after">
+                <h2>CCPDT</h2>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="logo-container">
+              <img src={apdt} />
+              <div className="after">
+                <h2>APDT</h2>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="logo-container">
+              <img src={homewardtrails} />
+              <div className="after">
+                <h2>Homeward Trails Animal Rescue</h2>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="logo-container">
+              <img src={lostdog} />
+              <div className="after">
+                <h2>Lost Dog & Cat Rescue Foundation</h2>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="logo-container">
+              <img src={mk9s} />
+              <div className="after">
+                <h2>MK9S</h2>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="logo-container">
+              <img className="landscape" src={greatfalls} />
+              <div className="after">
+                <h2>Great Dogs of Great Falls</h2>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div className="logo-container">
+              <img className="landscape" src={luckydog} />
+              <div className="after">
+                <h2>Lucky Dog Animal Rescue</h2>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
+      
+    </Container>
   );
 }

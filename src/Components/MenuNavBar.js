@@ -111,7 +111,7 @@ function MenuNavBar(){
 
   useEffect(() => {
     const updateNavbarColor = () => {
-      if(("/" === locations.pathname) || ("/pages/approach/")){
+      if(("/" === locations.pathname) || ("/pages/partners/" === locations.pathname)){
         if (
           document.documentElement.scrollTop > 299 ||
           document.body.scrollTop > 299

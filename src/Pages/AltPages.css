@@ -176,6 +176,118 @@ a:hover {
   height: 5%;
 }
 
+.partners-wrapper {
+  height: 100%;
+  width: 100vw;
+  background-color: var(--background-color);
+  color: black;
+  margin-top: 4rem;
+  overflow: hidden;
+}
+
+.partners-container {
+  min-height: 100%;
+  max-width: 100vw;
+  font-size: 2.5em;
+  padding: 1rem 1rem 1rem 1rem;
+  margin-left: 3rem;
+}
+
+.partners-container .partners-logos {
+  max-width: 90vw;
+}
+
+.partners-container .partners-logos ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+}
+
+.partners-container li {
+  height: 40vh;
+  flex-grow: 1;
+  margin: 3rem 0.5rem 0.5rem 0.5rem;
+}
+
+.partners-container .logo-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  
+}
+
+.logo-container .after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  color: #FFF;
+  background: rgba(0, 0, 0, .6);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.75s ease;
+}
+
+.logo-container:hover .after {
+  opacity: 1;
+  background: rgba(0, 0, 0, .6);
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.partners-container li:last-child {
+  flex-grow: 10;
+  margin-bottom: 20vh;
+}
+
+.partners-container img {
+  max-height: 100%;
+  min-width: 100%;
+  object-fit: contain;
+  vertical-align: bottom;
+  transition: box-shadow 1s;
+  background-color: white;
+}
+
+.partners-container img:hover {
+  
+}
+
+.partners-container img.landscape {
+  max-width: 25vw;
+}
+
+/* The overlay effect - lays on top of the container and over the image */
+.overlay {
+  position: relative;
+  bottom: 0;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* When you mouse over the container, fade in the overlay title */
+.container:hover .overlay {
+  opacity: 1;
+}
+
 .approach-section ol li:before {
   counter-increment: li;
   content: counter(li) ". ";

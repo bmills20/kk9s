@@ -8,6 +8,7 @@ import Page2 from "./Pages/Page2";
 import About from "./Pages/About";
 import LandingServices from "./Pages/LandingServices"
 import Approach from "./Pages/Approach";
+import Partners from "./Pages/Partners";
 import Main from "./index.js"
 import homeStyles from "./Pages/Home.css";
 import altPages from "./Pages/AltPages.css"
@@ -20,10 +21,21 @@ export default class App extends React.Component {
         <div className="page-container">
           <MenuNavBar />
           <main role="main" /*className="container"*/>
-            <div><Route exact path="/" component={Home}></Route></div>
-            <div><Route exact path="/" component={About}></Route></div>
-            <div><Route exact path="/" component={LandingServices}></Route></div>
-            <div className="approach-wrapper"><Route exact path="/pages/approach" component={Approach}></Route></div>
+            <div>
+              <Route exact path="/" component={Home}></Route>
+            </div>
+            <div>
+              <Route exact path="/" component={About}></Route>
+            </div>
+            <div>
+              <Route exact path="/" component={LandingServices}></Route>
+            </div>
+            <div className="approach-wrapper">
+              <Route exact path="/pages/approach" component={Approach}></Route>
+            </div>
+            <div className="partners-wrapper">
+            <Route exact path="/pages/partners" component={Partners}></Route>
+            </div>
           </main>
           <Footer />
           </div>
