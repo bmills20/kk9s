@@ -9,6 +9,10 @@
     }
 
     // Access-Control headers are received during OPTIONS requests
+    // OPTIONS requests (used for debugging purposes): 
+    // The OPTIONS method is used to describe the communication options for the target resource.
+    // Once fully integrated, change to POST: 
+    // The POST method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
     if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 
         if (isset($_SERVER['HTTP_ACCESS_CONTROL_REQUEST_METHOD']))
