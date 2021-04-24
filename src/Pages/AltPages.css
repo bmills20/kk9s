@@ -185,6 +185,40 @@ a:hover {
   overflow: hidden;
 }
 
+.contact-wrapper {
+  height: 100%;
+  width: 100vw;
+  background-color: var(--background-color);
+  color: black;
+  margin-top: 0rem;
+  overflow: hidden;
+}
+
+.contact-container {
+  min-height: 100%;
+  max-width: 100vw;
+  padding: 1rem 1rem 1rem 1rem;
+  margin-left: 3rem;
+}
+
+.contact-body {
+  height: 100%;
+  margin-bottom: 0;
+  background-image: none;
+}
+
+.contact-container .form-control {
+  border: none;
+  border-bottom: 1px solid var(--accent-color);
+  background-color: var(--background-color);
+  border-radius: 0;
+  resize: none;
+}
+
+.contact-container form {
+  width: 90%;
+}
+
 .partners-container {
   min-height: 100%;
   max-width: 100vw;
@@ -256,10 +290,6 @@ a:hover {
   vertical-align: bottom;
   transition: box-shadow 1s;
   background-color: white;
-}
-
-.partners-container img:hover {
-  
 }
 
 .partners-container img.landscape {
