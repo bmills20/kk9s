@@ -23,3 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 .eslintcache
 /src/Components/config.js
+/src/back-end/config/config.js

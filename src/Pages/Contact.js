@@ -19,7 +19,6 @@ export default function Contact() {
       method: "POST",
       /* url: `${process.env.REACT_APP_API}`, */
       url: "http://localhost:3002/send",
-      headers: {"content-type": application/json},
       timeout: 5000,
       data: {
         name: name,
@@ -27,16 +26,16 @@ export default function Contact() {
         message: message
       }
     })
-      .then(result => {
-        if(result.data.sent) {
-          setMailSent(result.data.sent);
+      .then((response) => {
+        if(response.data.msg === 'success') {
+          setMailSent(true);
           setIsError(false);
         }
-        else {
+        else if(response.data.msg === 'fail'){
           setIsError(true);
         }
       })
-      .catch(error => setErrror(error.message));
+      
   }
 
   if(!mounted){
@@ -50,7 +49,7 @@ export default function Contact() {
       <Container className="contact-container">
           <h1>Contact Us</h1>
           <br />
-          <Form onSubmit={e => { handleSubmit(e) }}>
+          <Form id="contact-form" onSubmit={e => { handleSubmit(e) }}>
               <Form.Row>
                   <Form.Group as={Col}>
                       <Form.Label>Your Name</Form.Label>
@@ -59,6 +58,7 @@ export default function Contact() {
                         rows={1}
                         placeholder="Your name goes here..."
                         name="name"
+                        id="name"
                         value={name}
                         onChange={e => setName(e.target.value)}
                         required
@@ -70,6 +70,7 @@ export default function Contact() {
                         type="email"
                         placeholder="name@example.com"
                         name="email"
+                        id="email"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                         required
@@ -97,6 +98,7 @@ export default function Contact() {
                     placeholder="Message content goes here..."
                     rows={3}
                     name="message"
+                    id="message"
                     value={message}
                     onChange={e => setMessage(e.target.value)}
                     required
@@ -106,8 +108,8 @@ export default function Contact() {
                   Submit
               </Button>
               <div>
-                {mailIsSent && <div className="success">Success</div>}
-                {isError && <div className="error">Error</div>}
+                {mailSent && <div className="success"><br/>Thank you! Your inquiry has been sent; we will be in touch shortly.<br/><br/>A copy of your message has been sent to the email you provided.</div>}
+                {isError && <div className="error"><br/>Error: message failed to send.<br/> Please check your internet connection.</div>}
               </div>
           </Form>
       </Container> 
