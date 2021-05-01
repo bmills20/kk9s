@@ -90,10 +90,8 @@ function MenuNavBar(){
   // react-scroll events
   useEffect(() => {
     Events.scrollEvent.register('begin', function(to, element) {
-      console.log('begin');
     });
     Events.scrollEvent.register('end', function(to, element) {
-      console.log("end");
     });
 
     scrollSpy.update();
@@ -111,18 +109,17 @@ function MenuNavBar(){
 
   useEffect(() => {
     const updateNavbarColor = () => {
-      if(("/" === locations.pathname) || ("/pages/partners/" === locations.pathname)){
+      console.log(location.pathname);
+      if(("/" === locations.pathname) || ("/kk9s/pages/partners" === location.pathname) || ("/kk9s/pages/approach" === location.pathname)){
         if (
           document.documentElement.scrollTop > 299 ||
           document.body.scrollTop > 299
-
         ) { setNavbarColor("");
 
         } else if (
             document.documentElement.scrollTop < 300 ||
             document.body.scrollTop < 300
-
-        ) { setNavbarColor("navbar-transparent");
+        ) {setNavbarColor("navbar-transparent");
 
       } 
     }
@@ -197,6 +194,7 @@ function MenuNavBar(){
 
                             // If user clicks on anything other than the homepage or the about page
                             // Set the navbar color to blue (take away transparent class)
+                            
                             if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
                               setNavbarColor("");
                             }
