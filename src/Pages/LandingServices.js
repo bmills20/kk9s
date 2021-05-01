@@ -6,6 +6,11 @@ import kingaCircle from "../images/kinga_outside_circle.png";
 import { motion, useAnimation } from "framer-motion";
 import { Element } from "react-scroll";
 import eatingDog from "../images/eatingDog_blue.svg";
+import foundations from "../images/foundations.svg";
+import kidTraining from "../images/kidtraining.svg";
+import puppyTraining from "../images/puppytraining.svg";
+import followup from "../images/followup.svg";
+
 
 /* const certifications = {
   initial: { opacity: 0 },
@@ -32,7 +37,8 @@ export default function About() {
       <motion.div intial="rest" animate="show" className="about mx-auto">
         <h1 className="text-left aboutHeader">SERVICES</h1>
         <Container className="services-container">
-          <div className="services-column col-lg-4">
+          <div className="services-column col-sm-3">
+            <img src={foundations} className="card-icon" />
             <h3>Foundations</h3>
             <h4>1 Session</h4>
             <h5 className="text-muted">Works for most dogs</h5>
@@ -45,19 +51,21 @@ export default function About() {
             </ol>
             <Button className="btn-services">Inquire</Button>
           </div>
-          <div className="services-column col-lg-4">
-          <h3>Follow-up Session</h3>
-          <h4>1 Session</h4>
-          <h5 className="text-muted">Good for a refresher or follow-up</h5>
-            <ol>
-              <li>1 or more hour(s)</li>
-              <li>Assesses progress</li>
-              <li>Addresses any remaining or new behavioral issues</li> 
-              <li>Hands-on instruction for the dog and guidance for owners </li>
-            </ol>
-            <Button className="btn-services">Inquire</Button>
+          <div className="services-column col-sm-3">
+            <img src={followup} className="card-icon" />
+            <h3>Follow-up Session</h3>
+            <h4>1 Session</h4>
+            <h5 className="text-muted">Good for a refresher or follow-up</h5>
+              <ol>
+                <li>1 or more hour(s)</li>
+                <li>Assesses progress</li>
+                <li>Addresses any remaining or new behavioral issues</li> 
+                <li>Hands-on instruction for the dog and guidance for owners </li>
+              </ol>
+              <Button className="btn-services">Inquire</Button>
           </div>
-          <div className="services-column col-lg-4">
+          <div className="services-column col-sm-3">
+            <img src={puppyTraining} className="card-icon" />
             <h3>Behavioral Training Package Deal</h3>
             <h4>4 Sessions</h4>
             <h5 className="text-muted">Perfect for puppies and dogs with more difficult behavioral issues</h5>
@@ -72,7 +80,8 @@ export default function About() {
             </ol>
             <Button className="btn-services">Inquire</Button>
           </div>
-          <div className="services-column col-lg-4">
+          <div className="services-column col-sm-3">
+            <img src={kidTraining} className="card-icon" />
             <h3>Specialized Program Package Deal</h3>
             <h4>4 Sessions</h4>
             <h5 className="text-muted">Kids and K9s: Understanding and Learning How to Properly Handle a K9</h5>

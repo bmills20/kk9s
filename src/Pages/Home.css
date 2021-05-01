@@ -176,7 +176,6 @@ body{
 .services-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
@@ -192,12 +191,26 @@ body{
     border:1px solid rgba(0, 0, 0, 0.2);
 }
 
+.services-container .services-column .card-icon {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+}
+
 .services-container .services-column h3:first-of-type {
     font-family: firasans;
+    font-size: 1.5rem;
+}
+
+.services-container .services-column h4:first-of-type {
+    font-size: 1.25rem;
+    font-family: firasans-light;
 }
 
 .services-container .services-column h5.text-muted{
     font-family: firasans-lightitalic;
+    font-size: 1rem;
 }
 
 .services-container .services-column h5:last-of-type {
