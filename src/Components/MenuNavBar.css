@@ -13,7 +13,7 @@ body {
   -ms-transition: background-color 1s ;
   -o-transition: background-color 1s ;
   transition: background-color 1s ;
-  max-height: 6rem/* 25% or 100px */;
+  max-height: 6rem/* 6rem */;
   background-color: rgba(17, 41, 71, 1) !important;
 
 }

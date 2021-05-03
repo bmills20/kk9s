@@ -50,7 +50,8 @@ export default function About() {
               <li>Provides rehabilitation plan (homework) for the owner to achieve successful rehabilitation after the training</li>
             </ol>
             <Button className="btn-services">Inquire</Button>
-          </div>
+            <p>Read more</p>
+]          </div>
           <div className="services-column col-sm-3">
             <img src={followup} className="card-icon" />
             <h3>Follow-up Session</h3>
@@ -66,9 +67,9 @@ export default function About() {
           </div>
           <div className="services-column col-sm-3">
             <img src={puppyTraining} className="card-icon" />
-            <h3>Behavioral Training Package Deal</h3>
+            <h3>Behavioral Training</h3>
             <h4>4 Sessions</h4>
-            <h5 className="text-muted">Perfect for puppies and dogs with more difficult behavioral issues</h5>
+            <h5 className="text-muted">For puppies and dogs with difficult behavioral issues</h5>
             <h4 style={{textAlign: "left", fontSize: "1rem", fontFamily: "firasans-lightitalic"}}>Initial Session (Up to 2 Hours):</h4>
             <ol>
               <li>Works with the dog and owner to ensure basic obedience of commands and rehabilitate the identified behavioral issues.</li>  
@@ -82,10 +83,9 @@ export default function About() {
           </div>
           <div className="services-column col-sm-3">
             <img src={kidTraining} className="card-icon" />
-            <h3>Specialized Program Package Deal</h3>
+            <h3>Kids and K9s</h3>
             <h4>4 Sessions</h4>
-            <h5 className="text-muted">Kids and K9s: Understanding and Learning How to Properly Handle a K9</h5>
-            <h5 className="text-muted">Perfect for children interested in animal behavior</h5>
+            <h5 className="text-muted">Teaches Children How to Properly Handle a K9</h5>
             <ol>
               <li>Teaches children about dog behavior</li>
               <li>Teaches children how to be comfortable around dogs and handle them with confidence</li>
