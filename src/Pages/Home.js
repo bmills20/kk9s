@@ -1,5 +1,5 @@
 import "./Home.css";
-import React, {useEffect, useState, Suspense} from "react";
+import React, {useEffect, useState} from "react";
 import { Container, Button } from "react-bootstrap";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -48,6 +48,10 @@ const useLazyImage = src => {
   return bgSource
 };
 
+const preloadsleep = () => {
+  return new Promise(resolve => setTimeout(resolve, 2000));
+}
+
 export default function Home() {
   const showAnimation = getSession();
   var [questionLine, setQuestionLine] = useState(0);
@@ -58,14 +62,43 @@ export default function Home() {
   var [buttonRef, buttonInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: false});
   const [mounted, setMounted] = useState(false);
 
+  const loaded = useLazyImage(homeBackground);
+
+
   if(!mounted){
     document.body.className="home-body";
+    document.body.id = "home-id";
   }
 
   useEffect(() =>{
     setMounted(true);
+    /* Preloading */
+
+    if(loaded !== null) {
+      document.body.style.background = `url(${homeBackground}), linear-gradient(rgba(0,0,0,0) 40%, black), radial-gradient(ellipse at center top, transparent 20%,black)`;
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundColor = "#f9f9f985";
+      document.body.style.backgroundPosition= "50% 100%";
+      document.body.style.backgroundRepeat= "no-repeat";
     
-  },[]);
+      }
+
+
+    // Sleep method for preloading
+    
+    
+    preloadsleep().then(() => {
+      const prog = document.getElementById('ipl-progress-indicator');
+      if(prog && (loaded !== null)) {
+        prog.classList.add('available');
+        setTimeout(() => {
+          prog.outerHTML = ''
+        }, 2000);
+      }
+    })
+},[loaded]);
+    
+  
   
   /* 'question' bar animation config, question array, and question loop */
   const firstLine = {
@@ -120,8 +153,7 @@ export default function Home() {
 
 
   return (
-  <Suspense>
-  <Element onClick={() => console.log(loaded)} name="homeTop" id="homeTop">
+  <Element name="homeTop" id="homeTop">
     <div name="home" className="splash">
       <div className="main-content">
       <motion.div variants={mainContent} initial={showAnimation ? "rest" : "show"} animate="show">
@@ -167,6 +199,5 @@ export default function Home() {
     </div>
 
   </Element>
-  </Suspense>
   );
 }
