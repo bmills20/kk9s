@@ -47,7 +47,7 @@ body{
 }
 
 .home-body {
-    background: url("../images/photoshoot2-flipped.png"), linear-gradient(rgba(0,0,0,0) 40%, black), radial-gradient(ellipse at center top, transparent 20%,black);
+    background: none;
     height: 100vh;
     background-color: var(--background-color);
     background-position: 50% 100%;

@@ -15,6 +15,32 @@ import homeStyles from "./Pages/Home.css";
 import altPages from "./Pages/AltPages.css";
 
 export default class App extends React.Component {
+
+  preloadsleep() {
+    return new Promise(resolve => setTimeout(resolve, 5000));
+  }
+
+  // Sleep method for preloading
+  componentDidMount(){
+    this.preloadsleep().then(() => {
+      
+      const prog = document.getElementById('ipl-progress-indicator');
+      if(prog) {
+        prog.classList.add('available');
+        setTimeout(() => {
+            try{
+              if(!prog.contains('available')){
+                prog.classList.add('available');
+              }
+            }
+            catch {
+              console.log("prog error")
+            }
+          }, 5000);
+        }
+      
+    })
+  }
   render() {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>

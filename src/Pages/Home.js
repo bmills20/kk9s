@@ -29,7 +29,7 @@ const textLines = {
  const mainContent = {
   rest: { opacity: 0 },
   show: { opacity: 1,
-    transition: {delay: 2, staggerChildren: 3}}
+    transition: {delay: 0, staggerChildren: 3}}
 };
 
 // Lazy load images for better performance
@@ -49,7 +49,7 @@ const useLazyImage = src => {
 };
 
 const preloadsleep = () => {
-  return new Promise(resolve => setTimeout(resolve, 2000));
+  return new Promise(resolve => setTimeout(resolve, 1500));
 }
 
 export default function Home() {
@@ -63,6 +63,7 @@ export default function Home() {
   const [mounted, setMounted] = useState(false);
 
   const loaded = useLazyImage(homeBackground);
+  var prog = document.getElementById('ipl-progress-indicator');
 
 
   if(!mounted){
@@ -72,30 +73,30 @@ export default function Home() {
 
   useEffect(() =>{
     setMounted(true);
-    /* Preloading */
 
+    /* Preloading */
     if(loaded !== null) {
       document.body.style.background = `url(${homeBackground}), linear-gradient(rgba(0,0,0,0) 40%, black), radial-gradient(ellipse at center top, transparent 20%,black)`;
       document.body.style.backgroundSize = "cover";
       document.body.style.backgroundColor = "#f9f9f985";
       document.body.style.backgroundPosition= "50% 100%";
       document.body.style.backgroundRepeat= "no-repeat";
-    
-      }
-
+    }
 
     // Sleep method for preloading
-    
-    
     preloadsleep().then(() => {
-      const prog = document.getElementById('ipl-progress-indicator');
       if(prog && (loaded !== null)) {
         prog.classList.add('available');
         setTimeout(() => {
           prog.outerHTML = ''
-        }, 2000);
+        }, 1500);
       }
     })
+
+    return function cleanup() {
+      document.body.style.background = "none";
+      document.body.style.backgroundColor = "#f9f9f985";
+    }
 },[loaded]);
     
   
@@ -103,9 +104,9 @@ export default function Home() {
   /* 'question' bar animation config, question array, and question loop */
   const firstLine = {
     restInitial: {opacity: 0, y: 25, 
-      transition: showAnimation ? { delay: 3 } : { delay: 0 }},
+      transition: (prog == null) ? { delay: 0 } : { delay: 3 }},
     rest: { opacity: 0, y: 17,
-      transition: showAnimation ? {duration: 0.5} : { duration: 0} },
+      transition: showAnimation ? { duration: 0.5 } : { duration: 0} },
     show: { opacity: 1, y: 0,
       transition: {duration:2}},
     showStop: { opacity: 1, y: 0,
@@ -123,20 +124,23 @@ export default function Home() {
 
   useEffect(() => {
     const sequence = async () => {
-      while(true){
-        if(firstRun){
-          await questionControls.start(firstLine.restInitial);
-          setFirstRun(false);
+      const prog = document.getElementById('ipl-progress-indicator');    
+      /* if(prog == null){ */
+        while(true){
+          if(firstRun){
+            await questionControls.start(firstLine.restInitial);
+            setFirstRun(false);
+          }
+          await questionControls.start(firstLine.rest);
+          await questionControls.start(firstLine.show);
+          await questionControls.start(firstLine.showStop);
+          await questionControls.start(firstLine.next);
+          setQuestionLine(questionLine + 1);
+          if(questionLine >= 3){
+            setQuestionLine(0);
+          }        
         }
-        await questionControls.start(firstLine.rest);
-        await questionControls.start(firstLine.show);
-        await questionControls.start(firstLine.showStop);
-        await questionControls.start(firstLine.next);
-        setQuestionLine(questionLine + 1);
-        if(questionLine >= 3){
-          setQuestionLine(0);
-        }        
-      }
+      //}
     };
     sequence();
   }, [questionControls, questionLine])
