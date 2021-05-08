@@ -14,8 +14,29 @@ import Main from "./index.js";
 import homeStyles from "./Pages/Home.css";
 import altPages from "./Pages/AltPages.css";
 
-
 export default class App extends React.Component {
+
+  /* Preloading */
+
+  // Sleep method for preloading
+  preloadsleep() {
+    return new Promise(resolve => setTimeout(resolve, 500));
+  }
+  
+  componentDidMount(){
+    this.preloadsleep().then(() => {
+      const prog = document.getElementById('ipl-progress-indicator');
+      if(prog) {
+        prog.classList.add('available');
+        setTimeout(() => {
+          prog.outerHTML = ''
+        }, 500);
+      }
+    })
+  }
+
+  /* Render after preload */
+  
   render() {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -41,8 +62,8 @@ export default class App extends React.Component {
               <Route exact path="/pages/contact" component={Contact}></Route>
             </div>
           </main>
-          <Footer />
-          </div>
+{/*           <Footer />
+ */}          </div>
       </BrowserRouter>
     );
   }

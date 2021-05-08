@@ -1,5 +1,5 @@
 import "./AltPages.css";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, Suspense} from "react";
 import { Container, Button } from "react-bootstrap";
 import greatfalls from "../images/logos/greatfalls.png";
 import ccpdt from "../images/logos/ccpdt.png";
@@ -10,18 +10,34 @@ import luckydog from "../images/logos/luckydog.png";
 import mk9s from "../images/logos/mk9s.jpeg";
 
 export default function Partners() {
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
+
+
 
   if(!mounted){
-    document.body.className="approach-body";
+    // Loads the correct CSS for this page
+    document.body.className="partners-body";
+    // Allows for animations to wait until page finishes
+    // loading all content
+    document.body.classList.add("js-loading");
   }
 
+  const showPage = () => {
+    document.body.classList.remove("js-loading");
+    console.log("done loading.");
+  };
+
+
+  window.addEventListener("load", showPage);
+
+  
   useEffect(() =>{
     setMounted(true)
   },[])
 
   return (
-    <Container className="partners-container">
+    <Container name="partnersTop" className="partners-container">
+      <Suspense>
       <h1>Partners</h1>
       <div className="partners-logos">
         <ul>
@@ -97,7 +113,7 @@ export default function Partners() {
           </li>
         </ul>
       </div>
-      
+      </Suspense>
     </Container>
   );
 }

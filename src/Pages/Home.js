@@ -1,11 +1,12 @@
 import "./Home.css";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, Suspense} from "react";
 import { Container, Button } from "react-bootstrap";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useHistory, useLocation } from "react-router-dom";
 import { Element, Link } from "react-scroll";
 import getSession from "./getSession";
+import homeBackground from "../images/photoshoot2-flipped.png";
 
 const button = {
   rest: { scale: 0.1, opacity: 0 },
@@ -31,7 +32,21 @@ const textLines = {
     transition: {delay: 2, staggerChildren: 3}}
 };
 
+// Lazy load images for better performance
+// React Suspense does not natively support data fetching yet
 
+const useLazyImage = src => {
+  const [bgSource, setBgSource] = useState(null);
+
+  useEffect(() => {
+    const isBackground = new Image();
+    isBackground.src = homeBackground;
+    isBackground.onload = () => setBgSource(homeBackground);
+    
+  }, [src]);
+
+  return bgSource
+};
 
 export default function Home() {
   const showAnimation = getSession();
@@ -41,16 +56,26 @@ export default function Home() {
   var questionControls = useAnimation();
   const [buttonHovered, setButtonHovered] = useState(false);
   var [buttonRef, buttonInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: false});
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
+
+  const loaded = useLazyImage(homeBackground);
 
   if(!mounted){
     document.body.className="home-body";
   }
 
   useEffect(() =>{
-    setMounted(true)
-  },[])
+    setMounted(true);
+    if(loaded !== null) {
+      document.body.style.background = `url(${homeBackground}), linear-gradient(rgba(0,0,0,0) 40%, black), radial-gradient(ellipse at center top, transparent 20%,black)`;
+      document.body.style.backgroundSize = "cover";
+      document.body.style.backgroundColor = "#f9f9f985";
+      document.body.style.backgroundPosition= "50% 100%";
+      document.body.style.backgroundRepeat= "no-repeat";
+    }
+  },[loaded]);
   
+  /* 'question' bar animation config, question array, and question loop */
   const firstLine = {
     restInitial: {opacity: 0, y: 25, 
       transition: showAnimation ? { delay: 3 } : { delay: 0 }},
@@ -103,8 +128,8 @@ export default function Home() {
 
 
   return (
-  <Element name="homeTop" id="homeTop">
-
+  <Suspense>
+  <Element onClick={() => console.log(loaded)} name="homeTop" id="homeTop">
     <div name="home" className="splash">
       <div className="main-content">
       <motion.div variants={mainContent} initial={showAnimation ? "rest" : "show"} animate="show">
@@ -150,5 +175,6 @@ export default function Home() {
     </div>
 
   </Element>
+  </Suspense>
   );
 }

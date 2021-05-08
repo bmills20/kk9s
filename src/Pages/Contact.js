@@ -46,7 +46,7 @@ export default function Contact() {
     setMounted(true)
   },[])
   return(
-      <Container className="contact-container">
+      <Container name="contactTop" className="contact-container">
           <h1>Contact Us</h1>
           <br />
           <Form id="contact-form" onSubmit={e => { handleSubmit(e) }}>

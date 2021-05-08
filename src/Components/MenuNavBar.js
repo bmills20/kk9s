@@ -58,32 +58,38 @@ function MenuNavBar(){
     {
       title: "HOME",
       color: "#FFF",
-      to: "homeTop"
+      to: "homeTop",
+      offset: -100
     },
     {
       title: "ABOUT",
       color: "#FFF",
-      to: "aboutDest"
+      to: "aboutDest",
+      offset: -50
     },
     {
       title: "APPROACH",
       color: "#FFF",
-      to: ""
+      to: "approachTop",
+      offset: -100
     },
     {
       title: "SERVICES",
       color: "#FFF",
-      to: "servicesDest"
+      to: "servicesDest",
+      offset: -75
     },
     {
       title: "PARTNERS",
       color: "#FFF",
-      to: ""
+      to: "partnersTop",
+      offset: -100
     },
     {
       title: "CONTACT",
       color: "#FFF",
-      to: ""
+      to: "contactTop",
+      offset: 0
     }
   ];
 
@@ -109,8 +115,7 @@ function MenuNavBar(){
 
   useEffect(() => {
     const updateNavbarColor = () => {
-      console.log(location.pathname);
-      if(("/" === locations.pathname) || ("/kk9s/pages/partners" === location.pathname) || ("/kk9s/pages/approach" === location.pathname)){
+      if(("/" === locations.pathname) || ("/kk9s/pages/approach" === location.pathname)){
         if (
           document.documentElement.scrollTop > 299 ||
           document.body.scrollTop > 299
@@ -168,13 +173,12 @@ function MenuNavBar(){
             <AnimateSharedLayout>
               <ol className="ml-auto horizontal-nav nav-links">
                 {
-                  pageNames.map(({title, color, to}, i) => (
-                    
+                  pageNames.map(({title, color, to, offset}, i) => (
                       <Link
                         to={to} // which page to scroll to 
                         smooth={true} // define scrolling behavior
                         duration={500} //control scrolling speed 1000 = 1s
-                        offset={-50}
+                        offset={offset}
                         spy={true}
                         >
                         <motion.li
