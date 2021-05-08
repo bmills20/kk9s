@@ -58,22 +58,14 @@ export default function Home() {
   var [buttonRef, buttonInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: false});
   const [mounted, setMounted] = useState(false);
 
-  const loaded = useLazyImage(homeBackground);
-
   if(!mounted){
     document.body.className="home-body";
   }
 
   useEffect(() =>{
     setMounted(true);
-    if(loaded !== null) {
-      document.body.style.background = `url(${homeBackground}), linear-gradient(rgba(0,0,0,0) 40%, black), radial-gradient(ellipse at center top, transparent 20%,black)`;
-      document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundColor = "#f9f9f985";
-      document.body.style.backgroundPosition= "50% 100%";
-      document.body.style.backgroundRepeat= "no-repeat";
-    }
-  },[loaded]);
+    
+  },[]);
   
   /* 'question' bar animation config, question array, and question loop */
   const firstLine = {
