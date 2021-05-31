@@ -177,11 +177,32 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
+    transition: all 0.5s;
+
 }
 
 .services-container .services-column {
     margin-left: 1rem;
     margin-right: 1rem;
+    box-sizing: border-box;
+    flex-grow: 0;
+    height: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: white;
+    padding: 2rem;
+    cursor: pointer;
+    border:1px solid rgba(0, 0, 0, 0.2);
+    max-width: 20%;
+    transition: all 0.5s;
+
+}
+
+.services-container .services-column.closed {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     box-sizing: border-box;
     flex-grow: 0;
     height: 65vh;
@@ -191,10 +212,12 @@ body{
     text-align: center;
     background-color: white;
     padding: 2rem;
+    cursor: pointer;
     border:1px solid rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
 }
 
-.services-container .services-column::after {
+.services-container .services-column.closed::after {
     position: absolute;
     z-index: 25;
     bottom: 0;
@@ -205,6 +228,27 @@ body{
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 1.0) 60%);
 }
 
+.services-container .services-column.open {
+/*     left: 50%;
+    transform: translateX(-50%); */
+    position: relative;
+    max-width: 100rem;
+    width: 100rem;
+    flex: 0 0 50%;
+    padding: 1rem;
+    transition: all 0.5s;
+}
+
+.services-container .services-column.open .card-icon {
+    width: 45%;
+    height: auto;
+    padding: 0;
+    margin-bottom: 0.5rem;
+}
+
+.services-container .services-column.open li {
+    margin-left: 1rem;
+}
 
 .services-container .services-column .card-icon {
     width: 100%;

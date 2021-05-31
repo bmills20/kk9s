@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
-import { Container, Card, ListGroupItem, ListGroup, Button } from "react-bootstrap";
+import { Container, Card, ListGroupItem, ListGroup, Button, Overlay } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import "./Home.css";
 import kingaCircle from "../images/kinga_outside_circle.png";
@@ -11,33 +12,26 @@ import kidTraining from "../images/kidtraining.svg";
 import puppyTraining from "../images/puppytraining.svg";
 import followup from "../images/followup.svg";
 
-
-/* const certifications = {
-  initial: { opacity: 0 },
-  show: { opacity: 1,
-    transition: {delay: 0.3, staggerChildren: 0.75}}
-};
-
-const certLines = {
-  initial: { opacity: 0, y: 1150 },
-  show: { opacity: 1, y: 0,
-    transition: {duration:1, ease: "circOut"}}
-}; */
-
-
 export default function About() {
   var controls = useAnimation();
   var picControls = useAnimation();
+  var [isSelected, setIsSelected] = useState(false);
+  var [oneSelected, setOneSelected] = useState(false);
+  var [twoSelected, setTwoSelected] = useState(false);
+  var [threeSelected, setThreeSelected] = useState(false);
+  var [fourSelected, setFourSelected] = useState(false);
   const [picAnim, setPicAnim] = useState(false);
   var [divref, inView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
   var [picRef, picInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
 
   return (
+    
     <Element id="servicesDest" className="servicesDest" name="servicesDest">
+      
       <motion.div intial="rest" animate="show" className="about mx-auto">
         <h1 className="text-left aboutHeader">SERVICES</h1>
         <Container className="services-container">
-          <div className="services-column col-sm-3">
+          <div onClick={() => setOneSelected(!oneSelected) } id="services1" className={oneSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={foundations} className="card-icon" />
             <h3>Foundations</h3>
             <h4>1 Session</h4>
@@ -50,9 +44,9 @@ export default function About() {
               <li>Provides rehabilitation plan (homework) for the owner to achieve successful rehabilitation after the training</li>
             </ol>
             <Button className="btn-services">Inquire</Button>
-            <p>Read more</p>
-]          </div>
-          <div className="services-column col-sm-3">
+            {oneSelected ? <p></p> : <p>Read more</p>}
+          </div>
+          <div onClick={() => setTwoSelected(!twoSelected) } id="services2" className={twoSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={followup} className="card-icon" />
             <h3>Follow-up Session</h3>
             <h4>1 Session</h4>
@@ -64,8 +58,9 @@ export default function About() {
                 <li>Hands-on instruction for the dog and guidance for owners </li>
               </ol>
               <Button className="btn-services">Inquire</Button>
+              {twoSelected ? <p></p> : <p>Read more</p>}
           </div>
-          <div className="services-column col-sm-3">
+          <div onClick={() => setThreeSelected(!threeSelected) } id="services3" className={threeSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={puppyTraining} className="card-icon" />
             <h3>Behavioral Training</h3>
             <h4>4 Sessions</h4>
@@ -80,8 +75,9 @@ export default function About() {
               <li>Performs three follow-on sessions to address remaining/new behavioral issues</li>
             </ol>
             <Button className="btn-services">Inquire</Button>
+            {threeSelected ? <p></p> : <p>Read more</p>}
           </div>
-          <div className="services-column col-sm-3">
+          <div onClick={() => setFourSelected(!fourSelected) } id="services4" className={fourSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={kidTraining} className="card-icon" />
             <h3>Kids and K9s</h3>
             <h4>4 Sessions</h4>
@@ -93,9 +89,8 @@ export default function About() {
               <li>Your child will have hands-on experience interacting with, handling and training a dog through four one-hour sessions.</li>
             </ol>
             <Button className="btn-services">Inquire</Button>
+            {fourSelected ? <p></p> : <p>Read more</p>}
           </div>
-
-          
         </Container>
       </motion.div>
     </Element>

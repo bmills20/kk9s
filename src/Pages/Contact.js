@@ -11,6 +11,7 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [subject, setSubject] = useState("");
   const [mailSent, setMailSent] = useState(false);
   const [isError, setIsError] = useState(null);
   const handleSubmit = e => {
@@ -47,16 +48,18 @@ export default function Contact() {
   },[])
   return(
       <Container name="contactTop" className="contact-container">
+        <div className="contact-title">
           <h1>Contact Us</h1>
+          <h4>Have a question about our services or about KK9s? Ask away below!</h4>
+        </div>
           <br />
           <Form id="contact-form" onSubmit={e => { handleSubmit(e) }}>
               <Form.Row>
                   <Form.Group as={Col}>
-                      <Form.Label>Your Name</Form.Label>
                       <Form.Control
                         as="textarea"
                         rows={1}
-                        placeholder="Your name goes here..."
+                        placeholder="Name"
                         name="name"
                         id="name"
                         value={name}
@@ -65,10 +68,11 @@ export default function Contact() {
                       />
                   </Form.Group>
                   <Form.Group as={Col}>
-                      <Form.Label>Your Email address</Form.Label>
                       <Form.Control
+                        as="textarea"
+                        rows={1}
                         type="email"
-                        placeholder="name@example.com"
+                        placeholder="Email"
                         name="email"
                         id="email"
                         value={email}
@@ -77,26 +81,31 @@ export default function Contact() {
                       />
                   </Form.Group>
               </Form.Row>
-              {/* Probably don't need a subject field if we have an inquiry field
-              <Form.Group>
-                  <Form.Label>Subject</Form.Label>
-                  <Form.Control
-                    as="textarea"
-                    rows={1}
-                    placeholder="Subject goes here..."
-                    name="subject"
-                    value={subject}
-                    onChange={e => setSubject(e.target.value)}
-                    required
-                  />
-              </Form.Group> */}
+              <Form.Row>
+                <Form.Group as={Col}>
+                        <Form.Control as="select"
+                          type="subject"
+                          name="subject"
+                          id="subject"
+                          value={subject}
+                          onChange={e => setSubject(e.target.value)}
+                          required
+                        >
+                          <option className="default-select" value="" disabled selected>Select your inquiry reason...</option>
+                          <option>Foundations Service Inquiry</option>
+                          <option>Follow-up Session Inquiry</option>
+                          <option>Behavioral Training Inquiry</option>
+                          <option>Kids & K9s Inquiry</option>
+                          <option>General Question/Other</option>
+                        </Form.Control>
+                </Form.Group>
+              </Form.Row>
               
               <Form.Group>
-                  <Form.Label>Message content</Form.Label>
                   <Form.Control
                     as="textarea"
-                    placeholder="Message content goes here..."
-                    rows={3}
+                    placeholder="Message"
+                    rows={5}
                     name="message"
                     id="message"
                     value={message}
