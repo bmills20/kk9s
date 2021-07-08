@@ -6,13 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const cors = require('./routes/cors');
 
-
 var index = require('./routes/index');
 
-
 var app = express();
-
-console.log("hello");
 
 app.use(function (req, res, next) {
   const allowedOrigins = ['*'];

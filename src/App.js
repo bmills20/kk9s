@@ -13,6 +13,7 @@ import Contact from "./Pages/Contact";
 import Main from "./index.js";
 import homeStyles from "./Pages/Home.css";
 import altPages from "./Pages/AltPages.css";
+import Testimonials from "./Pages/Testimonials.js";
 
 export default class App extends React.Component {
 
@@ -61,6 +62,9 @@ export default class App extends React.Component {
             </div>
             <div className="partners-wrapper">
               <Route exact path="/pages/partners" component={Partners}></Route>
+            </div>
+            <div className="testimonials-wrapper">
+              <Route exact path="/pages/testimonials" component={Testimonials}></Route>
             </div>
             <div className="contact-wrapper">
               <Route exact path="/pages/contact" component={Contact}></Route>

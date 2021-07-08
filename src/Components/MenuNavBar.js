@@ -83,7 +83,13 @@ function MenuNavBar(){
       title: "PARTNERS",
       color: "#FFF",
       to: "partnersTop",
-      offset: -100
+      offset: -120
+    },
+    {
+      title: "TESTIMONIALS",
+      color: "#FFF",
+      to: "testimonialsTop",
+      offset: -75
     },
     {
       title: "CONTACT",

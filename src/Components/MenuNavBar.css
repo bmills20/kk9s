@@ -5,6 +5,7 @@
 
 body {
   padding-top: 2rem;
+  
 }
 
 .navbar {
@@ -29,7 +30,7 @@ body {
 .nav-link {
   z-index: 15;
   font-family: firasans-light;
-  margin: 0.5em;
+  margin: 0;
   position: relative;
   padding: 1em;
   font-size: 1.25em;
