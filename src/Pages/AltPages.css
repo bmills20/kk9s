@@ -379,6 +379,12 @@ select#subject.form-control{
   max-width: 25vw;
 }
 
+.testimonials-blurb {
+  text-align: center;
+  font-family: firasans-italic;
+  color: #666666;
+}
+
 /* The overlay effect - lays on top of the container and over the image */
 .overlay {
   position: relative;
@@ -602,6 +608,9 @@ select#subject.form-control{
   padding: 1rem;
   margin-right: auto;
   margin-left: auto;
+  flex-grow: 3;
+  display: flex;
+  flex-direction: column;
   /* font-family: firasans-light; */
 }
 
@@ -617,21 +626,27 @@ select#subject.form-control{
 
 .my-card {
   position: relative;
-  width: 50%;
+  width: 40%;
+  height: 40%;
   margin: 0 auto 2rem auto;
   /* transform: scale(0.5); */
   transform-origin: bottom;
 }
 
+.testimonial-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
 .testimonials-header {
   font-size: 3rem;
   padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .testimonials-image {
   /* Set width, height, object-fit: cover to crop image instead of resizing */
-  width: 100% !important;
+  width: auto !important;
   height: auto !important;
   object-fit: cover;
   
