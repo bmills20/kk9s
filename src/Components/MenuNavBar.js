@@ -155,7 +155,7 @@ function MenuNavBar(){
   // Change selected nav on reload
   useEffect(() => {
     const updateNavbarRefresh = () => {
-      if("/" !== locations.pathname){
+      if("/" !== locations.pathname && locations.pathname.length > 2){
         const currentPage = locations.pathname.split("/")[2].toUpperCase();
         (currentPage === "HOME") ? setSelectedNav(0)
           : (currentPage === "APPROACH") ? setSelectedNav(2)

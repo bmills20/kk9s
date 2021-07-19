@@ -12,6 +12,7 @@ import stoli from "../images/stoli.jpeg";
 import riley from "../images/riley.jpeg";
 import TestimonialBox from "../Components/TestimonialBox";
 import TestimonialBoxRight from "../Components/TestimonialBoxRight";
+import {CardList} from "../Components/CardList";
 
 
 export default function Testimonials() {
@@ -75,11 +76,15 @@ export default function Testimonials() {
     }
 
     return (
+        
         <Element id="testimonialsDest" className="testimonialsDest" name="testimonialsDest">
+            <div className="container">
+            {/* <CardList /> */}
+        </div>
             <h1 className="text-left testimonials-header">Testimonials</h1>
             <h4 style={{fontFamily: "firasans-italic"}}>See what our customers have been saying about their experience with Kinga's K9s!</h4>
             <br/>
-            <h3 className="testimonials-blurb">Quite simply, she read him like a book.</h3>
+            {/* <h3 className="testimonials-blurb">Quite simply, she read him like a book.</h3> */}
             <TestimonialBox
                 image={bigred}
                 title={"Big Red"}
@@ -89,7 +94,6 @@ export default function Testimonials() {
                 headerTwo={"The Solution"}
             />
             <br/><br/>
-            <h2>Holy fucking shit Kinga made my dog a big bitch</h2>
             <TestimonialBoxRight
                 image={bailey}
                 title={"Bailey and Tripper"}
