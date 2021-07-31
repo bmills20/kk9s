@@ -1,25 +1,28 @@
 {
   "files": {
-    "main.css": "/kk9s/static/css/main.98db4142.chunk.css",
-    "main.js": "/kk9s/static/js/main.2490a878.chunk.js",
-    "main.js.map": "/kk9s/static/js/main.2490a878.chunk.js.map",
+    "main.css": "/kk9s/static/css/main.b4b7eddd.chunk.css",
+    "main.js": "/kk9s/static/js/main.a96a6248.chunk.js",
+    "main.js.map": "/kk9s/static/js/main.a96a6248.chunk.js.map",
     "runtime-main.js": "/kk9s/static/js/runtime-main.da9791b6.js",
     "runtime-main.js.map": "/kk9s/static/js/runtime-main.da9791b6.js.map",
     "static/css/2.d986b589.chunk.css": "/kk9s/static/css/2.d986b589.chunk.css",
-    "static/js/2.dd9d72c1.chunk.js": "/kk9s/static/js/2.dd9d72c1.chunk.js",
-    "static/js/2.dd9d72c1.chunk.js.map": "/kk9s/static/js/2.dd9d72c1.chunk.js.map",
+    "static/js/2.60727373.chunk.js": "/kk9s/static/js/2.60727373.chunk.js",
+    "static/js/2.60727373.chunk.js.map": "/kk9s/static/js/2.60727373.chunk.js.map",
     "index.html": "/kk9s/index.html",
     "static/css/2.d986b589.chunk.css.map": "/kk9s/static/css/2.d986b589.chunk.css.map",
-    "static/css/main.98db4142.chunk.css.map": "/kk9s/static/css/main.98db4142.chunk.css.map",
-    "static/js/2.dd9d72c1.chunk.js.LICENSE.txt": "/kk9s/static/js/2.dd9d72c1.chunk.js.LICENSE.txt",
+    "static/css/main.b4b7eddd.chunk.css.map": "/kk9s/static/css/main.b4b7eddd.chunk.css.map",
+    "static/js/2.60727373.chunk.js.LICENSE.txt": "/kk9s/static/js/2.60727373.chunk.js.LICENSE.txt",
     "static/media/APDT.f77ee65f.jpeg": "/kk9s/static/media/APDT.f77ee65f.jpeg",
+    "static/media/Big_Red_Cropped.c75c6849.png": "/kk9s/static/media/Big_Red_Cropped.c75c6849.png",
+    "static/media/AltPages.css": "/kk9s/static/media/massimo-negrello-S7WoaCSkOvo-unsplash.50f1ebf7.jpeg",
     "static/media/Home.css": "/kk9s/static/media/checkmark.3290ca2a.svg",
     "static/media/MenuNavBar.css": "/kk9s/static/media/FiraSans-Light.850f6774.ttf",
-    "static/media/AltPages.css": "/kk9s/static/media/massimo-negrello-S7WoaCSkOvo-unsplash.50f1ebf7.jpeg",
     "static/media/arrow.70a62432.svg": "/kk9s/static/media/arrow.70a62432.svg",
+    "static/media/bailey.a218c39c.jpeg": "/kk9s/static/media/bailey.a218c39c.jpeg",
     "static/media/ccpdt.c27ec406.png": "/kk9s/static/media/ccpdt.c27ec406.png",
     "static/media/dog_and_stella.e141fdea.JPG": "/kk9s/static/media/dog_and_stella.e141fdea.JPG",
     "static/media/eatingDog_blue.30a8ed8c.svg": "/kk9s/static/media/eatingDog_blue.30a8ed8c.svg",
+    "static/media/eddie.a6a9e524.jpeg": "/kk9s/static/media/eddie.a6a9e524.jpeg",
     "static/media/followup.c732ec8b.svg": "/kk9s/static/media/followup.c732ec8b.svg",
     "static/media/foundations.43ccc657.svg": "/kk9s/static/media/foundations.43ccc657.svg",
     "static/media/golden.073aba17.jpeg": "/kk9s/static/media/golden.073aba17.jpeg",
@@ -34,13 +37,15 @@
     "static/media/mk9s.43263776.jpeg": "/kk9s/static/media/mk9s.43263776.jpeg",
     "static/media/pawprint.5d5b6528.svg": "/kk9s/static/media/pawprint.5d5b6528.svg",
     "static/media/photoshoot2-flipped.fadef5c5.png": "/kk9s/static/media/photoshoot2-flipped.fadef5c5.png",
-    "static/media/puppytraining.5c13a535.svg": "/kk9s/static/media/puppytraining.5c13a535.svg"
+    "static/media/puppytraining.5c13a535.svg": "/kk9s/static/media/puppytraining.5c13a535.svg",
+    "static/media/riley.9e28d0d1.jpeg": "/kk9s/static/media/riley.9e28d0d1.jpeg",
+    "static/media/stoli.f9b137a1.jpeg": "/kk9s/static/media/stoli.f9b137a1.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.da9791b6.js",
     "static/css/2.d986b589.chunk.css",
-    "static/js/2.dd9d72c1.chunk.js",
-    "static/css/main.98db4142.chunk.css",
-    "static/js/main.2490a878.chunk.js"
+    "static/js/2.60727373.chunk.js",
+    "static/css/main.b4b7eddd.chunk.css",
+    "static/js/main.a96a6248.chunk.js"
   ]
 }
