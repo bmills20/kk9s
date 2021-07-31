@@ -62,6 +62,26 @@ export default function Testimonials() {
             <br/>— Betty, Roph, and Riley</i>
         </React.Fragment>
     );
+    const baileyQuote = (
+        <React.Fragment>
+            Placeholder      
+        </React.Fragment>
+    );
+    const eddieQuote = (
+        <React.Fragment>
+            Placeholder      
+        </React.Fragment>
+    );
+    const stoliQuote = (
+        <React.Fragment>
+            Placeholder      
+        </React.Fragment>
+    );
+    const rileyQuote = (
+        <React.Fragment>
+            Placeholder      
+        </React.Fragment>
+    );
 
     useEffect(() =>{
         setMounted(true)
@@ -96,24 +116,28 @@ export default function Testimonials() {
             <br/><br/>
             <TestimonialBoxRight
                 image={bailey}
+                quote={baileyQuote}
                 title={"Bailey and Tripper"}
                 text={baileyTest}
             />
             <br/><br/>
             <TestimonialBox
                 image={eddie}
+                quote={eddieQuote}
                 title={"Eddie and Reese"}
                 text={eddieTest}
             />
             <br/><br/>
             <TestimonialBoxRight
                 image={stoli}
+                quote={stoliQuote}
                 title={"Stoli"}
                 text={stoliTest}
             />
             <br/><br/>
             <TestimonialBox
                 image={riley}
+                quote={rileyQuote}
                 title={"Riley"}
                 text={rileyTest}
             />

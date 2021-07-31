@@ -11,6 +11,9 @@ export default function TestimonialBox(props) {
                 </Card>
                 <div className="testimonials-box">
                     <h2>{props.headerOne}</h2>
+                        <div className="blockquote">
+                            <h2>{props.quote}</h2>
+                        </div>
                     <p className="testimonials-text">{props.text}</p>
                     <h2>{props.headerTwo}</h2>
                     <p className="testimonials-text">{props.text2}</p>
