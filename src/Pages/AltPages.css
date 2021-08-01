@@ -728,14 +728,22 @@ select#subject.form-control{
   
 }
 
+.testimonails-carousel-caption {
+  
+}
+
+.carousel-img-item {
+  width: 100% !important;
+  height: 500px !important;
+}
+
 .testimonials-car-image {
   height: 75vh !important;
 
 }
 
 .testimonials-my-carousel {
-  width: 65%;
-  overflow:hidden;
+  flex-basis: 0px;
 }
 
 .testimonials-wrapper {
