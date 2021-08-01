@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Container, Card, ListGroupItem, ListGroup, Button, Overlay } from "react-bootstrap";
+import { Container, Card, ListGroupItem, ListGroup, Button, Overlay, Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import "./Home.css";
@@ -12,12 +12,44 @@ import stoli from "../images/stoli.jpeg";
 import riley from "../images/riley.jpeg";
 import TestimonialBox from "../Components/TestimonialBox";
 import TestimonialBoxRight from "../Components/TestimonialBoxRight";
+import michele1 from "../images/Michele.jpeg"
+import michele2 from "../images/Michele2.jpeg"
 import {CardList} from "../Components/CardList";
 
 
 export default function Testimonials() {
     const controls = useAnimation();
     const [mounted, setMounted] = useState(false);
+    const emptyTest = (
+        <React.Fragment>
+            <br/><br/>
+            <br/>
+            <br/><br/>
+        </React.Fragment>
+    );
+
+    const micheleImage = (
+        <Carousel fade>
+            <Carousel.Item>
+                <img src={michele1} />
+            </Carousel.Item>
+        </Carousel>
+    );
+
+    const micheleTest = (
+        <React.Fragment>
+            Kinga Samuel is a remarkable and highly professional dog trainer and is truly an asset to the MK9s Service Dogs’ training team. As a trainer with over twelve years expericence working in the dog training industry I can unequivocally say that Kinga is one of the best trainers I have had the privlege to work with. I have known Kinga in a professional capacity since July 2019. Kinga’s passion for having a successful working relationship with both the client and the dog is demonstrated everytime she has a training session. Kinga’s vast experience with training dogs allows her to quickly adapt and modify a training plan to ensure that both members of the team will have a postive experince in that session.  Kinga has a wonderful way of balancing both the canine and human needs and is able to ensure that both are being met successfully.
+            <br/><br/>
+            I would highly recommend Kinga Samuel as a trainer and a service dog trainer. Kinga is very skilled at what she does and it has been a privilege to work with her.
+            If you have any questions please don’t hesitate to contact me directly.
+            <br/><br/>
+            <i>Michele Khol<br/>
+            MK9s Service Dogs<br/>
+            Director of Operations and K9 Programs<br/>
+            International Association of Canine Professionals Certified Dog Trainer, Certified Service Dog Trainer</i>
+
+        </React.Fragment>
+    );
     const bigredTest = (
         <React.Fragment>
             Our Big Red has always been just the sweetest Vizla. At almost two-years-old, though, he surprised us with some defensive behavior, primarily towards men. It all kind of started quite suddenly; he would bark and growl and seemed to have moments where he appeared threatened, but we could not understand why. The sudden change in our easygoing, friendly guy was upsetting, to say the least! 
@@ -58,6 +90,11 @@ export default function Testimonials() {
             <br/>— Betty, Roph, and Riley</i>
         </React.Fragment>
     );
+    const micheleQuote = (
+        <React.Fragment>
+            As a trainer with over twelve years expericence working in the dog training industry I can unequivocally say that Kinga is one of the best trainers I have had the privlege to work with.
+        </React.Fragment>
+    )
     const bigredQuote = (
         <React.Fragment>
             One of her great strengths is clearly narrowing in on what is causing a negative response in a dog.      
@@ -104,6 +141,12 @@ export default function Testimonials() {
                 <h4 style={{fontFamily: "firasans-italic"}}>See what our customers have been saying about their experience with Kinga's K9s!</h4>
             </div>
             {/* <h3 className="testimonials-blurb">Quite simply, she read him like a book.</h3> */}
+            <TestimonialBox
+                carousel={[michele1,michele2]}
+                quote={micheleQuote}
+                title={"MK9s Service Dogs"}
+                text={micheleTest}
+            />
             <TestimonialBox
                 image={bigred}
                 quote={bigredQuote}

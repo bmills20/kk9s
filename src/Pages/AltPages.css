@@ -728,6 +728,16 @@ select#subject.form-control{
   
 }
 
+.testimonials-car-image {
+  height: 75vh !important;
+
+}
+
+.testimonials-my-carousel {
+  width: 65%;
+  overflow:hidden;
+}
+
 .testimonials-wrapper {
   background-color: var(--background-color);
   color: black;

@@ -160,6 +160,7 @@ function MenuNavBar(){
         (currentPage === "HOME") ? setSelectedNav(0)
           : (currentPage === "APPROACH") ? setSelectedNav(2)
           : (currentPage === "PARTNERS") ? setSelectedNav(4)
+          : (currentPage === "TESTIMONIALS") ? setSelectedNav(5)
           : setSelectedNav(0)
       }
         
@@ -186,6 +187,7 @@ function MenuNavBar(){
                         duration={500} //control scrolling speed 1000 = 1s
                         offset={offset}
                         spy={true}
+                        key={"linkholder"+i.toString()}
                         >
                         <motion.li
                           animate
@@ -219,11 +221,12 @@ function MenuNavBar(){
                         {i === selectedNav && (
                           <motion.div
                             layoutId="underline"
+                            key={"underline_selected"}
                             className="underline"
                             style={{ backgroundColor: color }}
                           />
                         )}
-                        <DomLink className="dom-link" to={
+                        <DomLink key={"my_dom_link"} className="dom-link" to={
                             (title==="HOME") ? "/" 
                           : (title==="ABOUT") ? "/"
                           : (title==="SERVICES") ? "/"
