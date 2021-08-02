@@ -7,15 +7,12 @@ export default function TestimonialBox(props) {
     
     const GetCarousel = () => {
         if(props.carousel){
-            console.log("test");
             const carouselImg = props.carousel;
             const carouselItems = carouselImg.map((image) =>
                 <Carousel.Item className="my-item">
                     <img className="testimonials-car-image" src={image}/>
-                    <Carousel.Caption>
-                        {props.title}
-                    </Carousel.Caption>
                 </Carousel.Item>
+                
             );
             return (
                 <Carousel className="testimonials-my-carousel">
@@ -32,7 +29,7 @@ export default function TestimonialBox(props) {
                 </div>
                 <div className="testimonial-container">
                     {props.carousel ?
-                    <GetCarousel/>
+                        <GetCarousel/>
                     :
                     <Card className="my-card">
                         <Card.Img className="testimonials-image testimonials-bigred" src={props.image} alt="Big Red"/>
@@ -42,7 +39,6 @@ export default function TestimonialBox(props) {
                     </Card>}
                     <div className="testimonials-box">
                         <p className="testimonials-text">{props.text}</p>
-                        <p className="testimonials-text">{props.text2}</p>
                     </div>
                 </div>
             </Container>

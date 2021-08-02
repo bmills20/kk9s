@@ -609,8 +609,10 @@ select#subject.form-control{
   width: 40rem;
   padding: 2rem;
   margin-right: auto;
+  flex-basis: 55%;
+  flex-grow: 0;
+  flex-shrink: 0;
   margin-left: auto;
-  flex-grow: 3;
   display: flex;
   flex-direction: column;
   /* font-family: firasans-light; */
@@ -706,7 +708,7 @@ select#subject.form-control{
 }
 
 .testimonial-full-container {
-  min-width: 80%;
+  width: 70%;
   align-self: center;
 }
 
@@ -729,12 +731,38 @@ select#subject.form-control{
 }
 
 .testimonails-carousel-caption {
-  
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+  padding: 1rem;
+  background-color:rgba(0, 0, 0, 0.8);
 }
 
-.carousel-img-item {
-  width: 100% !important;
-  height: 500px !important;
+.testimonials-wrapper .carousel:nth-of-type(1)::after {
+  content: "MK9s Service Dogs";
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  padding: 1rem;
+  background-color:rgba(0, 0, 0, 0.8);
+}
+
+.testimonials-wrapper .carousel:nth-of-type(2)::after {
+  content: "Lexi";
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  padding: 1rem;
+  background-color:rgba(0, 0, 0, 0.8);
 }
 
 .testimonials-car-image {
@@ -743,7 +771,11 @@ select#subject.form-control{
 }
 
 .testimonials-my-carousel {
-  flex-basis: 0px;
+  flex-basis:44%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
 }
 
 .testimonials-wrapper {

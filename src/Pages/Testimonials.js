@@ -8,7 +8,8 @@ import { Element } from "react-scroll";
 import bigred from "../images/Big_Red_Cropped.png";
 import eddie from "../images/eddie.jpeg"
 import bailey from "../images/bailey.jpeg"
-import stoli from "../images/stoli.jpeg";
+import lexi1 from "../images/lexi1.JPEG";
+import lexi2 from "../images/lexi2.jpeg";
 import riley from "../images/riley.jpeg";
 import TestimonialBox from "../Components/TestimonialBox";
 import TestimonialBoxRight from "../Components/TestimonialBoxRight";
@@ -74,12 +75,28 @@ export default function Testimonials() {
             <br/>— Erica and Brendan</i>
         </React.Fragment>
     );
-    const stoliTest = (
+    const lexiTest = (
         <React.Fragment>
-            Thank you so much for helping with our pup Stoli! Even after her first session I can tell we are making progress. The training techniques you went over with us are great and have been working well. We appreciated your patience with us and all our questions. We still have some practicing to do, but with our new confident attitude I know we will be able to overcome all the future training obstacles!
+            Kinga is amazing! We can’t say enough about her!
             <br/><br/>
-            <i>Couldn't of done it with out your guidance, Thanks again!
-            <br/>— Kristi & Nick</i>
+            We adopted a 1 year old mixed breed rescue/stray named Lexi in January 2021. She was adorable and
+            very sweet but had a fear of people and dogs and significant separation anxiety. All of which got worse
+            due to COVID and the winter weather. Prior to Lexi, we’d only had one dog our entire life which we got
+            as a puppy. Because she was a Golden Retriever and easily trainable, we had very little dog training
+            knowledge. What worked for our previous dog did not work for Lexi. We called Kinga - she listened and
+            observed how we were handling Lexi and very quickly made adjustments that accommodated Lexi’s
+            personality.
+            <br/><br/>
+            With regards to Lexi’s fear of people and dogs, we organized a meet &amp; greet at a local shopping center.
+            Kinga worked with us and the local shoppers &amp; dogs on how to introduce themselves to Lexi. Within 30
+            minutes, Lexi went from anxious and fearful to happy and excited to meet people and their dogs.
+            <br/><br/>
+            Then came a one week vacation in which Lexi would stay home with a dog sitter. We did a practice
+            night away to see how Lexi would do. It was a disaster. Kinga came to the rescue! She met with our
+            dog sitter for an hour the night before we left. With just some minor adjustments and suggestions the
+            week was a complete success. Kinga texted throughout the week to check on Lexi and the dog sitter.
+            Lexi is a completely different dog then she was in January. Everyone who met her back then and sees
+            her now is amazed how calm and relaxed she has become. We couldn’t have done it without Kinga!
         </React.Fragment>
     );
     const rileyTest = (
@@ -110,9 +127,9 @@ export default function Testimonials() {
             Kinga proved to me that the confidence is within and that I am capable of being a leader and teaching Eddie how to obey.      
         </React.Fragment>
     );
-    const stoliQuote = (
+    const lexiQuote = (
         <React.Fragment>
-            Even after her first session I can tell we are making progress.      
+            Within 30 minutes Lexi went from anxious and fearful to happy and excited to meet people and their dogs.
         </React.Fragment>
     );
     const rileyQuote = (
@@ -166,13 +183,7 @@ export default function Testimonials() {
                 text={eddieTest}
             />
             <TestimonialBoxRight
-                image={stoli}
-                quote={stoliQuote}
-                title={"Stoli"}
-                text={stoliTest}
-            />
-            <TestimonialBox
-                image={riley}
+                carousel={[lexi1,lexi2]}
                 quote={rileyQuote}
                 title={"Riley"}
                 text={rileyTest}
