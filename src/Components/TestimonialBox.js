@@ -2,6 +2,8 @@ import React from "react";
 import { Card, Carousel, Container } from "react-bootstrap";
 import michele1 from "../images/Michele.jpeg"
 import michele2 from "../images/Michele2.jpeg"
+import litter1 from "../images/litter1.jpeg"
+import litter2 from "../images/litter2.jpeg"
 
 export default function TestimonialBox(props) {
     

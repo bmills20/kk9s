@@ -712,6 +712,10 @@ select#subject.form-control{
   align-self: center;
 }
 
+.testimonial-full-container:last-of-type {
+  margin-bottom: 25vh;
+}
+
 .testimonials-header h1{
   font-size: 3rem;
 }
@@ -755,6 +759,18 @@ select#subject.form-control{
 
 .testimonials-wrapper .carousel:nth-of-type(2)::after {
   content: "Lexi";
+  color: white;
+  font-weight: 800;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 2rem;
+  right: 0;
+  padding: 1rem;
+  background-color:rgba(0, 0, 0, 0.8);
+}
+
+.testimonials-wrapper .carousel:nth-of-type(3)::after {
+  content: "Puppy Litter";
   color: white;
   font-weight: 800;
   font-size: 1.5rem;

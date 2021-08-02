@@ -15,6 +15,8 @@ import TestimonialBox from "../Components/TestimonialBox";
 import TestimonialBoxRight from "../Components/TestimonialBoxRight";
 import michele1 from "../images/Michele.jpeg"
 import michele2 from "../images/Michele2.jpeg"
+import litter1 from "../images/litter1.jpeg"
+import litter2 from "../images/litter2.jpeg"
 import {CardList} from "../Components/CardList";
 
 
@@ -37,6 +39,16 @@ export default function Testimonials() {
         </Carousel>
     );
 
+
+    const litterTest = (
+        <React.Fragment>
+            My family first met Kinga when we needed help with a fear aggressive foster dog. She taught us workable strategies to desensitize the dog to its fears, and help build his confidence. This enabled us to keep the dog longer, improve his adoptability, and find him a good home. While at our home, Kinga noticed that our resident dog had some confidence issues as well, and gave us some some simple tips we could follow every day to establish leadership and help put him at ease.
+            <br/><br/>
+            Perhaps the most fun and interesting work we did with Kinga happened when we fostered a litter of 5 puppies. She showed us how to temperament test the puppies, which gave us insight about their predispositions and helped us give better information to prospective adopters to increase the chances of a successful match. And as she came and went, she always had great tips for us, and it was also beneficial to watch her interact with the dogs, so we could follow her lead. Kinga is a lovely person, a gifted trainer, and a true professional.
+            <br/><br/>
+            <i>— Mary</i>
+        </React.Fragment>
+    );
     const micheleTest = (
         <React.Fragment>
             Kinga Samuel is a remarkable and highly professional dog trainer and is truly an asset to the MK9s Service Dogs’ training team. As a trainer with over twelve years expericence working in the dog training industry I can unequivocally say that Kinga is one of the best trainers I have had the privlege to work with. I have known Kinga in a professional capacity since July 2019. Kinga’s passion for having a successful working relationship with both the client and the dog is demonstrated everytime she has a training session. Kinga’s vast experience with training dogs allows her to quickly adapt and modify a training plan to ensure that both members of the team will have a postive experince in that session.  Kinga has a wonderful way of balancing both the canine and human needs and is able to ensure that both are being met successfully.
@@ -138,6 +150,12 @@ export default function Testimonials() {
         </React.Fragment>
     );
 
+    const litterQuote = (
+        <React.Fragment>
+            As she came and went, she always had great tips for us, and it was also beneficial to watch her interact with the dogs, so we could follow her lead. 
+        </React.Fragment>
+    );
+
     useEffect(() =>{
         setMounted(true)
     },[])
@@ -164,12 +182,6 @@ export default function Testimonials() {
                 title={"MK9s Service Dogs"}
                 text={micheleTest}
             />
-            <TestimonialBox
-                image={bigred}
-                quote={bigredQuote}
-                title={"Big Red"}
-                text={bigredTest}
-            />
             <TestimonialBoxRight
                 image={bailey}
                 quote={baileyQuote}
@@ -184,9 +196,21 @@ export default function Testimonials() {
             />
             <TestimonialBoxRight
                 carousel={[lexi1,lexi2]}
-                quote={rileyQuote}
-                title={"Riley"}
-                text={rileyTest}
+                quote={lexiQuote}
+                title={"Lexi"}
+                text={lexiTest}
+            />
+            <TestimonialBox
+                image={bigred}
+                quote={bigredQuote}
+                title={"Big Red"}
+                text={bigredTest}
+            />
+            <TestimonialBoxRight
+                carousel={[litter1,litter2]}
+                quote={litterQuote}
+                title={"Puppy Litter"}
+                text={litterTest}
             />
         </div>
     );
