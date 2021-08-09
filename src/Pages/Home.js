@@ -78,7 +78,7 @@ export default function Home() {
     if(loaded !== null) {
       document.body.style.background = `url(${homeBackground}), linear-gradient(rgba(0,0,0,0) 40%, black), radial-gradient(ellipse at center top, transparent 20%,black)`;
       document.body.style.backgroundSize = "cover";
-      document.body.style.backgroundColor = "#f9f9f985";
+      document.body.style.backgroundColor = "#f9f9f9";
       document.body.style.backgroundPosition= "50% 100%";
       document.body.style.backgroundRepeat= "no-repeat";
     }

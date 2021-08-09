@@ -118,7 +118,7 @@ export default function Approach() {
               </Container>
               
             </motion.div>
-            <motion.div>
+            <motion.div className="behavior-motion-div">
               <Container className="scrollsnap behavior" name="behavior">
                 <div style={{width: '100%'}}> 
                   <div className="approach-section">
@@ -131,7 +131,7 @@ export default function Approach() {
                 </div>
               </Container>
             </motion.div>
-            <motion.div>
+            <motion.div className="commands-motion-div">
               <Container className="scrollsnap commands" name="commands">
                 <div style={{width: '100%'}}>
                   <div className="approach-section">

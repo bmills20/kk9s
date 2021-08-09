@@ -55,6 +55,10 @@
   --background-color: #f9f9f9;
 }
 
+html {
+  background-color: var(--background-color);
+}
+
 .mt-6 {
   margin-top: 4rem !important;
 }
@@ -66,7 +70,6 @@
 .mt-8 {
   margin-top: 6rem !important;
 }
-
 
 .splash {
   min-height: 100vh;
@@ -102,6 +105,10 @@ a:hover {
   /*     background-color: var(--background-color) !important;
  */
   font-size: .9375rem;
+}
+
+.approach-wrapper {
+  /* background-color: var(--background-color); */
 }
 
 .approach-body {
@@ -176,6 +183,10 @@ a:hover {
   padding: 0;
   counter-reset: li;
 
+}
+
+#root > div > main {
+  
 }
 
 .paw-container {
@@ -451,6 +462,22 @@ select#subject.form-control{
 }
 
 .obedience-motion-div {
+  background-color: var(--background-color);
+  position: relative;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 7%;
+}
+
+.behavior-motion-div {
+  background-color: var(--background-color);
+  position: relative;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 7%;
+}
+
+.commands-motion-div {
   background-color: var(--background-color);
   position: relative;
   padding-left: 5%;
@@ -769,7 +796,7 @@ select#subject.form-control{
   background-color:rgba(0, 0, 0, 0.8);
 }
 
-.testimonials-wrapper .carousel:nth-of-type(3)::after {
+.testimonials-wrapper > div > div:nth-child(7) > div.testimonial-container > div.testimonials-my-carousel.carousel.slide::after {
   content: "Puppy Litter";
   color: white;
   font-weight: 800;

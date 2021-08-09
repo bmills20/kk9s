@@ -41,6 +41,11 @@ function MenuNavBar(){
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
   const [selectedNav, setSelectedNav] = useState(0);
   const [hoveredNav, setHoveredNav] = useState(-1);
+  const [width, setWidth] = useState(window.innerWidth);
+  const [navbarClass, setNavbarClass] = useState("ml-auto horizontal-nav nav-links");
+  const [navbarCollapse, setNavbarCollapse] = useState(false);
+  const [underline, setUnderline] = useState(0);
+
   let history = useHistory();
   var locations = useLocation();
 
@@ -109,12 +114,33 @@ function MenuNavBar(){
     scrollSpy.update();
   
   }, []) // passing an empty array as second argument triggers the callback in 
-        //useEffect only after the initial render thus replicating `componentDidMount` lifecycle behavior
+        // useEffect only after the initial render thus replicating `componentDidMount` lifecycle behavior
     
   useEffect(() => {
     Events.scrollEvent.remove('begin');
     Events.scrollEvent.remove('end');
 }, []) //componentWillUnmount
+
+  // Listen for window resize for desktop users expanding horizontally (mobile -> desktop navbar layout)
+  useEffect(() => {
+    const handleResize = () => {
+      
+      setWidth(window.innerWidth);
+      if(width >= 992){
+        setNavbarClass("ml-auto horizontal-nav nav-links");
+      }
+      else {
+        setNavbarClass("ml-auto vertical-nav nav-links");
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    // load listener for mobile or desktop navbar
+    window.addEventListener('load', handleResize);
+
+    return function cleanup() {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, [width]) // dimensions state callback to trigger re-render (effect runs when dimensions changes)
 
   // Change from transparent to color once you scroll past
   // a certain y coord
@@ -170,15 +196,15 @@ function MenuNavBar(){
   }); 
 
   return (
-      <Navbar fixed="top" variant="dark" expand="lg" className={navbarColor}>
+      <Navbar expanded={navbarCollapse} fixed="top" variant="dark" expand="lg" className={navbarColor}>
         <DomLink className="dom-link" to={"/"} onClick={() => {setNavbarColor("navbar-transparent"); setSelectedNav(0); }}> 
           <img src={kingaWhite} className="siteLogo"/>
         </DomLink> 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle onClick={() => setNavbarCollapse(navbarCollapse ? false : "expanded")} aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <motion.Nav className="ml-auto horizontal-nav">
             <AnimateSharedLayout>
-              <ol className="ml-auto horizontal-nav nav-links">
+              <ol className={navbarClass}>
                 {
                   pageNames.map(({title, color, to, offset}, i) => (
                       <Link
@@ -198,6 +224,7 @@ function MenuNavBar(){
                           whileHover="show"
                           onTap={() => {
                             setSelectedNav(i);
+                            setNavbarCollapse(false);
                             // History tracker for retaining animations
                             history.push((title==="HOME") ? "/" 
                             : (title==="ABOUT") ? ""
@@ -218,7 +245,9 @@ function MenuNavBar(){
                         {/* If the mapped nav-link is the currently
                             selected link, apply the underline class to it */}
 
-                        {i === selectedNav && (
+                        {(navbarClass === "ml-auto vertical-nav nav-links") ?
+                        i === selectedNav
+                        : i === selectedNav && (
                           <motion.div
                             layoutId="underline"
                             key={"underline_selected"}
@@ -226,7 +255,7 @@ function MenuNavBar(){
                             style={{ backgroundColor: color }}
                           />
                         )}
-                        <DomLink key={"my_dom_link"} className="dom-link" to={
+                        <DomLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} to={
                             (title==="HOME") ? "/" 
                           : (title==="ABOUT") ? "/"
                           : (title==="SERVICES") ? "/"
