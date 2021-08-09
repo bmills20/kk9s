@@ -105,7 +105,6 @@ body{
 }
 
 .about {
-    margin-top: 4%;
     margin-bottom: 10%;
     font-family: firasans-light;
     color: black;
@@ -421,7 +420,6 @@ h1.text-left {
 }
 
 .checkmark-container {
-    margin-top: -15rem !important;
     display: flex;
     margin-top: 1vh;
     flex-direction: column;
