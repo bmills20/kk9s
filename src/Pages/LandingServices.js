@@ -28,9 +28,9 @@ export default function About() {
     
     <Element id="servicesDest" className="servicesDest" name="servicesDest">
       
-      <motion.div intial="rest" animate="show" className="about mx-auto">
+      <motion.div intial="rest" animate="show" className="about">
         <h1 className="text-left aboutHeader">SERVICES</h1>
-        <Container className="services-container">
+        <div className="services-container">
           <div onClick={() => setOneSelected(!oneSelected) } id="services1" className={oneSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={foundations} className="card-icon" />
             <h3>Foundations</h3>
@@ -91,7 +91,7 @@ export default function About() {
             <Button className="btn-services">Inquire</Button>
             {fourSelected ? <p></p> : <p>Read more</p>}
           </div>
-        </Container>
+        </div>
       </motion.div>
     </Element>
   );

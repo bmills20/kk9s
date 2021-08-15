@@ -28,7 +28,6 @@
     src: url(../Fira_Sans/FiraSans-Medium.ttf);
   }
 
-
 :root{
     --default-color: #112947;
     --accent-color: #31cde6;
@@ -110,12 +109,10 @@ body{
     color: black;
     min-height: 100%;
     max-width: 95%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: #f9f9f9;
     font-size: 1.25rem;
-    justify-content: space-between;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 .landingServices {
@@ -176,14 +173,12 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     transition: all 0.5s;
-
 }
 
 .services-container .services-column {
-    margin-left: 1rem;
-    margin-right: 1rem;
     box-sizing: border-box;
     flex-grow: 0;
     height: auto;
@@ -194,20 +189,20 @@ body{
     padding: 2rem;
     cursor: pointer;
     border:1px solid rgba(0, 0, 0, 0.2);
-    max-width: 20%;
     transition: all 0.5s;
+
 
 }
 
 .services-container .services-column.closed {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
     box-sizing: border-box;
     flex-grow: 0;
     height: 65vh;
     overflow:hidden;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     text-align: center;
     background-color: white;
     padding: 2rem;
@@ -384,14 +379,18 @@ Button.splashButton {
     max-width: 300px;
 }
 
+.pic-container {
+
+    float: right;
+}
+
 .circlePic {
-    width: 100%;
-    max-width: 295px;
-    max-height: 295px;
+    display: block;
     height: auto;
-    margin-bottom: 10%;
+    width: 100%;
+/*     margin-bottom: 10%;
     margin-top: 10%;
-    margin-right: 0%;
+    margin-right: 0%; */
     filter: drop-shadow(30px 10px 5px #112947);
     -webkit-filter: drop-shadow(10px 10px 5px #112947);
 }
@@ -402,11 +401,11 @@ Button.splashButton {
     font-size: 2.0em;
 }
 
-.aboutContainer {
+/* .aboutContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
+} */
 
 .aboutPara {
     margin-top: 1%;
