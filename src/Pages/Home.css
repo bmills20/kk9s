@@ -26,7 +26,7 @@
 @font-face {
     font-family: firasans-medium;
     src: url(../Fira_Sans/FiraSans-Medium.ttf);
-  }
+}
 
 :root{
     --default-color: #112947;
@@ -396,14 +396,16 @@ Button.splashButton {
 }
 
 .pic-container {
-
+    margin: 1em;
+    margin-left: 5em;
     float: right;
+    width: 25vw;
 }
 
 .circlePic {
     display: block;
     height: auto;
-    width: 100%;
+    max-width: 100%;
 /*     margin-bottom: 10%;
     margin-top: 10%;
     margin-right: 0%; */
@@ -428,6 +430,7 @@ Button.splashButton {
     margin-right: 8%;
     font-size: 0.90em;
     color: #565656;
+    width: 70%;
 }
 
 h1.text-left {
@@ -453,4 +456,21 @@ svg.check-scaled {
 p.text-left {
     font-family: firasans-light;
     color: #565656;
+}
+
+@media only screen and (min-width: 1800px) {
+    .pic-container {
+        margin-top: -1em;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .pic-container {
+        width: 80%;
+        margin: 0 auto 0 auto;
+    }
+    .aboutPara {
+        margin-right: 0;
+        width: 100%;
+    }
 }
