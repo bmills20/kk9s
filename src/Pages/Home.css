@@ -174,14 +174,13 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    width: 100%;
     transition: all 0.5s;
 }
 
 .services-container .services-column {
     box-sizing: border-box;
-    flex-grow: 0;
-    height: auto;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
     text-align: center;
@@ -190,14 +189,16 @@ body{
     cursor: pointer;
     border:1px solid rgba(0, 0, 0, 0.2);
     transition: all 0.5s;
+    width: 50px;
+    
 
 
 }
 
 .services-container .services-column.closed {
     box-sizing: border-box;
-    flex-grow: 0;
-    height: 65vh;
+    flex: 1 1 auto;
+    height: auto;
     overflow:hidden;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -206,9 +207,16 @@ body{
     text-align: center;
     background-color: white;
     padding: 2rem;
+    padding-bottom: 4rem;
     cursor: pointer;
     border:1px solid rgba(0, 0, 0, 0.2);
-    transition: all 0.5s;
+    transition: flex-basis 0.5s;
+    max-width: 30%;
+
+}
+
+.services-container .services-column.closed .services-column-content {
+    display: none;
 }
 
 .services-container .services-column.closed::after {
@@ -218,7 +226,7 @@ body{
     left: 0;
     content: "";
     width: 100%;
-    height: 25%;
+    height: 20%;
     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 1.0) 60%);
 }
 
@@ -230,7 +238,6 @@ body{
     width: 100rem;
     flex: 0 0 50%;
     padding: 1rem;
-    transition: all 0.5s;
 }
 
 .services-container .services-column.open .card-icon {
@@ -245,7 +252,7 @@ body{
 }
 
 .services-container .services-column .card-icon {
-    width: 100%;
+    width: 60%;
     height: auto;
     padding: 1rem;
     margin-bottom: 0.5rem;
@@ -253,7 +260,7 @@ body{
 
 .services-container .services-column h3:first-of-type {
     font-family: firasans;
-    font-size: 1.5rem;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
 }
 
 .services-container .services-column h4:first-of-type {
@@ -353,8 +360,17 @@ body{
     background-position: 0 .3em;
 }
 
-.services-container .services-column p:first-of-type {
-    margin-top: 2rem;
+#services2::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    white-space: pre;
+    content: "*Available after a\00000afoundations session";
+    font-style: italic;
+    text-align: right;
+    font-size: calc(5px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));;
+    margin: 0.75rem;
+    color: rgba(255, 0, 0, 0.61);
 }
 
 
