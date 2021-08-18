@@ -28,6 +28,11 @@
     src: url(../Fira_Sans/FiraSans-Medium.ttf);
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
 :root{
     --default-color: #112947;
     --accent-color: #31cde6;
@@ -85,6 +90,9 @@ body{
 }
 
 .main-content h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: firasans-lightitalic, sans-serif;
     font-size: 1.5rem;
     margin-bottom: 1rem;
@@ -176,7 +184,8 @@ body{
     align-items: center;
     flex-wrap: nowrap;
     width: 100%;
-    transition: all 0.5s;
+    
+    height: 100%;
 }
 
 .services-container .services-column {
@@ -188,17 +197,13 @@ body{
     padding: 2rem;
     cursor: pointer;
     border:1px solid rgba(0, 0, 0, 0.2);
-    transition: all 0.5s;
-    width: 50px;
     
-
-
 }
 
 .services-container .services-column.closed {
     box-sizing: border-box;
     flex: 1 1 auto;
-    height: auto;
+    height: 100%;
     overflow:hidden;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -210,13 +215,14 @@ body{
     padding-bottom: 4rem;
     cursor: pointer;
     border:1px solid rgba(0, 0, 0, 0.2);
-    transition: flex-basis 0.5s;
+    
     max-width: 30%;
 
 }
 
 .services-container .services-column.closed .services-column-content {
-    display: none;
+    opacity: 0;
+    height: 0;
 }
 
 .services-container .services-column.closed::after {
@@ -235,6 +241,7 @@ body{
     transform: translateX(-50%); */
     position: relative;
     max-width: 100rem;
+    height: auto;
     width: 100rem;
     flex: 0 0 50%;
     padding: 1rem;
@@ -406,6 +413,7 @@ Button.splashButton {
     display: block;
     height: auto;
     max-width: 100%;
+    margin-bottom: 7%;
 /*     margin-bottom: 10%;
     margin-top: 10%;
     margin-right: 0%; */
@@ -415,6 +423,7 @@ Button.splashButton {
 
 .aboutHeader {
     margin-top: 5%;
+    
     font-family: firasans-bold;
     font-size: 2.0em;
 }
@@ -458,6 +467,10 @@ p.text-left {
     color: #565656;
 }
 
+.check-text {
+    
+}
+
 @media only screen and (min-width: 1800px) {
     .pic-container {
         margin-top: -1em;
@@ -466,11 +479,73 @@ p.text-left {
 
 @media only screen and (max-width: 600px) {
     .pic-container {
-        width: 80%;
-        margin: 0 auto 0 auto;
+        width: 100%;
+        margin: 0;
     }
+
+    .circlePic {
+        max-width: 75%;
+        margin: 0 auto 1em auto;
+    }
+
     .aboutPara {
         margin-right: 0;
         width: 100%;
+    }
+
+    svg.check-scaled {
+        width: 32px;
+        height: 32px;
+        float: left;
+    }
+
+    .check-text {
+        margin-top: 0;
+    }
+
+    #aboutDest > div > div > div.aboutContainer > p > div > p:nth-child(3) > svg,
+    #aboutDest > div > div > div.aboutContainer > p > div > p:nth-child(4) > svg {
+        margin-top: 0.5rem;
+    }
+
+    .services-container {
+        flex-wrap: wrap;
+        flex-basis: 1;
+    }
+
+    .services-column.closed .services-column-content {
+        opacity: 0;
+        height: 0;
+        flex-basis: 0;
+        transition: opacity 0.5s, height 0.5s, flex-basis 0.5s;
+    }
+
+    .services-column.open .services-column-content{
+        opacity: 1;
+        display: block;
+        transition: opacity 1s, height 0.5s, flex-basis 0.5s;
+    }
+
+    #services2::before {
+        font-size: 12.5px;
+    }
+
+    .services-container .services-column {
+        min-width: 100%;
+        width: 100%;
+    }
+
+    .main-content h1.text-center {
+        font-size: 3em;
+    }
+
+    .main-content h2.text-center {
+        font-size: 2em;
+    }
+
+    .main-content h3.text-center {
+        min-height: 84px;
+        font-weight: 800;
+        font-size: 20px;
     }
 }

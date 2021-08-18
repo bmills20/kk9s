@@ -68,18 +68,18 @@ export default function About() {
           <div>
             <h1 className="text-left aboutHeader">ABOUT</h1>
             <div className="pic-container">
-                <motion.img ref={picRef} variants={picInitial} initial={showAnimation ? "rest" : "show"} animate={ picControls } src={kingaCircle} className="circlePic" />
-              </div>
+              <motion.img ref={picRef} variants={picInitial} initial={showAnimation ? "rest" : "show"} animate={ picControls } src={kingaCircle} className="circlePic" />
+              <p className="text-center" style={{fontStyle: "italic", color: "grey", fontSize: "0.75em"}}>Kinga with her two dogs Axel and Rose</p>
+            </div>
             <div className="aboutContainer">
               <p className="text-left aboutPara">
                 Kinga’s K9s’ behavioral training provides you with solutions to all your dog problems, big and small.  As the founder, Kinga Niecko-Samuel has more than 14 years’ experience helping clients develop and nurture good canine behaviors.  Kinga develops puppies into well-behaved companions and solves some of the most challenging dog behaviors like separation anxiety and aggression.  Kinga is a certified trainer by the Council of Professional Dog Trainers (CPDT) and also partners with MK9S Service Dogs, an organization that trains and certifies service dogs for veterans. With Kinga’s help, you can be confident that you will be prepared for a new arrival, break any bad dog habits, and enforce and maintain good behavior in your dog.
                 <motion.div ref={divref} variants={certifications} initial={showAnimation ? "rest" : "show"} animate={controls} className="checkmark-container">
-                <motion.p className="text-left" variants={certLines}><Checkmark />CPDT Certified</motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark />14+ Years of Experience</motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark />Specializes in behavioral in-home training</motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark />Partners to train service dogs for veterans</motion.p>
-
-            </motion.div>
+                <motion.p className="text-left" variants={certLines}><Checkmark /><span className="check-text">CPDT Certified</span></motion.p>
+                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">14+ Years of Experience</span></motion.p>
+                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">Specializes in behavioral in-home training</span></motion.p>
+                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">Partners to train service dogs for veterans</span></motion.p>
+                </motion.div>
               </p>
               
             </div>

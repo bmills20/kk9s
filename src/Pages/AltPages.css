@@ -114,6 +114,7 @@ a:hover {
 .approach-body {
   height: 100%;
   margin-bottom: 0;
+  background: none !important;
 }
 
 .approach-body::before {
@@ -1249,4 +1250,34 @@ select#subject.form-control{
   .card-group>.card:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
   }
+
+}
+
+@media only screen and (max-width: 600px) {
+  .approach-header.container {
+    margin: 0;
+  }
+  .approach-row.container {
+    margin: 0;
+    max-width: 80vw;
+  }
+  .approach-card.card {
+    width: 50%;
+  }
+  .approach-header-section{
+    height: auto;
+  }
+  .approach-body::before{
+    max-height: 300vh;
+    width: 200vw;
+    min-height: 136vh;
+  }
+  .obedience-motion-div {
+    margin-top: 10vh;
+  }
+  .approach-card.card{
+    min-width: 0 !important;
+    max-width: 75vw;
+  }
+
 }

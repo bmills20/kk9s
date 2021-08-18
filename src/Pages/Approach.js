@@ -55,6 +55,7 @@ export default function Approach() {
 
   if(!mounted){
     document.body.className="approach-body";
+    document.body.style="none";
   }
 
   useEffect(() =>{

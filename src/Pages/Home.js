@@ -187,7 +187,7 @@ export default function Home() {
       </motion.div>
           <motion.button
             className="splashButton mx-auto text-center"
-            variants={button} 
+            variants={button}
             initial={showAnimation ? "rest" : "show"}
             animate={buttonControls}
             /* onTap={() => console.log(showAnimation)} */

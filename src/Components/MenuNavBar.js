@@ -122,11 +122,10 @@ function MenuNavBar(){
 }, []) //componentWillUnmount
 
   // Listen for window resize for desktop users expanding horizontally (mobile -> desktop navbar layout)
+  // Idk why this works with the browser variable but it does...
   useEffect(() => {
     const handleResize = () => {
-      
-      setWidth(window.innerWidth);
-      if(width >= 992){
+      if(window.innerWidth >= 992){
         setNavbarClass("ml-auto horizontal-nav nav-links");
       }
       else {
