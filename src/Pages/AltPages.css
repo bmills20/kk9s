@@ -1342,4 +1342,34 @@ select#subject.form-control{
     display: flex;
     flex-direction: column-reverse;
   }
+  .partners-container{
+    margin-left: 0;
+  }
+  .partners-container .partners-logos {
+    margin-right: 0;
+  }
+  .partners-container .partners-logos li {
+    height: 30vh;
+  }
+  .partners-container .partners-logos ul {
+    flex-direction: column;
+  }
+  .testimonials-header {
+    margin-left: 0;
+    padding-left: 1rem;
+  }
+  .testimonial-full-container {
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+  .testimonial-full-container .blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 99vw;
+  }
+  .testimonial-full-container .blockquote h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
 }
