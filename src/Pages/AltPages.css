@@ -1358,6 +1358,28 @@ select#subject.form-control{
     margin-left: 0;
     padding-left: 1rem;
   }
+  .testimonials-my-carousel {
+    width: 90vw;
+  }
+  .testimonials-car-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: top;
+  }
+  .testimonial-container {
+    flex-direction: column;
+  }
+  .carousel-inner {
+    width: 90vw;
+    height: 50vh;
+  }
+  .testimonials-box {
+    padding-left: 0.5rem;
+  }
+  .testimonials-text {
+    max-width: 90vw;
+  }
   .testimonial-full-container {
     margin-left: 0;
     margin-right: 0;
@@ -1371,5 +1393,21 @@ select#subject.form-control{
   .testimonial-full-container .blockquote h2 {
     font-size: 1.2rem;
     text-align: center;
+  }
+  .my-card {
+    width: 100%;
+  }
+  #root > div > main > div.testimonials-wrapper > div > div:nth-child(5) > div.testimonial-container,
+  #root > div > main > div.testimonials-wrapper > div > div:nth-child(7) > div.testimonial-container,
+  #root > div > main > div.testimonials-wrapper > div > div:nth-child(3) > div.testimonial-container {
+    flex-direction: column-reverse;
+  }
+  .contact-container {
+    max-width: 90vw;
+    padding: 0;
+  }
+  .contact-container .contact-title {
+    margin-left: 0;
+    margin-right: 0;
   }
 }

@@ -209,4 +209,7 @@ a:hover, a:visited, a:link, a:active
   .nav-link{
     font-size: 2.5em;
   }
+  .navbar-toggler {
+    z-index: 350;
+  }
 }
