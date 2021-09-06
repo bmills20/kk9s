@@ -93,7 +93,7 @@ body {
 }
 
 .navbar-toggler {
-  z-index: 100;
+  z-index: 350;
 }
 
 .nav-link {
