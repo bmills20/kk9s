@@ -64,7 +64,7 @@ export default function Approach() {
 
   return (
       <Container name="approachTop" className="approach">
-        <div className="approach-relative-spacer"></div>
+      
         <div className="approach-header-section">
           <Container className="approach-header">
             <h1 className="text-left">Approach</h1>
