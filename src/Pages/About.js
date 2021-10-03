@@ -9,13 +9,13 @@ import { Element } from "react-scroll";
 import getSession from "./getSession";
 
 const certifications = {
-  unchecked: { opacity: 0 },
+  unchecked: { opacity: 1 },
   checked: { opacity: 1,
-    transition: {delay: 0.3, staggerChildren: 0.75}}
+    transition: {delayChildren: 0.7, staggerChildren: 0.6}}
 };
 
 const certLines = {
-  unchecked: { opacity: 0, x: -250 },
+  unchecked: { opacity: 0, x: -50 },
   checked: { opacity: 1, x: 0,
     transition: {duration:1, ease: "circOut"}}
 };
@@ -42,23 +42,29 @@ export default function About() {
   var [picRef, picInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
 
   useEffect(() => {
-    const checkSequence = async () => {
-      if (inView) {
-        await controls.start("checked");
-      }
-    };
-    checkSequence();
+    if(inView) {
+      controls.start("checked");
+    }
+    else if(!inView){
+      controls.start("unchecked");
+    }
   }, [controls, inView]);
 
   // Upon scrolling down to the about section, use async and promises to begin
   // the 3 animation variant sequence
   useEffect(() => {
-    const sequence = async () => {
+    /*const sequence = async () => {
       if (picInView) {
         await picControls.start(picInitial.show);
       }
     };
-    sequence();
+    sequence();*/
+    if(picInView){
+      picControls.start("show");
+    }
+    else if(!picInView){
+      picControls.start("rest")
+    }
   }, [picControls, picInView])
 
 

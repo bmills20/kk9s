@@ -29,11 +29,6 @@ const navbarReveal = {
     transition: { staggerChildren: 1 }}
 };
 
-const navbarHover = {
-  rest: { fontWeight: 400, textShadow: "0px 0px 0px #000000" },
-  show: { fontWeight: 900, textShadow: "3px 3px 6px #000000",
-    transition: {duration: 0.3}}
-};
 
 function MenuNavBar(){
   // Defining react states
@@ -218,17 +213,16 @@ function MenuNavBar(){
                           animate
                           key = {i}
                           className={"nav-link"}
-                          variants={navbarHover}
                           initial="rest"
                           whileHover="show"
                           onTap={() => {
                             setSelectedNav(i);
                             setNavbarCollapse(false);
                             // History tracker for retaining animations
-                            history.push((title==="HOME") ? "/" 
-                            : (title==="ABOUT") ? ""
-                            : (title==="SERVICES") ? ""
-                            : `/pages/${title.toLocaleLowerCase()}`);
+                            //</Link>history.push((title==="HOME") ? "/" 
+                            //: (title==="ABOUT") ? ""
+                            //: (title==="SERVICES") ? ""
+                            //: `/pages/${title.toLocaleLowerCase()}`);
 
                             // If user clicks on anything other than the homepage or the about page
                             // Set the navbar color to blue (take away transparent class)
@@ -244,16 +238,7 @@ function MenuNavBar(){
                         {/* If the mapped nav-link is the currently
                             selected link, apply the underline class to it */}
 
-                        {(navbarClass === "ml-auto vertical-nav nav-links") ?
-                        i === selectedNav
-                        : i === selectedNav && (
-                          <motion.div
-                            layoutId="underline"
-                            key={"underline_selected"}
-                            className="underline"
-                            style={{ backgroundColor: color }}
-                          />
-                        )}
+
                         <DomLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} to={
                             (title==="HOME") ? "/" 
                           : (title==="ABOUT") ? "/"

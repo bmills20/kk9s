@@ -80,7 +80,7 @@ export default function Approach() {
                 offset={-130}
                 spy={true}
               >
-                <a href="/"><Card className="approach-card" style={{ width: '18rem' }}>
+                <a href="/"><Card className="approach-card" >
                   <Card.Body>
                     <Card.Title className="approach-title">{title}</Card.Title>
                     <Card.Subtitle className="approach-subtitle">{subtitle}</Card.Subtitle>

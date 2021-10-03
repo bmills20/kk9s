@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, NavLink } from "react-router-dom";
 import MenuNavBar from "./Components/MenuNavBar";
 import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
@@ -48,7 +48,7 @@ export default class App extends React.Component {
         <div className="page-container">
           <MenuNavBar />
           <main role="main" /*className="container"*/>
-            <div>
+             <div>
               <Route exact path="/" component={Home}></Route>
             </div>
             <div>
@@ -69,6 +69,27 @@ export default class App extends React.Component {
             <div className="contact-wrapper">
               <Route exact path="/pages/contact" component={Contact}></Route>
             </div>
+{/*             <div>
+              <NavLink to="/" component={Home}></NavLink>
+            </div>
+            <div>
+              <NavLink to="/" component={About}></NavLink>
+            </div>  
+            <div>
+              <NavLink to="/" component={LandingServices}></NavLink>
+            </div>
+            <div className="approach-wrapper">
+              <NavLink to="/pages/approach" component={Approach}></NavLink>
+            </div>
+            <div className="partners-wrapper">
+              <NavLink to="/pages/partners" component={Partners}></NavLink>
+            </div>
+            <div className="testimonials-wrapper">
+              <NavLink to="/pages/testimonials" component={Testimonials}></NavLink>
+            </div>
+            <div className="contact-wrapper">
+              <NavLink to="/pages/contact" component={Contact}></NavLink>
+            </div> */}
           </main>
 {/*           <Footer />
  */}          </div>
