@@ -127,10 +127,11 @@ a:hover {
   min-height: 100vh;
   width: 100vw;
   max-height: 100vh;
-  background-image: url("../images/massimo-negrello-S7WoaCSkOvo-unsplash.jpeg");
-  background-position: top left;
-  background-size: cover;
+  background: url("../images/massimo-negrello-S7WoaCSkOvo-unsplash.jpeg");
+  background-position: 50% 20%;
   background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
   z-index: -1;
 }
 
@@ -1266,9 +1267,6 @@ select#subject.form-control{
   .approach-card.card {
     width: 50vw;
   }
-  .approach-header-section{
-    height: auto;
-  }
   .approach-body::before{
     max-height: 300vh;
     width: 200vw;
@@ -1280,56 +1278,15 @@ select#subject.form-control{
 
 }
 
-/* @media only screen and (min-width: 600px) {
-  .approach-header.container {
-    margin: 0;
-  }
-  .approach-row.container {
-    margin: 0;
-    max-width: 80vw;
-  }
-  .approach-card.card {
-    width: 50vw;
-  }
-  .approach-header-section{
-    height: auto;
-  }
-  .approach-body::before{
-    max-height: 300vh;
-    width: 200vw;
-    min-height: 136vh;
-  }
-  .obedience-motion-div {
-    margin-top: 30vh;
-  }
-
-} */
-
 @media only screen and (min-width: 601px) {
   .approach-card.card{
     width: 40vw;
-  }
-  .approach-header-section{
-    height: auto;
-  }
-  .approach-body::before{
-    max-height: 300vh;
-    width: 200vw;
-    min-height: 136vh;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .approach-card.card{
     width: 35vw;
-  }
-  .approach-header-section{
-    height: auto;
-  }
-  .approach-body::before{
-    max-height: 300vh;
-    width: 200vw;
-    min-height: 136vh;
   }
 }
 
@@ -1343,13 +1300,5 @@ select#subject.form-control{
 @media only screen and (min-width: 1400px) {
   .approach-card.card{
     width: 25vw;
-  }
-  .approach-body::before{
-    min-height: 100vh;
-    width: 100vw;
-    max-height: 100vh;
-  }
-  .approach-header-section {
-    height: 90vh;
   }
 }
