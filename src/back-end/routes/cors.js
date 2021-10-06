@@ -8,9 +8,11 @@ var corsOptionsDelegate = (req, callback) => {
 
     if(allowedOrigins.indexOf(req.header('Origin')) !== -1) {
         corsOptions = { origin: true };
+        console.log("true");
     }
     else {
         corsOptions = { origin: false };
+        console.log("false");
     }
     
     callback(null, corsOptions);

@@ -10,7 +10,7 @@ var index = require('./routes/index');
 
 var app = express();
 
-app.use(function (req, res, next) {
+/*app.use(function (req, res, next) {
   const allowedOrigins = ['*'];
   const origin = req.headers.origin;
   if (allowedOrigins.includes(origin)) {
@@ -20,7 +20,12 @@ app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   res.header('Access-Control-Allow-Credentials', true);
   return next();
-});
+});*/
+app.use('*', function(req,res,next){
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "*");
+  next();
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
