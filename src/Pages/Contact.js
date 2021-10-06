@@ -10,6 +10,7 @@ export default function Contact() {
   const [mounted, setMounted] = useState(false)
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
   const [mailSent, setMailSent] = useState(false);
@@ -24,6 +25,8 @@ export default function Contact() {
       data: {
         name: name,
         email: email,
+        phone: phone,
+        subject: subject,
         message: message
       }
     })
@@ -80,6 +83,18 @@ export default function Contact() {
                         required
                       />
                   </Form.Group>
+                  <Form.Group as={Col}>
+                      <Form.Control
+                        as="textarea"
+                        rows={1}
+                        placeholder="Phone"
+                        name="phone"
+                        id="phone"
+                        value={phone}
+                        onChange={e => setPhone(e.target.value)}
+                        required
+                      />
+                  </Form.Group>
               </Form.Row>
               <Form.Row>
                 <Form.Group as={Col}>
@@ -118,7 +133,7 @@ export default function Contact() {
               </Button>
               <div>
                 {mailSent && <div className="success"><br/>Thank you! Your inquiry has been sent; we will be in touch shortly.<br/><br/>A copy of your message has been sent to the email you provided.</div>}
-                {isError && <div className="error"><br/>Error: message failed to send.<br/> Please check your internet connection.</div>}
+                {isError && <div className="error"><br/>Error: message failed to send.<br/> Please check your internet connection and try again.</div>}
               </div>
           </Form>
       </Container> 

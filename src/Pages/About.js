@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { Container } from "react-bootstrap";
 import { useInView } from "react-intersection-observer";
 import "./Home.css";
-import kingaCircle from "../images/kinga_outside_circle.png";
+import kingaCircle from "../images/kinga_rose.jpeg";
 import {Check} from "../Components/Check";
 import { motion, useAnimation } from "framer-motion";
 import { Element } from "react-scroll";
@@ -39,7 +39,7 @@ export default function About() {
   var picControls = useAnimation();
   const [picAnim, setPicAnim] = useState(false);
   var [divref, inView] = useInView({threshold: 1.0, delay: 500, trackVisibility: true});
-  var [picRef, picInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
+  var [picRef, picInView] = useInView({threshold: 0.01, delay: 500, trackVisibility: true});
 
   useEffect(() => {
     if(inView) {
@@ -75,7 +75,7 @@ export default function About() {
             <h1 className="text-left aboutHeader">ABOUT</h1>
             <div className="pic-container">
               <motion.img ref={picRef} variants={picInitial} initial={showAnimation ? "rest" : "show"} animate={ picControls } src={kingaCircle} className="circlePic" />
-              <p className="text-center" style={{fontStyle: "italic", color: "grey", fontSize: "0.75em"}}>Kinga with her two dogs Axel and Rose</p>
+              <p className="text-center" style={{fontStyle: "italic", color: "grey", fontSize: "0.75em"}}>Kinga with one of her dogs, Rose</p>
             </div>
             <div className="aboutContainer">
               <p className="text-left aboutPara">

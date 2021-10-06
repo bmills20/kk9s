@@ -110,10 +110,11 @@ export default function Approach() {
               <Container name="scrollsnap obedience" className="obedience">
                   <div className="approach-section">
                     <div className="approach-section-text">
+                      <img src={kingaLeash} className="approach-pic-cropped-kinga"/>
                       <h1 className="text-left">Obedience</h1>
                       <p>The key to having a well-behaved dog is to understand that every interaction you have with your dog is a learning opportunity.<br /> <br /> Our training sessions (in-home or field) are set up with this goal in mind:  Train your dog to not only know commands, but more importantly, to obey them when asked! <br /> <br /> A key element in training your dog is teaching you, as the owner to achieve that same level of obedience from your companion.</p>
                     </div>
-                    <img src={kingaLeash} className="approach-pic-cropped-kinga"/>
+                    
                   </div>
                 
               </Container>
@@ -137,6 +138,7 @@ export default function Approach() {
                 <div style={{width: '100%'}}>
                   <div className="approach-section">
                     <div className="approach-section-text">
+                      <img src={golden} className="approach-pic-cropped"/>
                     <h1 className="text-left">Commands</h1>
                       <p>As the first step, we identify the primary driver that motivates your dog to follow commands.  Identifying your dog’s primary driver directly improves training success.  We teach basic commands, recommend training tools, treats and equipment and specialize in hard to solve behavioral problems to include, but not limited to:
                       <br /><br />
@@ -154,7 +156,7 @@ export default function Approach() {
                     </p>
                     </div>
 
-                      <img src={golden} className="approach-pic-cropped"/>
+                      
                       </div>
                 </div>
             </Container>

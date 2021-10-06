@@ -69,30 +69,8 @@ export default class App extends React.Component {
             <div className="contact-wrapper">
               <Route exact path="/pages/contact" component={Contact}></Route>
             </div>
-{/*             <div>
-              <NavLink to="/" component={Home}></NavLink>
-            </div>
-            <div>
-              <NavLink to="/" component={About}></NavLink>
-            </div>  
-            <div>
-              <NavLink to="/" component={LandingServices}></NavLink>
-            </div>
-            <div className="approach-wrapper">
-              <NavLink to="/pages/approach" component={Approach}></NavLink>
-            </div>
-            <div className="partners-wrapper">
-              <NavLink to="/pages/partners" component={Partners}></NavLink>
-            </div>
-            <div className="testimonials-wrapper">
-              <NavLink to="/pages/testimonials" component={Testimonials}></NavLink>
-            </div>
-            <div className="contact-wrapper">
-              <NavLink to="/pages/contact" component={Contact}></NavLink>
-            </div> */}
           </main>
-{/*           <Footer />
- */}          </div>
+         </div>
       </BrowserRouter>
     );
   }

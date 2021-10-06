@@ -31,17 +31,23 @@ export default function About() {
       
       <motion.div intial="rest" animate="show" className="about">
         <h1 className="text-left aboutHeader">SERVICES</h1>
+        <p className="text-left aboutPara">We offer in-home or on-site (problem environments) training for your dog. We always
+start with a Foundations session as a minimum to establish and reiterate fundamentals for
+the dog and all members of the household. Most issues require a Foundations session and
+possibly a follow-up in the future. For specialized training (hard to solve behavioral
+issues) or if you are getting a puppy, a lot of our clients prefer a package to ensure
+consistency and access to help when necessary.</p>
         <div className="services-container">
-          <div onClick={() => setOneSelected(!oneSelected) } id="services1" className={oneSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
+          <div onMouseUp={() => setOneSelected(!oneSelected) } id="services1" className={oneSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={foundations} className="card-icon" />
             <h3>Foundations Session</h3>
             <h4>1 Session</h4>
             {oneSelected ? <p></p> : <p>Read more</p>}
+            <h5 className={oneSelected ? "text-muted hidebar" : "text-muted"}>Works for most dogs</h5>
             <div className = "services-column-content">
-              <h5 className="text-muted">Works for most dogs</h5>
               <ol>
-                <li>One to two hours</li>
-                <li>Training with the dog and owner</li>
+                <li>Up to two hours</li>
+                <li>Trains the dog and helps owner handle dog</li>
                 <li>Ensures basic obedience of commands</li>
                 <li>Rehabilitates identified behavioral issues</li>
                 <li>Provides rehabilitation plan (homework) for the owner to achieve successful rehabilitation after the training</li>
@@ -50,17 +56,18 @@ export default function About() {
             </div>
             
           </div>
-          <div onClick={() => setTwoSelected(!twoSelected) } id="services2" className={twoSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
+          <div onMouseUp={() => setTwoSelected(!twoSelected) } id="services2" className={twoSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={followup} className="card-icon" />
-            <h3>Follow-up Session</h3>
+            <h3>Follow-up Hourly Session</h3>
             <h4>1 Session</h4>
+            <h5 className={twoSelected ? "text-muted hidebar" : "text-muted"}>Good for a refresher or follow-up</h5>
             <div className = "services-column-content">
-              <h5 className="text-muted">Good for a refresher or follow-up</h5>
               <ol>
-                <li>1 or more hour(s)</li>
+                <li>Hourly</li>
                 <li>Assesses progress</li>
-                <li>Addresses any remaining or new behavioral issues</li> 
-                <li>Hands-on instruction for the dog and guidance for owners </li>
+                <li>Addresses remaining or new behavioral issues</li>
+                <li>Trains the dog independently or with owner</li>
+                <li>Delivers in-home or in the field training as necessary</li>
               </ol>
               <Button className="btn-services">Inquire</Button>
             </div>
@@ -68,12 +75,12 @@ export default function About() {
           </div>
         </div>
         <div className="services-container">
-          <div onClick={() => setThreeSelected(!threeSelected) } id="services3" className={threeSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
+          <div onMouseUp={() => setThreeSelected(!threeSelected) } id="services3" className={threeSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={puppyTraining} className="card-icon" />
-            <h3>Behavioral Training</h3>
+            <h3>Behavioral Training Package</h3>
             <h4>4 Sessions</h4>
+            <h5 className={threeSelected ? "text-muted hidebar" : "text-muted"}>For puppies and dogs with difficult behavioral issues</h5>
             <div className = "services-column-content">
-              <h5 className="text-muted">For puppies and dogs with difficult behavioral issues</h5>
               <h4 style={{textAlign: "left", fontSize: "1rem", fontFamily: "firasans-lightitalic"}}>Initial Session (Up to 2 Hours):</h4>
               <ol>
                 <li>Works with the dog and owner to ensure basic obedience of commands and rehabilitate the identified behavioral issues.</li>  
@@ -87,17 +94,18 @@ export default function About() {
             </div>
             {threeSelected ? <p></p> : <p>Read more</p>}
           </div>
-          <div onClick={() => setFourSelected(!fourSelected) } id="services4" className={fourSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
+          <div onMouseUp={() => setFourSelected(!fourSelected) } id="services4" className={fourSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={kidTraining} className="card-icon" />
-            <h3>Kids and K9s</h3>
+            <h3>Understanding and Learning How to Properly Handle a K9</h3>
             <h4>4 Sessions</h4>
+            <h5 className={fourSelected ? "text-muted hidebar" : "text-muted"}>Perfect for children or adults interested in animal behavior</h5>
             <div className = "services-column-content">
-              <h5 className="text-muted">Teaches Children How to Properly Handle a K9</h5>
               <ol>
-                <li>Teaches children about dog behavior</li>
-                <li>Teaches children how to be comfortable around dogs and handle them with confidence</li>
-                <li>Your child will learn training techniques and the right time to use them to effectively handle a dog with confidence in any situation.</li> 
-                <li>Your child will have hands-on experience interacting with, handling and training a dog through four one-hour sessions.</li>
+                <li>Teaches participants about how a dog develops, learns, and behaves</li>
+                <li>Hands on experience using the right approach to effectively handle a dog with confidence in any situation</li>
+                <li>Teaches when to engage and disengage with a dog to effectively achieve obedience </li>
+                <li>Provides guidance on how to handle emergency situations like aggressive dogs, dog fights or charging</li> 
+                <li>Provides opportunities for shadowing and help in pursuing animal behavior professions</li>
               </ol>
               <Button className="btn-services">Inquire</Button>
               </div>

@@ -27,12 +27,14 @@ router.post('/send', (req, res, next) => {
   var name = req.body.name
   var email = req.body.email
   var message = req.body.message
-  var content = `name: ${name} \nemail: ${email} \nmessage: ${message} `
+  var phone = req.body.phone
+  var formSubj = req.body.subject
+  var content = `Name: ${name} \nEmail: ${email} \nPhone: ${phone} \nSubject: ${formSubj} \nMessage:\n\n${message} `
 
   var mail = {
     from: name,
     to: 'braxton25@gmail.com',
-    subject: 'New Message from Contact Form',
+    subject: `Contact Form: ${formSubj}`,
     text: content,
   }
 

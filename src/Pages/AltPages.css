@@ -182,13 +182,6 @@ a:hover {
   transition: color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.approach-section ol {
-  list-style: none;
-  padding: 0;
-  counter-reset: li;
-
-}
-
 #root > div > main {
   
 }
@@ -268,6 +261,7 @@ a:hover {
   border-color: rgb(197, 197, 197);
   resize: none;
   padding-right: 0;
+  font-size: 1rem;
   color: #888;
 }
 
@@ -422,25 +416,27 @@ select#subject.form-control{
   opacity: 1;
 }
 
-.approach-section ol li:before {
+/* .approach-section ol li:before {
   counter-increment: li;
   content: counter(li) ". ";
   color: var(--accent-color);
   font-family: FiraSans-mediumitalic;
   font-size: 1.5em;
   margin-bottom: 3em;
-}
+} */
 
 .approach-section {
-  display: flex;
+/*   display: flex;
   align-items: flex-start;
-  flex-direction: row;
+  flex-direction: row; */
+
 }
 
 .approach-section .approach-section-text {
-  display: flex;
+/*   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; */
+  word-wrap: normal;
 }
 
 .approach-section b {
@@ -459,6 +455,7 @@ select#subject.form-control{
   border-radius: 5px;
   filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
   -webkit-filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
+  float: right;
 }
 
 .container .obedience p {
@@ -494,9 +491,11 @@ select#subject.form-control{
   max-width: 35%;
   margin-top: 1%;
   margin-left: 5%;
+  margin-bottom: 5%;
   border-radius: 5px;
   filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
   -webkit-filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.3));
+  float: right;
 }
 
 .approach-section .approach-pic-cropped-left {
@@ -504,9 +503,11 @@ select#subject.form-control{
   max-width: 50%;
   margin-left: 0;
   margin-right: 5%;
+  margin-bottom: 5%;
   border-radius: 5px;
   filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.3));
   -webkit-filter: drop-shadow(-10px 10px 5px rgba(0, 0, 0, 0.3));
+  float: left;
 }
 
 .approach-card {
@@ -594,8 +595,20 @@ select#subject.form-control{
   margin-top: 5rem;
 }
 
-.container .commands li {
-  font-size: 0.95em;
+.container .commands li{
+  vertical-align: top;
+  margin-bottom: 1em;
+}
+
+.container .commands li::marker {
+  color: var(--accent-color);
+  font-family: FiraSans-mediumitalic;
+  font-size: 1.0em;
+}
+.approach-section ol {
+  margin-left: 0;
+  padding-left: 2em;
+  list-style-position: outside;
 }
 
 .container .behavior {
@@ -1275,7 +1288,12 @@ select#subject.form-control{
   .obedience-motion-div {
     margin-top: 30vh;
   }
-
+  .approach-section .approach-section-text h1.text-left{
+    font-size: 2rem !important;
+  }
+  .approach-section-text p {
+    font-size: 1.25rem !important;
+  }
 }
 
 @media only screen and (min-width: 601px) {
@@ -1288,6 +1306,7 @@ select#subject.form-control{
   .approach-card.card{
     width: 35vw;
   }
+
 }
 
 
@@ -1295,10 +1314,12 @@ select#subject.form-control{
   .approach-card.card{
     width: 25vw;
   }
+
 }
 
 @media only screen and (min-width: 1400px) {
   .approach-card.card{
     width: 25vw;
   }
+
 }

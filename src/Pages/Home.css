@@ -203,7 +203,7 @@ body{
 .services-container .services-column.closed {
     box-sizing: border-box;
     flex: 1 1 auto;
-    height: 100%;
+    height: 45vh;
     overflow:hidden;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
@@ -233,18 +233,19 @@ body{
     content: "";
     width: 100%;
     height: 20%;
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 1.0) 60%);
-}
+/*     background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 1.0) 60%);
+ */}
 
 .services-container .services-column.open {
 /*     left: 50%;
     transform: translateX(-50%); */
     position: relative;
     max-width: 100rem;
-    height: auto;
+    max-height: 80vh;
     width: 100rem;
     flex: 0 0 50%;
     padding: 1rem;
+    margin: 1rem;
 }
 
 .services-container .services-column.open .card-icon {
@@ -292,7 +293,7 @@ body{
     font-size: 1rem;
 }
 
-.services-container .services-column h5:last-of-type {
+.services-container .services-column h5.hidebar:last-of-type {
     padding-bottom: 1rem;
     margin-bottom: 1rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -412,7 +413,9 @@ Button.splashButton {
 .circlePic {
     display: block;
     height: auto;
-    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 80%;
     margin-bottom: 7%;
 /*     margin-bottom: 10%;
     margin-top: 10%;
@@ -474,6 +477,12 @@ p.text-left {
 @media only screen and (min-width: 1800px) {
     .pic-container {
         margin-top: -1em;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .card-icon{
+        width: 80%;
     }
 }
 
