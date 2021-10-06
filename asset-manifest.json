@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/kk9s/static/css/main.89b6739f.chunk.css",
-    "main.js": "/kk9s/static/js/main.8eca6902.chunk.js",
-    "main.js.map": "/kk9s/static/js/main.8eca6902.chunk.js.map",
+    "main.css": "/kk9s/static/css/main.058652f4.chunk.css",
+    "main.js": "/kk9s/static/js/main.93079a0c.chunk.js",
+    "main.js.map": "/kk9s/static/js/main.93079a0c.chunk.js.map",
     "runtime-main.js": "/kk9s/static/js/runtime-main.da9791b6.js",
     "runtime-main.js.map": "/kk9s/static/js/runtime-main.da9791b6.js.map",
-    "static/css/2.d986b589.chunk.css": "/kk9s/static/css/2.d986b589.chunk.css",
-    "static/js/2.d6d67e3b.chunk.js": "/kk9s/static/js/2.d6d67e3b.chunk.js",
-    "static/js/2.d6d67e3b.chunk.js.map": "/kk9s/static/js/2.d6d67e3b.chunk.js.map",
+    "static/css/2.88226b60.chunk.css": "/kk9s/static/css/2.88226b60.chunk.css",
+    "static/js/2.31a0e507.chunk.js": "/kk9s/static/js/2.31a0e507.chunk.js",
+    "static/js/2.31a0e507.chunk.js.map": "/kk9s/static/js/2.31a0e507.chunk.js.map",
     "index.html": "/kk9s/index.html",
-    "static/css/2.d986b589.chunk.css.map": "/kk9s/static/css/2.d986b589.chunk.css.map",
-    "static/css/main.89b6739f.chunk.css.map": "/kk9s/static/css/main.89b6739f.chunk.css.map",
-    "static/js/2.d6d67e3b.chunk.js.LICENSE.txt": "/kk9s/static/js/2.d6d67e3b.chunk.js.LICENSE.txt",
+    "static/css/2.88226b60.chunk.css.map": "/kk9s/static/css/2.88226b60.chunk.css.map",
+    "static/css/main.058652f4.chunk.css.map": "/kk9s/static/css/main.058652f4.chunk.css.map",
+    "static/js/2.31a0e507.chunk.js.LICENSE.txt": "/kk9s/static/js/2.31a0e507.chunk.js.LICENSE.txt",
     "static/media/APDT.f77ee65f.jpeg": "/kk9s/static/media/APDT.f77ee65f.jpeg",
     "static/media/Big_Red_Cropped.c75c6849.png": "/kk9s/static/media/Big_Red_Cropped.c75c6849.png",
     "static/media/AltPages.css": "/kk9s/static/media/massimo-negrello-S7WoaCSkOvo-unsplash.50f1ebf7.jpeg",
@@ -34,6 +34,7 @@
     "static/media/kidtraining.18f5563c.svg": "/kk9s/static/media/kidtraining.18f5563c.svg",
     "static/media/kinga-white.af92255d.png": "/kk9s/static/media/kinga-white.af92255d.png",
     "static/media/kinga_outside_circle.2074b50e.png": "/kk9s/static/media/kinga_outside_circle.2074b50e.png",
+    "static/media/kinga_rose.d28f2e8f.jpeg": "/kk9s/static/media/kinga_rose.d28f2e8f.jpeg",
     "static/media/kingamain2.78c8ea00.jpeg": "/kk9s/static/media/kingamain2.78c8ea00.jpeg",
     "static/media/lexi1.504f5d0d.JPEG": "/kk9s/static/media/lexi1.504f5d0d.JPEG",
     "static/media/lexi2.1c1887ef.jpeg": "/kk9s/static/media/lexi2.1c1887ef.jpeg",
@@ -49,9 +50,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.da9791b6.js",
-    "static/css/2.d986b589.chunk.css",
-    "static/js/2.d6d67e3b.chunk.js",
-    "static/css/main.89b6739f.chunk.css",
-    "static/js/main.8eca6902.chunk.js"
+    "static/css/2.88226b60.chunk.css",
+    "static/js/2.31a0e507.chunk.js",
+    "static/css/main.058652f4.chunk.css",
+    "static/js/main.93079a0c.chunk.js"
   ]
 }
