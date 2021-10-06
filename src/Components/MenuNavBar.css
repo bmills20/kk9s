@@ -134,6 +134,7 @@ body {
   text-transform: uppercase;
   padding: 4px 0;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 .nav-link a::after {

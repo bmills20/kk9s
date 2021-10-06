@@ -16,6 +16,7 @@ import classnames from "classnames";
 import kingaWhite from "./kinga-white.png";
 import * as Scroll from "react-scroll";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
+//import {NavHashLink as Link} from 'react-router-hash-link';
 
 
 const navbarInitial = {
@@ -64,6 +65,7 @@ function MenuNavBar(){
     {
       title: "ABOUT",
       color: "#FFF",
+      //to: "/kk9s#aboutDest",
       to: "aboutDest",
       offset: -50
     },
