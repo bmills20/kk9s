@@ -6,7 +6,7 @@ import Home from "./Pages/Home";
 import Page1 from "./Pages/Page1";
 import Page2 from "./Pages/Page2";
 import About from "./Pages/About";
-import LandingServices from "./Pages/LandingServices"
+import Services from "./Pages/Services"
 import Approach from "./Pages/Approach";
 import Partners from "./Pages/Partners";
 import Contact from "./Pages/Contact";
@@ -55,7 +55,7 @@ export default class App extends React.Component {
               <Route exact path="/" component={About}></Route>
             </div>  
             <div>
-              <Route exact path="/" component={LandingServices}></Route>
+              <Route exact path="/pages/services" component={Services}></Route>
             </div>
             <div className="approach-wrapper">
               <Route exact path="/pages/approach" component={Approach}></Route>

@@ -55,7 +55,6 @@ function MenuNavBar(){
   }
 
   const updateNavbarColor = useCallback(event => {
-    console.log("updatenavbar")
     if(("/" === locations.pathname) || ("/kk9s/pages/approach" === location.pathname)){
       if (
         document.documentElement.scrollTop > 299 ||
@@ -161,15 +160,16 @@ function MenuNavBar(){
   // a certain y coord
   // Also uses JS passive event listeners to allow the page to not wait for the listeners for better performance
 
+  // moved back to scroll listener because of react-scroll
   useEffect(() => {
     updateNavbarColor();
 
     // scroll listener
-    window.addEventListener("wheel", updateNavbarColor, {capture: true, passive: true});
+    window.addEventListener("scroll", updateNavbarColor, {capture: true, passive: true});
 
     // cleanup scroll listener on exit
     return function cleanup() {
-      window.removeEventListener("wheel", updateNavbarColor, {capture: true, passive: true});
+      window.removeEventListener("scroll", updateNavbarColor, {capture: true, passive: true});
     };
   }, [updateNavbarColor]);
 
@@ -180,6 +180,7 @@ function MenuNavBar(){
         const currentPage = locations.pathname.split("/")[2].toUpperCase();
         (currentPage === "HOME") ? setSelectedNav(0)
           : (currentPage === "APPROACH") ? setSelectedNav(2)
+          : (currentPage === "SERVICES") ? setSelectedNav(3)
           : (currentPage === "PARTNERS") ? setSelectedNav(4)
           : (currentPage === "TESTIMONIALS") ? setSelectedNav(5)
           : setSelectedNav(0)
@@ -243,7 +244,6 @@ function MenuNavBar(){
                         <DomLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} to={
                             (title==="HOME") ? "/" 
                           : (title==="ABOUT") ? "/"
-                          : (title==="SERVICES") ? "/"
                           : `/pages/${title.toLocaleLowerCase()}`}>
                           {title}
                         </DomLink>
