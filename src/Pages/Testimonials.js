@@ -46,14 +46,14 @@ export default function Testimonials() {
             <br/><br/>
             Perhaps the most fun and interesting work we did with Kinga happened when we fostered a litter of 5 puppies. She showed us how to temperament test the puppies, which gave us insight about their predispositions and helped us give better information to prospective adopters to increase the chances of a successful match. And as she came and went, she always had great tips for us, and it was also beneficial to watch her interact with the dogs, so we could follow her lead. Kinga is a lovely person, a gifted trainer, and a true professional.
             <br/><br/>
-            <i>— Mary</i>
+            <i>— Mary, Great Falls, VA</i>
         </React.Fragment>
     );
     const micheleTest = (
         <React.Fragment>
-            Kinga Samuel is a remarkable and highly professional dog trainer and is truly an asset to the MK9s Service Dogs’ training team. As a trainer with over twelve years expericence working in the dog training industry I can unequivocally say that Kinga is one of the best trainers I have had the privlege to work with. I have known Kinga in a professional capacity since July 2019. Kinga’s passion for having a successful working relationship with both the client and the dog is demonstrated everytime she has a training session. Kinga’s vast experience with training dogs allows her to quickly adapt and modify a training plan to ensure that both members of the team will have a postive experince in that session.  Kinga has a wonderful way of balancing both the canine and human needs and is able to ensure that both are being met successfully.
+            Kinga Niecko-Samuel is a remarkable and highly professional dog trainer and is truly an asset to the MK9s Service Dogs’ training team. As a trainer with over twelve years expericence working in the dog training industry I can unequivocally say that Kinga is one of the best trainers I have had the privlege to work with. I have known Kinga in a professional capacity since July 2019. Kinga’s passion for having a successful working relationship with both the client and the dog is demonstrated everytime she has a training session. Kinga’s vast experience with training dogs allows her to quickly adapt and modify a training plan to ensure that both members of the team will have a postive experince in that session.  Kinga has a wonderful way of balancing both the canine and human needs and is able to ensure that both are being met successfully.
             <br/><br/>
-            I would highly recommend Kinga Samuel as a trainer and a service dog trainer. Kinga is very skilled at what she does and it has been a privilege to work with her.
+            I would highly recommend Kinga Niecko-Samuel as a trainer and a service dog trainer. Kinga is very skilled at what she does and it has been a privilege to work with her.
             If you have any questions please don’t hesitate to contact me directly.
             <br/><br/>
             <i>Michele Khol<br/>
@@ -66,17 +66,18 @@ export default function Testimonials() {
     const bigredTest = (
         <React.Fragment>
             Our Big Red has always been just the sweetest Vizla. At almost two-years-old, though, he surprised us with some defensive behavior, primarily towards men. It all kind of started quite suddenly; he would bark and growl and seemed to have moments where he appeared threatened, but we could not understand why. The sudden change in our easygoing, friendly guy was upsetting, to say the least! 
-            <br/><br/>After we tried working with another trainer who was not the right match for our situation, we got Kinga Niecko’s name and number from a neighbor. Kinga was immediately responsive and eager to meet our pup. Her whole approach with Red was so sensitive and methodical; one of her great strengths is clearly narrowing in on what is causing a negative response in a dog.
+            <br/><br/>After we tried working with another trainer who was not the right match for our situation, we got Kinga Niecko-Samuel's name and number from a neighbor. Kinga was immediately responsive and eager to meet our pup. Her whole approach with Red was so sensitive and methodical; one of her great strengths is clearly narrowing in on what is causing a negative response in a dog.
             <br/>
             Quite simply, she read him like a book. She could gauge Red’s comfort level with the training exercises, and moved at his pace in order to work him through what was upsetting him. She spent a good deal of time explaining to us and showing us what was going on in his head, and she taught us concrete ways to address the behaviors.  I was awestruck by how quickly she could not only pinpoint my dog’s exact anxieties, but also how fast she got him reacting positively to those triggers.
             <br/><br/>When she left, we felt empowered to work with him and continue the training. I want to emphasize that it is her kindness and expertise that will make her our first call with any dog behavioral dilemma we may encounter in the future!
+            <br/><br/><i>— Sarah, Great Falls VA</i>
         </React.Fragment>
     );
     const baileyTest = (
         <React.Fragment>
             Simply Incredible: that's the only way to describe the way Kinga was able to interact with my dog Bailey (Belgian Shepherd Malinois, 1 yr) and my roommate's dog Tripper (German Shepherd Mix, 2 yrs) from the instant she walked in the door.  The dogs listened to everything that she said to them, which was a completely new experience to us.  One of the most amazing things about working with Kinga is not only how she is able to interact effectively with the dogs, but that she is able to teach you how to teach your dog.<br/><br/>  She is dedicated to doing "homework" prior to any session she conducts by reading up on the dog's behavior, as described by the owner.  In doing this she made an immediate impact and was able to help us teach our dogs to heel, to sit down and wait to go outside after we opened a door and told them they could go out, and even to not jump up on guests entering our townhouse.  It is amazing what repetition can do for the behavior of a dog and Kinga teaches you the methods necessary to fix any behavioral problems your dog may have.<br/><br/> For this, Kinga dedicated her time after our session to returning the favor and giving us "homework" of our own, which focused on the key points to concentrate on going forward with Bailey and Tripper.  No detail goes unnoticed by Kinga and she made sure to address every matter, no matter how small, before she was satisfied that her work was complete.  I would recommend Kinga to anyone who wants to improve any aspect of their dogs behavior and I can say first hand that it is the best investment that my roommate and I have ever made for our dogs!
             <br/><br/>
-            <i>Thanks so much for everything you've done for us Kinga! <br/>— Pat</i>
+            <i>Thanks so much for everything you've done for us Kinga! <br/>— Pat, Fairfax, VA</i>
         </React.Fragment>
     );
     const eddieTest = (
@@ -84,7 +85,7 @@ export default function Testimonials() {
             Thanks to Kinga, our family has learned to live like a family. Brendan and I were beginning to accept that Eddie, our Jack Russell Terrier was just a disobedient, stubborn and super-anxious dog. We were surprised at how quickly Kinga could actually communicate to Eddie and teach him how to be a good dog.During the first visit, it was amazing to see what a difference her guidance made. Eddie actually wanted to be a good dog. Her skills and expertise are one of a kind. It was like a lesson for everyone, not just for Eddie. Kinga proved to me that the confidence is within and that I am capable of being a leader and teaching Eddie how to obey. We now are committed to Eddie and our new puppy, Reese. What a difference simple rules and boundaries have made, playtime is now enjoyable. We are still a work in progress, but we are only moving forward thanks to Kinga's techniques and advice.
             <br/><br/>
             <i>We really couldn't of done it without your help!
-            <br/>— Erica and Brendan</i>
+            <br/>— Erica and Brendan, Baltimore, MD</i>
         </React.Fragment>
     );
     const lexiTest = (
@@ -108,7 +109,8 @@ export default function Testimonials() {
             dog sitter for an hour the night before we left. With just some minor adjustments and suggestions the
             week was a complete success. Kinga texted throughout the week to check on Lexi and the dog sitter.
             Lexi is a completely different dog then she was in January. Everyone who met her back then and sees
-            her now is amazed how calm and relaxed she has become. We couldn’t have done it without Kinga!
+            her now is amazed how calm and relaxed she has become. <br/><br/><i>We couldn’t have done it without Kinga!
+            <br/>— Dale and Jackie, Great Falls VA</i>
         </React.Fragment>
     );
     const rileyTest = (
@@ -152,7 +154,7 @@ export default function Testimonials() {
 
     const litterQuote = (
         <React.Fragment>
-            As she came and went, she always had great tips for us, and it was also beneficial to watch her interact with the dogs, so we could follow her lead. 
+            Kinga is a lovely person, a gifted trainer, and a true professional.
         </React.Fragment>
     );
 

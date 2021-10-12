@@ -17,8 +17,7 @@ const ScrollLink = Scroll.ScrollLink
 
 var tickVariants = {
   unchecked: { scale: 0.5, pathLength: 0 },
-  checked: { scale: 0.5, pathLength: 1,
-    transition: {delay: 3} }
+  checked: { scale: 0.5, pathLength: 1 }
 };
 
 var boxVariants = {

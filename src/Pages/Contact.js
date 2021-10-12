@@ -11,6 +11,8 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [location, setLocation] = useState("");
+  const [referral, setReferral] = useState("");
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
   const [mailSent, setMailSent] = useState(false);
@@ -98,6 +100,68 @@ export default function Contact() {
               </Form.Row>
               <Form.Row>
                 <Form.Group as={Col}>
+                  <Form.Control
+                    as="textarea"
+                    rows={1}
+                    placeholder="Location (city)"
+                    name="location"
+                    id="location"
+                    value={location}
+                    onChange={e => setLocation(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group as={Col}>
+                  <Form.Control
+                    as="textarea"
+                    rows={1}
+                    placeholder="Referral"
+                    name="referral"
+                    id="referral"
+                    value={referral}
+                    onChange={e => setLocation(e.target.value)}
+                  />
+                </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                  <Form.Group as={Col}>
+                      <Form.Control
+                        as="textarea"
+                        rows={1}
+                        placeholder="Pet's name"
+                        name="petname"
+                        id="petname"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        required
+                      />
+                  </Form.Group>
+                  <Form.Group as={Col}>
+                      <Form.Control
+                        as="textarea"
+                        rows={1}
+                        placeholder="Pet's age"
+                        name="petage"
+                        id="petage"
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
+                        required
+                      />
+                  </Form.Group>
+                  <Form.Group as={Col}>
+                      <Form.Control
+                        as="textarea"
+                        rows={1}
+                        placeholder="Pet's breed"
+                        name="petsbreed"
+                        id="petsbreed"
+                        value={phone}
+                        onChange={e => setPhone(e.target.value)}
+                        required
+                      />
+                  </Form.Group>
+              </Form.Row>
+              <Form.Row>
+                <Form.Group as={Col}>
                         <Form.Control as="select"
                           type="subject"
                           name="subject"
@@ -106,12 +170,11 @@ export default function Contact() {
                           onChange={e => setSubject(e.target.value)}
                           required
                         >
-                          <option className="default-select" value="" disabled selected>Select your inquiry reason...</option>
-                          <option>Foundations Service Inquiry</option>
-                          <option>Follow-up Session Inquiry</option>
-                          <option>Behavioral Training Inquiry</option>
-                          <option>Kids & K9s Inquiry</option>
-                          <option>General Question/Other</option>
+                          <option className="default-select" value="" disabled selected>Timeline for Training</option>
+                          <option>As soon as possible</option>
+                          <option>0-2 Weeks</option>
+                          <option>2-4 Weeks</option>
+                          <option>Flexible</option>
                         </Form.Control>
                 </Form.Group>
               </Form.Row>

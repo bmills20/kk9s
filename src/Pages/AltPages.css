@@ -465,7 +465,7 @@ select#subject.form-control{
 }
 
 .container .obedience p {
-  font-size: 1.4em;
+  font-size: 1.16em;
 }
 
 .obedience-motion-div {
@@ -688,9 +688,9 @@ select#subject.form-control{
    color: #000000;
    padding: 30px 0;
    width: 100%;
-   max-width: 50vw;
+   max-width: 70vw;
    z-index: 1;
-   margin: 4rem auto 6rem auto;
+   margin: 5rem auto 3rem auto;
    align-self: center;
    border-top: solid 1px;
    border-bottom: solid 1px;
@@ -700,7 +700,7 @@ select#subject.form-control{
 .blockquote h2 {
    position: relative;
    color: #575757;
-   font-size: 2.5rem;
+   font-size: 2rem;
    font-weight: 300;
    line-height: 1.4;
    margin: 0;
