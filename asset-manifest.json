@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/kk9s/static/css/main.058652f4.chunk.css",
-    "main.js": "/kk9s/static/js/main.93079a0c.chunk.js",
-    "main.js.map": "/kk9s/static/js/main.93079a0c.chunk.js.map",
+    "main.css": "/kk9s/static/css/main.c3654360.chunk.css",
+    "main.js": "/kk9s/static/js/main.bb54735e.chunk.js",
+    "main.js.map": "/kk9s/static/js/main.bb54735e.chunk.js.map",
     "runtime-main.js": "/kk9s/static/js/runtime-main.da9791b6.js",
     "runtime-main.js.map": "/kk9s/static/js/runtime-main.da9791b6.js.map",
     "static/css/2.88226b60.chunk.css": "/kk9s/static/css/2.88226b60.chunk.css",
-    "static/js/2.31a0e507.chunk.js": "/kk9s/static/js/2.31a0e507.chunk.js",
-    "static/js/2.31a0e507.chunk.js.map": "/kk9s/static/js/2.31a0e507.chunk.js.map",
+    "static/js/2.94e7f76e.chunk.js": "/kk9s/static/js/2.94e7f76e.chunk.js",
+    "static/js/2.94e7f76e.chunk.js.map": "/kk9s/static/js/2.94e7f76e.chunk.js.map",
     "index.html": "/kk9s/index.html",
     "static/css/2.88226b60.chunk.css.map": "/kk9s/static/css/2.88226b60.chunk.css.map",
-    "static/css/main.058652f4.chunk.css.map": "/kk9s/static/css/main.058652f4.chunk.css.map",
-    "static/js/2.31a0e507.chunk.js.LICENSE.txt": "/kk9s/static/js/2.31a0e507.chunk.js.LICENSE.txt",
+    "static/css/main.c3654360.chunk.css.map": "/kk9s/static/css/main.c3654360.chunk.css.map",
+    "static/js/2.94e7f76e.chunk.js.LICENSE.txt": "/kk9s/static/js/2.94e7f76e.chunk.js.LICENSE.txt",
     "static/media/APDT.f77ee65f.jpeg": "/kk9s/static/media/APDT.f77ee65f.jpeg",
     "static/media/Big_Red_Cropped.c75c6849.png": "/kk9s/static/media/Big_Red_Cropped.c75c6849.png",
     "static/media/AltPages.css": "/kk9s/static/media/massimo-negrello-S7WoaCSkOvo-unsplash.50f1ebf7.jpeg",
@@ -28,14 +28,14 @@
     "static/media/eddie.a6a9e524.jpeg": "/kk9s/static/media/eddie.a6a9e524.jpeg",
     "static/media/followup.c732ec8b.svg": "/kk9s/static/media/followup.c732ec8b.svg",
     "static/media/foundations.43ccc657.svg": "/kk9s/static/media/foundations.43ccc657.svg",
-    "static/media/golden.073aba17.jpeg": "/kk9s/static/media/golden.073aba17.jpeg",
+    "static/media/girls_and_rose.9769a010.jpeg": "/kk9s/static/media/girls_and_rose.9769a010.jpeg",
     "static/media/greatfalls.5d182c7b.png": "/kk9s/static/media/greatfalls.5d182c7b.png",
     "static/media/homewardtrails.c17398c2.jpeg": "/kk9s/static/media/homewardtrails.c17398c2.jpeg",
     "static/media/kidtraining.18f5563c.svg": "/kk9s/static/media/kidtraining.18f5563c.svg",
     "static/media/kinga-white.af92255d.png": "/kk9s/static/media/kinga-white.af92255d.png",
     "static/media/kinga_outside_circle.2074b50e.png": "/kk9s/static/media/kinga_outside_circle.2074b50e.png",
     "static/media/kinga_rose.d28f2e8f.jpeg": "/kk9s/static/media/kinga_rose.d28f2e8f.jpeg",
-    "static/media/kingamain2.78c8ea00.jpeg": "/kk9s/static/media/kingamain2.78c8ea00.jpeg",
+    "static/media/kingamain_cropped.db8d545b.png": "/kk9s/static/media/kingamain_cropped.db8d545b.png",
     "static/media/lexi1.504f5d0d.JPEG": "/kk9s/static/media/lexi1.504f5d0d.JPEG",
     "static/media/lexi2.1c1887ef.jpeg": "/kk9s/static/media/lexi2.1c1887ef.jpeg",
     "static/media/litter1.cabb8721.jpeg": "/kk9s/static/media/litter1.cabb8721.jpeg",
@@ -43,7 +43,6 @@
     "static/media/lostdog.2106e7b8.jpeg": "/kk9s/static/media/lostdog.2106e7b8.jpeg",
     "static/media/luckydog.bb5b73c0.png": "/kk9s/static/media/luckydog.bb5b73c0.png",
     "static/media/mk9s.43263776.jpeg": "/kk9s/static/media/mk9s.43263776.jpeg",
-    "static/media/pawprint.71ed24d0.svg": "/kk9s/static/media/pawprint.71ed24d0.svg",
     "static/media/photoshoot2-flipped.fadef5c5.png": "/kk9s/static/media/photoshoot2-flipped.fadef5c5.png",
     "static/media/puppytraining.7d1a503b.svg": "/kk9s/static/media/puppytraining.7d1a503b.svg",
     "static/media/riley.9e28d0d1.jpeg": "/kk9s/static/media/riley.9e28d0d1.jpeg"
@@ -51,8 +50,8 @@
   "entrypoints": [
     "static/js/runtime-main.da9791b6.js",
     "static/css/2.88226b60.chunk.css",
-    "static/js/2.31a0e507.chunk.js",
-    "static/css/main.058652f4.chunk.css",
-    "static/js/main.93079a0c.chunk.js"
+    "static/js/2.94e7f76e.chunk.js",
+    "static/css/main.c3654360.chunk.css",
+    "static/js/main.bb54735e.chunk.js"
   ]
 }
