@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import { Container, Button } from "react-bootstrap";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, Link as DomLink } from "react-router-dom";
 import { Element, Link } from "react-scroll";
 import getSession from "./getSession";
 import homeBackground from "../images/photoshoot2-flipped.png";
@@ -185,6 +185,7 @@ export default function Home() {
         </motion.h3>
 
       </motion.div>
+        <DomLink to={"/pages/contact"}>
           <motion.button
             className="splashButton mx-auto text-center"
             variants={button}
@@ -194,11 +195,10 @@ export default function Home() {
             onHoverStart={() => buttonControls.start(button.hover)}
             onHoverEnd={() =>
               buttonControls.start(button.hoverExit) 
-            }
-
-            >
-          
-          GET STARTED</motion.button>
+            }>
+            GET STARTED
+          </motion.button>
+        </DomLink>
       </div>
     </div>
 

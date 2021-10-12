@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import {
   Navbar,
   Nav,
@@ -54,6 +54,26 @@ function MenuNavBar(){
     setShowDropDown(false);
   }
 
+  const updateNavbarColor = useCallback(event => {
+    console.log("updatenavbar")
+    if(("/" === locations.pathname) || ("/kk9s/pages/approach" === location.pathname)){
+      if (
+        document.documentElement.scrollTop > 299 ||
+        document.body.scrollTop > 299
+      ) { setNavbarColor("");
+
+      } else if (
+          document.documentElement.scrollTop < 300 ||
+          document.body.scrollTop < 300
+      ) {setNavbarColor("navbar-transparent");
+
+      }
+    }
+    else {
+      setNavbarColor("");
+    }
+  });
+
   // Navbar link array
   const pageNames = [
     {
@@ -65,9 +85,8 @@ function MenuNavBar(){
     {
       title: "ABOUT",
       color: "#FFF",
-      //to: "/kk9s#aboutDest",
       to: "aboutDest",
-      offset: -50
+      offset: -100
     },
     {
       title: "APPROACH",
@@ -140,39 +159,19 @@ function MenuNavBar(){
 
   // Change from transparent to color once you scroll past
   // a certain y coord
+  // Also uses JS passive event listeners to allow the page to not wait for the listeners for better performance
 
   useEffect(() => {
-    const updateNavbarColor = () => {
-      if(("/" === locations.pathname) || ("/kk9s/pages/approach" === location.pathname)){
-        if (
-          document.documentElement.scrollTop > 299 ||
-          document.body.scrollTop > 299
-        ) { setNavbarColor("");
-
-        } else if (
-            document.documentElement.scrollTop < 300 ||
-            document.body.scrollTop < 300
-        ) {setNavbarColor("navbar-transparent");
-
-      } 
-    }
-    else {
-      setNavbarColor("");
-    }
-  };
-  
+    updateNavbarColor();
 
     // scroll listener
-    window.addEventListener("scroll", updateNavbarColor);
-
-    // load listener
-    window.addEventListener("load", updateNavbarColor);
+    window.addEventListener("wheel", updateNavbarColor, {capture: true, passive: true});
 
     // cleanup scroll listener on exit
     return function cleanup() {
-      window.removeEventListener("scroll", updateNavbarColor);
+      window.removeEventListener("wheel", updateNavbarColor, {capture: true, passive: true});
     };
-  });
+  }, [updateNavbarColor]);
 
   // Change selected nav on reload
   useEffect(() => {
@@ -221,10 +220,10 @@ function MenuNavBar(){
                             setSelectedNav(i);
                             setNavbarCollapse(false);
                             // History tracker for retaining animations
-                            //</Link>history.push((title==="HOME") ? "/" 
-                            //: (title==="ABOUT") ? ""
-                            //: (title==="SERVICES") ? ""
-                            //: `/pages/${title.toLocaleLowerCase()}`);
+                            history.push((title==="HOME") ? "/" 
+                            : (title==="ABOUT") ? ""
+                            : (title==="SERVICES") ? ""
+                            : `/pages/${title.toLocaleLowerCase()}`);
 
                             // If user clicks on anything other than the homepage or the about page
                             // Set the navbar color to blue (take away transparent class)
