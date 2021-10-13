@@ -239,6 +239,15 @@ a:hover {
   text-align: center;
 }
 
+.required-field::after {
+  content: "*";
+  color: red;
+}
+
+.form-label {
+  font-family: firasans-light;
+}
+
 .contact-container .contact-title {
   margin: 2rem;
 }

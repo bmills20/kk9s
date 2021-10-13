@@ -60,7 +60,9 @@ export default function Contact() {
           <br />
           <Form id="contact-form" onSubmit={e => { handleSubmit(e) }}>
               <Form.Row>
+                  
                   <Form.Group as={Col}>
+                  <Form.Label className="text-left">Your info</Form.Label>
                       <Form.Control
                         as="textarea"
                         rows={1}
@@ -72,6 +74,8 @@ export default function Contact() {
                         required
                       />
                   </Form.Group>
+                </Form.Row>
+                <Form.Row>
                   <Form.Group as={Col}>
                       <Form.Control
                         as="textarea"
@@ -85,6 +89,8 @@ export default function Contact() {
                         required
                       />
                   </Form.Group>
+                  </Form.Row>
+                <Form.Row>
                   <Form.Group as={Col}>
                       <Form.Control
                         as="textarea"
@@ -110,6 +116,8 @@ export default function Contact() {
                     onChange={e => setLocation(e.target.value)}
                   />
                 </Form.Group>
+                </Form.Row>
+                <Form.Row>
                 <Form.Group as={Col}>
                   <Form.Control
                     as="textarea"
@@ -124,6 +132,7 @@ export default function Contact() {
               </Form.Row>
               <Form.Row>
                   <Form.Group as={Col}>
+                    <Form.Label>Pet info</Form.Label>
                       <Form.Control
                         as="textarea"
                         rows={1}
@@ -135,6 +144,8 @@ export default function Contact() {
                         required
                       />
                   </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
                   <Form.Group as={Col}>
                       <Form.Control
                         as="textarea"
@@ -147,6 +158,8 @@ export default function Contact() {
                         required
                       />
                   </Form.Group>
+                  </Form.Row>
+                  <Form.Row>
                   <Form.Group as={Col}>
                       <Form.Control
                         as="textarea"
