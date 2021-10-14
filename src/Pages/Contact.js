@@ -2,6 +2,7 @@ import "./AltPages.css";
 import React, {useState, useEffect} from "react";
 import { Container, Button, Card, ListGroup, ListGroupItem, Row, Form, Col } from "react-bootstrap";
 import { motion, useAnimation, div, path, svg } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 // Using axios for backwards compatibility for older browsers
 // Also allows for timeout callback/property in case of connection issues
 import axios from 'axios';
@@ -17,6 +18,12 @@ export default function Contact() {
   const [subject, setSubject] = useState("");
   const [mailSent, setMailSent] = useState(false);
   const [isError, setIsError] = useState(null);
+  const recaptchaRef = React.createRef();
+  
+  const onChange = value => {
+    console.log("Captcha value: ",value);
+  }
+
   const handleSubmit = e => {
     e.preventDefault();
     axios({
@@ -59,14 +66,15 @@ export default function Contact() {
         </div>
           <br />
           <Form id="contact-form" onSubmit={e => { handleSubmit(e) }}>
+          <h4 className="form-label">Your info</h4>
               <Form.Row>
-                  
+                 
                   <Form.Group as={Col}>
-                  <Form.Label className="text-left">Your info</Form.Label>
+                  
                       <Form.Control
                         as="textarea"
                         rows={1}
-                        placeholder="Name"
+                        placeholder="Name *"
                         name="name"
                         id="name"
                         value={name}
@@ -74,14 +82,12 @@ export default function Contact() {
                         required
                       />
                   </Form.Group>
-                </Form.Row>
-                <Form.Row>
                   <Form.Group as={Col}>
                       <Form.Control
                         as="textarea"
                         rows={1}
                         type="email"
-                        placeholder="Email"
+                        placeholder="Email *"
                         name="email"
                         id="email"
                         value={email}
@@ -90,12 +96,12 @@ export default function Contact() {
                       />
                   </Form.Group>
                   </Form.Row>
-                <Form.Row>
-                  <Form.Group as={Col}>
+              <Form.Row>
+              <Form.Group as={Col}>
                       <Form.Control
                         as="textarea"
                         rows={1}
-                        placeholder="Phone"
+                        placeholder="Phone *"
                         name="phone"
                         id="phone"
                         value={phone}
@@ -103,8 +109,6 @@ export default function Contact() {
                         required
                       />
                   </Form.Group>
-              </Form.Row>
-              <Form.Row>
                 <Form.Group as={Col}>
                   <Form.Control
                     as="textarea"
@@ -114,6 +118,7 @@ export default function Contact() {
                     id="location"
                     value={location}
                     onChange={e => setLocation(e.target.value)}
+                    required
                   />
                 </Form.Group>
                 </Form.Row>
@@ -130,9 +135,9 @@ export default function Contact() {
                   />
                 </Form.Group>
               </Form.Row>
+              <h4 className="form-label">Your pet's info</h4>
               <Form.Row>
                   <Form.Group as={Col}>
-                    <Form.Label>Pet info</Form.Label>
                       <Form.Control
                         as="textarea"
                         rows={1}
@@ -144,8 +149,6 @@ export default function Contact() {
                         required
                       />
                   </Form.Group>
-                  </Form.Row>
-                  <Form.Row>
                   <Form.Group as={Col}>
                       <Form.Control
                         as="textarea"
@@ -172,8 +175,6 @@ export default function Contact() {
                         required
                       />
                   </Form.Group>
-              </Form.Row>
-              <Form.Row>
                 <Form.Group as={Col}>
                         <Form.Control as="select"
                           type="subject"
@@ -204,6 +205,12 @@ export default function Contact() {
                     required
                   />
               </Form.Group>
+              <div className="recaptcha">
+              <ReCAPTCHA
+                sitekey="6LdLI8wcAAAAAOmqdS0M0FjeAsxtbmuqSaDrrGQo"
+                onChange={onChange}
+              />
+              </div>
               <Button variant="outline-light" type="submit">
                   Submit
               </Button>
@@ -211,6 +218,7 @@ export default function Contact() {
                 {mailSent && <div className="success"><br/>Thank you! Your inquiry has been sent; we will be in touch shortly.<br/><br/>A copy of your message has been sent to the email you provided.</div>}
                 {isError && <div className="error"><br/>Error: message failed to send.<br/> Please check your internet connection and try again.</div>}
               </div>
+              
           </Form>
       </Container> 
   );

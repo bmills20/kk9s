@@ -239,17 +239,16 @@ a:hover {
   text-align: center;
 }
 
-.required-field::after {
-  content: "*";
-  color: red;
-}
-
 .form-label {
   font-family: firasans-light;
+  font-size: 1.5em;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: #444;
 }
 
 .contact-container .contact-title {
-  margin: 2rem;
+  margin: 2rem 2rem 0 2rem;
 }
 
 .contact-container .contact-title h4 {
@@ -257,12 +256,19 @@ a:hover {
   font-family: firasans-light;
   color: #444;
   font-size: 1.5em;
+  margin-bottom: 0;
 }
 
 .contact-body {
   height: 100%;
   margin-bottom: 0;
   background-image: none;
+}
+
+.contact-body .recaptcha {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .contact-container .form-control {

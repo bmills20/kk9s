@@ -3,9 +3,9 @@ import React, {useState, useEffect, Suspense} from "react";
 import { Container, Button, Card, ListGroup } from "react-bootstrap";
 import { motion, useAnimation, div, path, svg } from "framer-motion";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
-import girlsRose from '../images/girls_and_rose.jpeg';
+import girlsRose from '../images/kidsandrose.jpg';
 import kingaLeash from '../images/kingamain_cropped.png';
-import carrot from "../images/dog_and_stella.JPG";
+import carrot from "../images/shades.jpg";
 import { ReactComponent as Arrow } from '../images/arrow.svg';
 import {Link as DomLink} from "react-router-dom";
 
