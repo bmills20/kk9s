@@ -34,7 +34,7 @@ const paws = {
       "to": "behavior"
     },
     {
-      "title": "Problem Solving",
+      "title": "Solving Problems",
       "text": "As the first step, we identify the primary driver that motivates your dog to follow commands.  Identifying your dog’s primary driver directly improves training success.  We teach basic commands, recommend training tools, treats and equipment and specialize in hard to solve behavioral problems to include, but not limited to:",
       "to": "commands"
     },
@@ -135,7 +135,7 @@ export default function Approach() {
                   <div className="approach-section">
                     <div className="approach-section-text">
                       <img src={kingaLeash} className="approach-pic-cropped"/>
-                    <h1 className="text-left">Problem Solving</h1>
+                    <h1 className="text-left">Solving Problems</h1>
                       <p>As the first step, we identify the primary driver that motivates your dog to follow commands.  Identifying your dog’s primary driver directly improves training success.  We teach basic commands, recommend training tools, treats and equipment and specialize in hard to solve behavioral problems to include, but not limited to:
                       <br /><br />
                       <ol>

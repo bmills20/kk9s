@@ -470,7 +470,7 @@ select#subject.form-control{
 
 .approach-section .approach-pic-cropped-kinga {
   height: auto;
-  width: 50%;
+  width: 30%;
   margin-bottom: 5%;
   margin-left: 5%;
   border-radius: 5px;
@@ -496,7 +496,7 @@ select#subject.form-control{
   position: relative;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 7%;
+  padding-top: 3%;
 }
 
 .commands-motion-div {
@@ -504,7 +504,7 @@ select#subject.form-control{
   position: relative;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 7%;
+  padding-top: 3%;
 }
 
 .approach-section .approach-pic-cropped {
@@ -521,7 +521,7 @@ select#subject.form-control{
 
 .approach-section .approach-pic-cropped-left {
   height: auto;
-  max-width: 50%;
+  max-width: 30%;
   margin-left: 0;
   margin-right: 5%;
   margin-bottom: 5%;
