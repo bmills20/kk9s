@@ -38,7 +38,7 @@ export default function About() {
   var controls = useAnimation();
   var picControls = useAnimation();
   const [picAnim, setPicAnim] = useState(false);
-  var [divref, inView] = useInView({threshold: 1.0, delay: 500, trackVisibility: true});
+  var [divref, inView] = useInView({threshold: 0.01, delay: 500, trackVisibility: true});
   var [picRef, picInView] = useInView({threshold: 0.01, delay: 500, trackVisibility: true});
 
   useEffect(() => {
@@ -79,12 +79,14 @@ export default function About() {
             </div>
             <div className="aboutContainer">
               <p className="text-left aboutPara">
-                Kinga’s K9s’ behavioral training provides you with solutions to all your dog problems, big and small.  As the founder, Kinga Niecko-Samuel has more than 15 years of experience helping clients develop and nurture good canine behaviors. Kinga develops puppies into well-behaved companions and solves some of the most challenging dog behaviors like separation anxiety and aggression.  Kinga is a certified trainer by the Council of Professional Dog Trainers (CPDT) and also partners with MK9S Service Dogs, an organization that trains and certifies service dogs for veterans. With Kinga’s help, you can be confident that you will be prepared for a new arrival, break any bad dog habits, and enforce and maintain good behavior in your dog.
+              Kinga’s K9s’ behavioral training provides you with solutions to all your dog problems, big and small.  As the founder, Kinga Niecko-Samuel has more than 15 years’ experience helping clients develop and nurture good canine behaviors.  Kinga was born with a love for animals and started training by partnering with local rescue organizations to help needy dogs get adopted and thrive in their forever homes.  Kinga combines the latest research on dog behavior and psychology and hands-on work to intuitively handle all dog behavior problems and help owners achieve consistent obedience, trust and respect from their dog companions. Kinga develops puppies into well-behaved companions, solves some of the most challenging dog behaviors like separation anxiety and aggression and ensures balance and tranquility in multi-dog and multi-animal households.  Kinga is a certified trainer by the Council of Professional Dog Trainers (CPDT), and also partners with MK9S Service Dogs, an organization that trains and certifies service dogs for Veterans. With Kinga’s help you can be confident that you will be prepared for a new arrival, break any bad dog habits and enforce and maintain good behavior in your dog.
                 <motion.div ref={divref} variants={certifications} initial={showAnimation ? "rest" : "show"} animate={controls} className="checkmark-container">
+                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">15+ years of experience</span></motion.p>
                 <motion.p className="text-left" variants={certLines}><Checkmark /><span className="check-text">CPDT Certified</span></motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">More than 15 years of experience</span></motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">Specializes in behavioral in-home training</span></motion.p>
-                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">Partners to train service dogs for veterans</span></motion.p>
+                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">Specializes in behavioral training</span></motion.p>
+                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">Experienced in service dog training</span></motion.p>
+                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">Partner with NOVA rescue organizations</span></motion.p>
+                <motion.p className="text-left" variants={certLines} ><Checkmark /><span className="check-text">Skilled in picking the right puppy for your family</span></motion.p>
                 </motion.div>
               </p>
               

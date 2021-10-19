@@ -14,6 +14,9 @@ export default function Contact() {
   const [phone, setPhone] = useState("");
   const [location, setLocation] = useState("");
   const [referral, setReferral] = useState("");
+  const [petBreed, setPetBreed] = useState("");
+  const [petAge, setAge] = useState("");
+  const [petName, setPetName] = useState("");
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
   const [mailSent, setMailSent] = useState(false);
@@ -144,8 +147,8 @@ export default function Contact() {
                         placeholder="Pet's name"
                         name="petname"
                         id="petname"
-                        value={name}
-                        onChange={e => setName(e.target.value)}
+                        value={petName}
+                        onChange={e => setPetName(e.target.value)}
                         required
                       />
                   </Form.Group>
@@ -156,8 +159,8 @@ export default function Contact() {
                         placeholder="Pet's age"
                         name="petage"
                         id="petage"
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        value={petAge}
+                        onChange={e => setPetAge(e.target.value)}
                         required
                       />
                   </Form.Group>
@@ -168,10 +171,10 @@ export default function Contact() {
                         as="textarea"
                         rows={1}
                         placeholder="Pet's breed"
-                        name="petsbreed"
-                        id="petsbreed"
-                        value={phone}
-                        onChange={e => setPhone(e.target.value)}
+                        name="petbreed"
+                        id="petbreed"
+                        value={petBreed}
+                        onChange={e => setPetBreed(e.target.value)}
                         required
                       />
                   </Form.Group>

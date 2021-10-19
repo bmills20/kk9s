@@ -136,7 +136,7 @@ export default function Approach() {
                     <div className="approach-section-text">
                       <img src={kingaLeash} className="approach-pic-cropped"/>
                     <h1 className="text-left">Solving Problems</h1>
-                      <p>As the first step, we identify the primary driver that motivates your dog to follow commands.  Identifying your dog’s primary driver directly improves training success.  We teach basic commands, recommend training tools, treats and equipment and specialize in hard to solve behavioral problems to include, but not limited to:
+                      <p>As the first step, we identify the primary driver that motivates your dog to follow commands.  Dogs have three primary love languages that motivate and drive their behavior.  Identifying your dog’s primary driver directly improves training success.  We help you understand your dog’s behavior, teach basic commands, recommend training tools, treats and equipment and specialize in hard to solve behavioral problems to include, but not limited to:
                       <br /><br />
                       <ol>
                       <li>Teaching sit, come, stay, down, place and heel</li>
