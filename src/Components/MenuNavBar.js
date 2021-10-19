@@ -223,7 +223,6 @@ function MenuNavBar(){
                             // History tracker for retaining animations
                             history.push((title==="HOME") ? "/" 
                             : (title==="ABOUT") ? ""
-                            : (title==="SERVICES") ? ""
                             : `/pages/${title.toLocaleLowerCase()}`);
 
                             // If user clicks on anything other than the homepage or the about page

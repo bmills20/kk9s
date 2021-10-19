@@ -1316,9 +1316,13 @@ select#subject.form-control{
   }
 }
 
-@media only screen and (min-width: 601px) {
+
+@media only screen and (min-width: 401px) {
   .approach-card.card{
     width: 30vw;
+  }
+  .contact-container{
+    max-width: 90vw;
   }
 }
 
@@ -1330,11 +1334,10 @@ select#subject.form-control{
 }
 
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1300px) {
   .approach-card.card{
     width: 25vw;
   }
-
 }
 
 @media only screen and (min-width: 1400px) {
@@ -1344,6 +1347,9 @@ select#subject.form-control{
   .approach-row {
     max-width:60vw;
   }
+  .contact-container{
+    max-width: 40vw;
+  }
 
 }
 
@@ -1351,4 +1357,5 @@ select#subject.form-control{
   .approach-row {
     max-width:60vw;
   }
+
 }
