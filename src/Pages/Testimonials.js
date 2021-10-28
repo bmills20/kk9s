@@ -184,36 +184,57 @@ export default function Testimonials() {
                 title={"MK9s Service Dogs"}
                 text={micheleTest}
             />
-            <TestimonialBoxRight
+            {window.innerWidth <= 992 ? 
+            <TestimonialBox
                 image={bailey}
                 quote={baileyQuote}
                 title={"Bailey and Tripper"}
                 text={baileyTest}
-            />
+            /> : 
+            <TestimonialBoxRight
+            image={bailey}
+            quote={baileyQuote}
+            title={"Bailey and Tripper"}
+            text={baileyTest}
+            />}
             <TestimonialBox
                 image={eddie}
                 quote={eddieQuote}
                 title={"Eddie and Reese"}
                 text={eddieTest}
             />
+            {window.innerWidth <= 992 ? 
+            <TestimonialBox
+                carousel={[lexi1,lexi2]}
+                quote={lexiQuote}
+                title={"Lexi"}
+                text={lexiTest}
+            /> :
             <TestimonialBoxRight
                 carousel={[lexi1,lexi2]}
                 quote={lexiQuote}
                 title={"Lexi"}
                 text={lexiTest}
-            />
+            />}
             <TestimonialBox
                 image={bigred}
                 quote={bigredQuote}
                 title={"Big Red"}
                 text={bigredTest}
             />
+            {window.innerWidth <= 992 ? 
+            <TestimonialBox
+                carousel={[litter1,litter2]}
+                quote={litterQuote}
+                title={"Puppy Litter"}
+                text={litterTest}
+            /> :
             <TestimonialBoxRight
                 carousel={[litter1,litter2]}
                 quote={litterQuote}
                 title={"Puppy Litter"}
                 text={litterTest}
-            />
+            />}
         </div>
     );
 }

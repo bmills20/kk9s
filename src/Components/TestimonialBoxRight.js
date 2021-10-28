@@ -22,7 +22,7 @@ export default function TestimonialBoxRight(props) {
     }
     
     return(
-            <Container className="testimonial-full-container">
+            <Container className="testimonial-full-container testimonial-right">
                 <div className="blockquote">
                     <h2>{props.quote}</h2>
                 </div>

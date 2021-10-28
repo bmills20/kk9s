@@ -786,8 +786,12 @@ select#subject.form-control{
 
 .testimonials-header {
   margin-bottom: 2rem;
-  padding: 1rem 0 0 0;
-  margin: 0 0 0 11vw;
+  padding: 1rem 0 1rem 0;
+  margin: 11vw 0 0 1rem;
+}
+.testimonial-full-container {
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .testimonials-image {
@@ -1332,12 +1336,61 @@ select#subject.form-control{
   }
 
 }
+@media only screen and (max-width: 1299px) {
+  .blockquote h2{
+    font-size: 1rem;
+  }
+  .testimonial-container{
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    /*margin-left: 0;*/
+  }
+  .testimonials-box{
+    display: flex;
+    width: 90%;
+    padding: 2rem 0 2rem 0;
+  }
 
+  .testimonials-title {
+    font-size: 0.25em;
+  }
+
+  .testimonials-wrapper{
+    max-width: 99%;
+  }
+  .testimonials-header{
+    padding: 1rem 0 1rem 0;
+    margin: 11vw 3vw 0 3vw;
+  }
+  .testimonials-car-image{
+    max-width: 99%;
+    height:auto !important;
+  }
+
+  .testimonials-my-carousel {
+    display: block;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .blockquote{
+    margin: 11vw auto 8rem auto;
+    max-width: 90vw;
+  }
+  .my-card{
+    width: 99%;
+    height: auto !important;
+    padding: 0;
+  }
+}
 
 @media only screen and (min-width: 1300px) {
   .approach-card.card{
     width: 25vw;
   }
+
 }
 
 @media only screen and (min-width: 1400px) {
@@ -1356,6 +1409,9 @@ select#subject.form-control{
 @media only screen and (min-width: 1600px){
   .approach-row {
     max-width:60vw;
+  }
+  .blockquote h2{
+    font-size: 2rem;
   }
 
 }
