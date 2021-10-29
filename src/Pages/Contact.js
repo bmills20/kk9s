@@ -15,7 +15,7 @@ export default function Contact() {
   const [location, setLocation] = useState("");
   const [referral, setReferral] = useState("");
   const [petBreed, setPetBreed] = useState("");
-  const [petAge, setAge] = useState("");
+  const [petAge, setPetAge] = useState("");
   const [petName, setPetName] = useState("");
   const [message, setMessage] = useState("");
   const [subject, setSubject] = useState("");
@@ -134,7 +134,7 @@ export default function Contact() {
                     name="referral"
                     id="referral"
                     value={referral}
-                    onChange={e => setLocation(e.target.value)}
+                    onChange={e => setReferral(e.target.value)}
                   />
                 </Form.Group>
               </Form.Row>

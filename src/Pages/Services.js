@@ -14,6 +14,7 @@ import followup from "../images/followup.svg";
 import {ReactComponent as ChevronDown} from "../images/chevron_down.svg"
 
 export default function About() {
+  const [mounted, setMounted] = useState(false);
   var controls = useAnimation();
   var picControls = useAnimation();
   var [isSelected, setIsSelected] = useState(false);
@@ -24,6 +25,14 @@ export default function About() {
   const [picAnim, setPicAnim] = useState(false);
   var [divref, inView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
   var [picRef, picInView] = useInView({threshold: 1.0, delay: 100, trackVisibility: true});
+
+  if(!mounted){
+    // Loads the correct CSS for this page
+    document.body.className="partners-body";
+    // Allows for animations to wait until page finishes
+    // loading all content
+    document.body.classList.add("js-loading");
+  }
 
   return (
     
