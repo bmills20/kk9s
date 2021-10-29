@@ -87,7 +87,7 @@ consistency and access to help when necessary.</p>
             {twoSelected ? <p></p> : <p>Read more</p>}
           </div>
         </div>
-        <div className="services-container">
+        <div className="services-container second-container">
           <div onMouseUp={() => setThreeSelected(!threeSelected) } id="services3" className={threeSelected ? "services-column open col-sm-3" : "services-column closed col-sm-3"}>
             <img src={puppyTraining} className="card-icon" />
             <h3>Behavioral Training Package</h3>
