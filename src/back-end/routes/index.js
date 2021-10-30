@@ -2,14 +2,15 @@ var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
 var cors = require('cors');
-const creds = require('../config/config');
 const app = require('../app');
+const dotenv = require('dotenv');
+dotenv.config()
 
 var transport = {
   host: 'smtp.gmail.com',
   auth: {
-    user: creds.USER,
-    pass: creds.PASS
+    user: process.env.WORKER_EMAIL, 
+    pass: process.env.WORKER_PASS
   }
 }
 
@@ -29,12 +30,18 @@ router.post('/send', (req, res, next) => {
   var message = req.body.message
   var phone = req.body.phone
   var formSubj = req.body.subject
-  var content = `Name: ${name} \nEmail: ${email} \nPhone: ${phone} \nSubject: ${formSubj} \nMessage:\n\n${message} `
+  var phone = req.body.phone
+  var location = req.body.location
+  var referral = req.body.referral
+  var petBreed = req.body.petBreed
+  var petAge = req.body.petAge
+  var petName = req.body.petName
+  var content = `\nTimeline: ${formSubj} Name: ${name} \nEmail: ${email} \nLocation: ${location} \nReferral: ${referral} \nPhone: ${phone} \nPet Name: ${petName} \nPet Age: ${petAge} \nPet Breed: ${petBreed} \n\nMessage:\n\n${message} `
 
   var mail = {
     from: name,
     to: 'braxton25@gmail.com',
-    subject: `Contact Form: ${formSubj}`,
+    subject: `New Contact Form Inquiry From: ${name} - Timeline: ${formSubj}`,
     text: content,
   }
 

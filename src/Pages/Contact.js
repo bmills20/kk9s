@@ -38,6 +38,11 @@ export default function Contact() {
         name: name,
         email: email,
         phone: phone,
+        location: location,
+        referral: referral,
+        petBreed: petBreed,
+        petAge: petAge,
+        petName: petName,
         subject: subject,
         message: message
       }
