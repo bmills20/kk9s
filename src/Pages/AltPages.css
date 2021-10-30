@@ -1318,6 +1318,12 @@ select#subject.form-control{
   .approach-section-text p {
     font-size: 1.25rem !important;
   }
+  .approach-title{
+    font-size: 1.5em;
+  }
+  .approach-learn{
+    margin-left: 1rem;
+  }
 }
 
 

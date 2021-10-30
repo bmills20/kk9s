@@ -46,17 +46,10 @@ const paws = {
 
 
 export default function Approach() {
-  const [mounted, setMounted] = useState(false)
 
-  if(!mounted){
-    document.body.className="approach-body";
-    document.body.style="none";
-  }
-
-  useEffect(() =>{
-    setMounted(true)
-  },[])
-
+  document.body.className="approach-body";
+  document.body.style="none";
+  
   return (
       <Container name="approachTop" className="approach">
       

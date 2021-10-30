@@ -59,13 +59,13 @@ export default function Contact() {
       
   }
 
-  if(!mounted){
+/*   if(!mounted){
     document.body.className="contact-body";
   }
 
   useEffect(() =>{
     setMounted(true)
-  },[])
+  },[]) */
   return(
       <Container name="contactTop" className="contact-container">
         <div className="contact-title">

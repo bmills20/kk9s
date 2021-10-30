@@ -10,30 +10,9 @@ import luckydog from "../images/logos/luckydog.png";
 import mk9s from "../images/logos/mk9s.jpeg";
 
 export default function Partners() {
-  const [mounted, setMounted] = useState(false);
 
-
-
-  if(!mounted){
-    // Loads the correct CSS for this page
-    document.body.className="partners-body";
-    // Allows for animations to wait until page finishes
-    // loading all content
-    document.body.classList.add("js-loading");
-  }
-
-  const showPage = () => {
-    document.body.classList.remove("js-loading");
-    console.log("done loading.");
-  };
-
-
-  window.addEventListener("load", showPage);
-
-  
-  useEffect(() =>{
-    setMounted(true)
-  },[])
+  // Loads the correct CSS for this page
+  document.body.className="partners-body";
 
   return (
     <Container name="partnersTop" className="partners-container">

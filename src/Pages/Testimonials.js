@@ -157,18 +157,8 @@ export default function Testimonials() {
             Kinga is a lovely person, a gifted trainer, and a true professional.
         </React.Fragment>
     );
-
-    useEffect(() =>{
-        setMounted(true)
-    },[])
-
-    if(!mounted){
-        // Loads the correct CSS for this page
-        document.body.className="testimonials-body";
-        // Allows for animations to wait until page finishes
-        // loading all content
-        document.body.classList.add("js-loading");
-    }
+    // Loads the correct CSS for this page
+    document.body.className="testimonials-body";
 
     return (
         

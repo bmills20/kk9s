@@ -3,8 +3,6 @@ import { BrowserRouter, Route, NavLink } from "react-router-dom";
 import MenuNavBar from "./Components/MenuNavBar";
 import Footer from "./Components/Footer";
 import Home from "./Pages/Home";
-import Page1 from "./Pages/Page1";
-import Page2 from "./Pages/Page2";
 import About from "./Pages/About";
 import Services from "./Pages/Services"
 import Approach from "./Pages/Approach";
