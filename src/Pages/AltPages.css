@@ -301,6 +301,7 @@ select#subject.form-control{
 
 .partners-container .partners-logos {
   max-width: 90vw;
+  z-index: 1;
 }
 
 .partners-container .partners-logos ul {
@@ -1293,16 +1294,18 @@ select#subject.form-control{
 
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .approach-header.container {
     margin: 0;
   }
   .approach-row.container {
     margin: 0;
-    max-width: 80vw;
+    max-width: 100vw;
+    padding: 0;
   }
   .approach-card.card {
-    width: 50vw;
+    width: 35vw;
+
   }
   .approach-body::before{
     max-height: 300vh;
@@ -1319,30 +1322,41 @@ select#subject.form-control{
     font-size: 1.25rem !important;
   }
   .approach-title{
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
   .approach-learn{
     margin-left: 1rem;
+  }
+  .approach-row{
+    justify-content: center;
+  }
+  .partners-container{
+    margin: 0;
+    padding: 0;
+  }
+  .partners-container .partners-logos ul{
+    width: 100vw;
+  }
+  .partners-container h1{
+    margin-left: 10%;
   }
 }
 
 
 @media only screen and (min-width: 401px) {
-  .approach-card.card{
-    width: 30vw;
-  }
   .contact-container{
     max-width: 90vw;
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .approach-card.card{
-    width: 30vw;
-  }
 
-}
 @media only screen and (max-width: 1299px) {
+  .approach-title{
+    font-size: 1.45em;
+  }
+  .approach-learn{
+    margin-left: 1rem;
+  }
   .blockquote h2{
     font-size: 1rem;
   }
@@ -1364,10 +1378,11 @@ select#subject.form-control{
 
   .testimonials-wrapper{
     max-width: 99%;
+    margin-left: 1rem;
   }
   .testimonials-header{
     padding: 1rem 0 1rem 0;
-    margin: 11vw 3vw 0 3vw;
+    margin: 0 10% 0 3vw;
   }
   .testimonials-car-image{
     max-width: 99%;
@@ -1376,7 +1391,7 @@ select#subject.form-control{
 
   .testimonials-my-carousel {
     display: block;
-    width: 50%;
+    width: 100%;
     margin: 0;
     padding: 0;
   }

@@ -9,19 +9,6 @@ import carrot from "../images/shades.jpg";
 import { ReactComponent as Arrow } from '../images/arrow.svg';
 import {Link as DomLink} from "react-router-dom";
 
-
-const pawDiv = {
-  initial: { opacity: 0 },
-  show: { opacity: 1,
-    transition: {delay: 0.3, staggerChildren: 1}}
-};
-
-const paws = {
-  initial: { opacity: 0 },
-  show: { opacity: 1,
-    transition: {duration:1}}
-};
-
   const cardText = [
     {
       "title": "Achieving Obedience",
@@ -49,7 +36,7 @@ export default function Approach() {
 
   document.body.className="approach-body";
   document.body.style="none";
-  
+
   return (
       <Container name="approachTop" className="approach">
       
