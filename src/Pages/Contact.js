@@ -126,7 +126,6 @@ export default function Contact() {
                     id="location"
                     value={location}
                     onChange={e => setLocation(e.target.value)}
-                    required
                   />
                 </Form.Group>
                 </Form.Row>
@@ -154,7 +153,6 @@ export default function Contact() {
                         id="petname"
                         value={petName}
                         onChange={e => setPetName(e.target.value)}
-                        required
                       />
                   </Form.Group>
                   <Form.Group as={Col}>
@@ -166,7 +164,6 @@ export default function Contact() {
                         id="petage"
                         value={petAge}
                         onChange={e => setPetAge(e.target.value)}
-                        required
                       />
                   </Form.Group>
                   </Form.Row>
@@ -180,7 +177,6 @@ export default function Contact() {
                         id="petbreed"
                         value={petBreed}
                         onChange={e => setPetBreed(e.target.value)}
-                        required
                       />
                   </Form.Group>
                 <Form.Group as={Col}>
@@ -190,7 +186,6 @@ export default function Contact() {
                           id="subject"
                           value={subject}
                           onChange={e => setSubject(e.target.value)}
-                          required
                         >
                           <option className="default-select" value="" disabled selected>Timeline for Training</option>
                           <option>As soon as possible</option>
@@ -210,15 +205,14 @@ export default function Contact() {
                     id="message"
                     value={message}
                     onChange={e => setMessage(e.target.value)}
-                    required
                   />
               </Form.Group>
-              <div className="recaptcha">
+              {/*<div className="recaptcha">
               <ReCAPTCHA
                 sitekey="6LdLI8wcAAAAAOmqdS0M0FjeAsxtbmuqSaDrrGQo"
                 onChange={onChange}
               />
-              </div>
+  </div>*/}
               <Button variant="outline-light" type="submit">
                   Submit
               </Button>
