@@ -242,7 +242,7 @@ function MenuNavBar(){
 
                         <DomLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} to={
                             (title==="HOME") ? "/" 
-                          : (title==="ABOUT") ? "/"
+                          : (title==="ABOUT") ? "/#about"
                           : `/pages/${title.toLocaleLowerCase()}`}>
                           {title}
                         </DomLink>

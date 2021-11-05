@@ -9,8 +9,8 @@ dotenv.config()
 var transport = {
   host: 'smtp.gmail.com',
   auth: {
-    user: process.env.WORKER_EMAIL, 
-    pass: process.env.WORKER_PASS
+    user: process.env.WORKER_EMAIL, //process.env.WORKER_EMAIL, 
+    pass: process.env.WORKER_PASS //process.env.WORKER_PASS
   }
 }
 
@@ -18,7 +18,7 @@ var transporter = nodemailer.createTransport(transport)
 
 transporter.verify((error, success) => {
   if (error) {
-    console.log(error);
+    console.log('asdf '+error);
   } else {
     console.log('Server is ready to take messages');
   }
@@ -30,18 +30,12 @@ router.post('/send', (req, res, next) => {
   var message = req.body.message
   var phone = req.body.phone
   var formSubj = req.body.subject
-  var phone = req.body.phone
-  var location = req.body.location
-  var referral = req.body.referral
-  var petBreed = req.body.petBreed
-  var petAge = req.body.petAge
-  var petName = req.body.petName
-  var content = `\nTimeline: ${formSubj} Name: ${name} \nEmail: ${email} \nLocation: ${location} \nReferral: ${referral} \nPhone: ${phone} \nPet Name: ${petName} \nPet Age: ${petAge} \nPet Breed: ${petBreed} \n\nMessage:\n\n${message} `
+  var content = `Name: ${name} \nEmail: ${email} \nPhone: ${phone} \nSubject: ${formSubj} \nMessage:\n\n${message} `
 
   var mail = {
     from: name,
     to: 'braxton25@gmail.com',
-    subject: `New Contact Form Inquiry From: ${name} - Timeline: ${formSubj}`,
+    subject: `Contact Form: ${formSubj}`,
     text: content,
   }
 

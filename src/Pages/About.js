@@ -73,6 +73,7 @@ export default function About() {
       <motion.div intial="rest" animate="show" variants={divInitial} className="about">
           <div>
             <h1 className="text-left aboutHeader">ABOUT</h1>
+            <a href="#about"></a>
             <div className="pic-container">
               <motion.img ref={picRef} variants={picInitial} initial={showAnimation ? "rest" : "show"} animate={ picControls } src={kingaCircle} className="circlePic" />
               <p className="text-center" style={{fontStyle: "italic", color: "grey", fontSize: "0.75em"}}>Kinga with one of her dogs, Rose</p>
