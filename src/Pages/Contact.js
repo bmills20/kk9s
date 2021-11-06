@@ -32,7 +32,7 @@ export default function Contact() {
     axios({
       method: "POST",
       /* url: `${process.env.REACT_APP_API}`, */
-      url: "https://72.167.49.37:3002/send",
+      url: "72.167.49.37:3002/send",
       timeout: 10000,
       data: {
         name: name,
