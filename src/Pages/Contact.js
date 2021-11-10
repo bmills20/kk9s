@@ -6,8 +6,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 // Using axios for backwards compatibility for older browsers
 // Also allows for timeout callback/property in case of connection issues
 import axios from 'axios';
-import emailjs, { init } from 'emailjs-com';
-init("user_yo6KuVh7XCD3rc0vwVhqL")
+import emailjs from 'emailjs-com';
+emailjs.init("user_yo6KuVh7XCD3rc0vwVhqL")
 const dotenv = require('dotenv');
 dotenv.config()
 //const dotenv = require('dotenv').config()
@@ -37,11 +37,13 @@ export default function Contact() {
       e.preventDefault();
       
       //emailjs.sendForm(process.env.SID, process.env.TID, form.current, process.env.UID)
-      emailjs.sendForm('service_if0fk6b', 'template_0x5smzj', form.current, 'user_yo6KuVh7XCD3rc0vwVhq')
+      emailjs.sendForm('service_if0fk6b', 'template_0x5smzj', form.current)
         .then((result) => {
             setEmailSent(!emailSent);
+            console.log(result.text);
         }, (error) => {
             setEmailFailed(!emailFailed);
+            console.log(error.text);
         });
   }
   
@@ -230,12 +232,13 @@ export default function Contact() {
                     onChange={e => setMessage(e.target.value)}
                   />
               </Form.Group>
-              {/*<div className="recaptcha">
+              <div className="recaptcha">
               <ReCAPTCHA
                 sitekey="6LdLI8wcAAAAAOmqdS0M0FjeAsxtbmuqSaDrrGQo"
                 onChange={onChange}
+                className="reCAPTCHER"
               />
-  </div>*/}
+  </div>
               <Button variant="outline-light" value="Send" type="submit">
                   Submit
               </Button>
@@ -245,6 +248,15 @@ export default function Contact() {
               </div>
               
           </Form>
+          {/* <form ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form> */}
       </Container> 
   );
 }
