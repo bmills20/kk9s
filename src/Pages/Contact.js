@@ -1,11 +1,16 @@
 import "./AltPages.css";
-import React, {useState, useEffect} from "react";
+import React, {useState, useRef, useEffect} from "react";
 import { Container, Button, Card, ListGroup, ListGroupItem, Row, Form, Col } from "react-bootstrap";
 import { motion, useAnimation, div, path, svg } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
 // Using axios for backwards compatibility for older browsers
 // Also allows for timeout callback/property in case of connection issues
 import axios from 'axios';
+import emailjs, { init } from 'emailjs-com';
+init("user_yo6KuVh7XCD3rc0vwVhqL")
+const dotenv = require('dotenv');
+dotenv.config()
+//const dotenv = require('dotenv').config()
 
 export default function Contact() {
   const [mounted, setMounted] = useState(false)
@@ -22,16 +27,34 @@ export default function Contact() {
   const [mailSent, setMailSent] = useState(false);
   const [isError, setIsError] = useState(null);
   const recaptchaRef = React.createRef();
+
+  // Temporary email-js stuff
+  const [emailSent, setEmailSent] = useState(false);
+  const [emailFailed, setEmailFailed] = useState(false);
+  const form = useRef();
+
+  const sendEmail = e => {
+      e.preventDefault();
+      
+      //emailjs.sendForm(process.env.SID, process.env.TID, form.current, process.env.UID)
+      emailjs.sendForm('service_if0fk6b', 'template_0x5smzj', form.current, 'user_yo6KuVh7XCD3rc0vwVhq')
+        .then((result) => {
+            setEmailSent(!emailSent);
+        }, (error) => {
+            setEmailFailed(!emailFailed);
+        });
+  }
   
   const onChange = value => {
     console.log("Captcha value: ",value);
   }
 
-  const handleSubmit = e => {
+  // Method that passes to nodemailer -- will fix this later if needed
+
+  /*const handleSubmit = e => {
     e.preventDefault();
     axios({
       method: "POST",
-      /* url: `${process.env.REACT_APP_API}`, */
       url: "https://72.167.49.37:3002/send",
       timeout: 10000,
       data: {
@@ -57,7 +80,7 @@ export default function Contact() {
         }
       })
       
-  }
+  }*/
 
 /*   if(!mounted){
     document.body.className="contact-body";
@@ -73,7 +96,7 @@ export default function Contact() {
           <h4>Have a question about our services or about KK9s? Ask away below!</h4>
         </div>
           <br />
-          <Form id="contact-form" onSubmit={e => { handleSubmit(e) }}>
+          <Form ref={form} id="contact-form" onSubmit={sendEmail}>
           <h4 className="form-label">Your info</h4>
               <Form.Row>
                  
@@ -213,7 +236,7 @@ export default function Contact() {
                 onChange={onChange}
               />
   </div>*/}
-              <Button variant="outline-light" type="submit">
+              <Button variant="outline-light" value="Send" type="submit">
                   Submit
               </Button>
               <div>
