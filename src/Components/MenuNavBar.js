@@ -16,7 +16,9 @@ import classnames from "classnames";
 import kingaWhite from "./kinga-white.png";
 import * as Scroll from "react-scroll";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
-//import {NavHashLink as Link} from 'react-router-hash-link';
+import {isMobile} from 'react-device-detect';
+import {HashLink} from 'react-router-hash-link';
+import { render } from "ejs";
 
 
 const navbarInitial = {
@@ -41,6 +43,8 @@ function MenuNavBar(){
   const [navbarClass, setNavbarClass] = useState("ml-auto horizontal-nav nav-links");
   const [navbarCollapse, setNavbarCollapse] = useState(false);
   const [underline, setUnderline] = useState(0);
+
+  }
 
   let history = useHistory();
   var locations = useLocation();
@@ -189,74 +193,126 @@ function MenuNavBar(){
       
     }
     window.addEventListener("load", updateNavbarRefresh);
-  }); 
+  });
+  
+  const MyMobile = props => {
+      pageNames.map(({title, color, to, offset}, i) => (
+        <HashLink
+          smooth to={to} // which page to scroll to 
+          key={"linkholder"+i.toString()}
+          >
+          <motion.li
+            animate
+            key = {i}
+            className={"nav-link"}
+            initial="rest"
+            whileHover="show"
+            onTap={() => {
+              setSelectedNav(i);
+              setNavbarCollapse(false);
+              // History tracker for retaining animations
+              history.push((title==="HOME") ? "/" 
+              : (title==="ABOUT") ? ""
+              : `/pages/${title.toLocaleLowerCase()}`);
+
+              // If user clicks on anything other than the homepage or the about page
+              // Set the navbar color to blue (take away transparent class)
+              
+              if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
+                setNavbarColor("");
+              }
+              else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
+                setNavbarColor("navbar-transparent");
+              }
+            }}
+          >
+          {/* If the mapped nav-link is the currently
+              selected link, apply the underline class to it */}
+
+
+          <DomLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} to={
+              (title==="HOME") ? "/" 
+            : (title==="ABOUT") ? "/#about"
+            : `/pages/${title.toLocaleLowerCase()}`}>
+            {title}
+          </DomLink>
+          
+          </motion.li>
+        </HashLink>
+    ))
+  }
+
+  const NotMobile = props => {
+    pageNames.map(({title, color, to, offset}, i) => (
+      <Link
+          to={to} // which page to scroll to 
+          smooth={true} // define scrolling behavior
+          duration={500} //control scrolling speed 1000 = 1s
+          delay={1000}
+          offset={offset}
+          spy={true}
+          key={"linkholder"+i.toString()}
+          >
+          <motion.li
+            animate
+            key = {i}
+            className={"nav-link"}
+            initial="rest"
+            whileHover="show"
+            onTap={() => {
+              setSelectedNav(i);
+              setNavbarCollapse(false);
+              // History tracker for retaining animations
+              history.push((title==="HOME") ? "/" 
+              : (title==="ABOUT") ? ""
+              : `/pages/${title.toLocaleLowerCase()}`);
+
+              // If user clicks on anything other than the homepage or the about page
+              // Set the navbar color to blue (take away transparent class)
+              
+              if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
+                setNavbarColor("");
+              }
+              else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
+                setNavbarColor("navbar-transparent");
+              }
+            }}
+          >
+          {/* If the mapped nav-link is the currently
+              selected link, apply the underline class to it */}
+
+
+          <DomLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} to={
+              (title==="HOME") ? "/" 
+            : (title==="ABOUT") ? "/#about"
+            : `/pages/${title.toLocaleLowerCase()}`}>
+            {title}
+          </DomLink>
+          
+          </motion.li>
+        </Link>
+      ))
+  }
 
   return (
-      <Navbar expanded={navbarCollapse} fixed="top" variant="dark" expand="lg" className={navbarColor}>
-        <DomLink className="dom-link" to={"/"} onClick={() => {setNavbarColor("navbar-transparent"); setSelectedNav(0); }}> 
-          <img src={kingaWhite} className="siteLogo"/>
-        </DomLink> 
-        <Navbar.Toggle onClick={() => setNavbarCollapse(navbarCollapse ? false : "expanded")} aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <motion.Nav className="ml-auto horizontal-nav">
-            <AnimateSharedLayout>
-              <ol className={navbarClass}>
-                {
-                  pageNames.map(({title, color, to, offset}, i) => (
-                      <Link
-                        to={to} // which page to scroll to 
-                        smooth={true} // define scrolling behavior
-                        duration={500} //control scrolling speed 1000 = 1s
-                        offset={offset}
-                        spy={true}
-                        key={"linkholder"+i.toString()}
-                        >
-                        <motion.li
-                          animate
-                          key = {i}
-                          className={"nav-link"}
-                          initial="rest"
-                          whileHover="show"
-                          onTap={() => {
-                            setSelectedNav(i);
-                            setNavbarCollapse(false);
-                            // History tracker for retaining animations
-                            history.push((title==="HOME") ? "/" 
-                            : (title==="ABOUT") ? ""
-                            : `/pages/${title.toLocaleLowerCase()}`);
-
-                            // If user clicks on anything other than the homepage or the about page
-                            // Set the navbar color to blue (take away transparent class)
-                            
-                            if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
-                              setNavbarColor("");
-                            }
-                            else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
-                              setNavbarColor("navbar-transparent");
-                            }
-                          }}
-                        >
-                        {/* If the mapped nav-link is the currently
-                            selected link, apply the underline class to it */}
-
-
-                        <DomLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} to={
-                            (title==="HOME") ? "/" 
-                          : (title==="ABOUT") ? "/#about"
-                          : `/pages/${title.toLocaleLowerCase()}`}>
-                          {title}
-                        </DomLink>
-                        
-                        </motion.li>
-                      </Link>
-                  ))
-                }
-              </ol>
-            </AnimateSharedLayout>
-          </motion.Nav>
-        </Navbar.Collapse>
-      </Navbar>
+    <Navbar expanded={navbarCollapse} fixed="top" variant="dark" expand="lg" className={navbarColor}>
+      <DomLink className="dom-link" to={"/"} onClick={() => {setNavbarColor("navbar-transparent"); setSelectedNav(0); }}> 
+        <img src={kingaWhite} className="siteLogo"/>
+      </DomLink> 
+      <Navbar.Toggle onClick={() => setNavbarCollapse(navbarCollapse ? false : "expanded")} aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <motion.Nav className="ml-auto horizontal-nav">
+          <AnimateSharedLayout>
+            <ol className={navbarClass}>
+              {isMobile ?
+                <MyMobile/>
+                :
+                <NotMobile/>
+              }
+            </ol>
+          </AnimateSharedLayout>
+        </motion.Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
-}
-
 export default MenuNavBar;
