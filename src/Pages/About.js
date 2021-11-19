@@ -7,6 +7,7 @@ import {Check} from "../Components/Check";
 import { motion, useAnimation } from "framer-motion";
 import { Element } from "react-scroll";
 import getSession from "./getSession";
+import {HashLink, NavHashLink} from 'react-router-hash-link';
 
 const certifications = {
   unchecked: { opacity: 1 },
@@ -73,7 +74,6 @@ export default function About() {
       <motion.div intial="rest" animate="show" variants={divInitial} className="about">
           <div>
             <h1 className="text-left aboutHeader">ABOUT</h1>
-            <a href="#about"></a>
             <div className="pic-container">
               <motion.img ref={picRef} variants={picInitial} initial={showAnimation ? "rest" : "show"} animate={ picControls } src={kingaCircle} className="circlePic" />
               <p className="text-center" style={{fontStyle: "italic", color: "grey", fontSize: "0.75em"}}>Kinga with one of her dogs, Rose</p>
@@ -92,7 +92,7 @@ export default function About() {
               </p>
               
             </div>
-            
+            <HashLink smooth to={"/#homeTop"}>Test</HashLink>
           </div>
       </motion.div>
     </Element>

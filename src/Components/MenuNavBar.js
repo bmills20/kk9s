@@ -33,7 +33,7 @@ const navbarReveal = {
 };
 
 
-function MenuNavBar(){
+export default function MenuNavBar(){
   // Defining react states
   const [showDropDown, setShowDropDown] = useState(false);
   const [navbarColor, setNavbarColor] = useState("navbar-transparent");
@@ -44,7 +44,6 @@ function MenuNavBar(){
   const [navbarCollapse, setNavbarCollapse] = useState(false);
   const [underline, setUnderline] = useState(0);
 
-  }
 
   let history = useHistory();
   var locations = useLocation();
@@ -88,7 +87,7 @@ function MenuNavBar(){
     {
       title: "ABOUT",
       color: "#FFF",
-      to: "aboutDest",
+      to: "#aboutDest",
       offset: -100
     },
     {
@@ -304,15 +303,55 @@ function MenuNavBar(){
         <motion.Nav className="ml-auto horizontal-nav">
           <AnimateSharedLayout>
             <ol className={navbarClass}>
-              {isMobile ?
-                <MyMobile/>
-                :
-                <NotMobile/>
+              {
+      pageNames.map(({title, color, to, offset}, i) => (
+        <HashLink
+          smooth to={to} // which page to scroll to 
+          key={"linkholder"+i.toString()}
+          >
+          <motion.li
+            animate
+            key = {i}
+            className={"nav-link"}
+            initial="rest"
+            whileHover="show"
+            onTap={() => {
+              setSelectedNav(i);
+              setNavbarCollapse(false);
+              // History tracker for retaining animations
+              history.push((title==="HOME") ? "/" 
+              : (title==="ABOUT") ? ""
+              : `/pages/${title.toLocaleLowerCase()}`);
+
+              // If user clicks on anything other than the homepage or the about page
+              // Set the navbar color to blue (take away transparent class)
+              
+              if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
+                setNavbarColor("");
               }
+              else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
+                setNavbarColor("navbar-transparent");
+              }
+            }}
+          >
+          {/* If the mapped nav-link is the currently
+              selected link, apply the underline class to it */}
+
+
+          <HashLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} smooth to={
+              (title==="HOME") ? "/" 
+            : (title==="ABOUT") ? "/#aboutDest"
+            : `/pages/${title.toLocaleLowerCase()}`}>
+            {title}
+          </HashLink>
+          
+          </motion.li>
+        </HashLink>
+    ))}
             </ol>
           </AnimateSharedLayout>
         </motion.Nav>
       </Navbar.Collapse>
     </Navbar>
   );
-export default MenuNavBar;
+}
