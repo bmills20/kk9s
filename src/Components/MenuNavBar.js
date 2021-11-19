@@ -81,7 +81,7 @@ export default function MenuNavBar(){
     {
       title: "HOME",
       color: "#FFF",
-      to: "homeTop",
+      to: "",
       offset: -100
     },
     {
@@ -93,31 +93,31 @@ export default function MenuNavBar(){
     {
       title: "APPROACH",
       color: "#FFF",
-      to: "approachTop",
+      to: "/pages/approach",
       offset: -100
     },
     {
       title: "SERVICES",
       color: "#FFF",
-      to: "servicesDest",
+      to: "/pages/services",
       offset: -75
     },
     {
       title: "PARTNERS",
       color: "#FFF",
-      to: "partnersTop",
+      to: "/pages/partners",
       offset: -120
     },
     {
       title: "TESTIMONIALS",
       color: "#FFF",
-      to: "testimonialsTop",
+      to: "/pages/testimonials",
       offset: -75
     },
     {
       title: "CONTACT",
       color: "#FFF",
-      to: "contactTop",
+      to: "/pages/contact",
       offset: 0
     }
   ];
@@ -179,6 +179,7 @@ export default function MenuNavBar(){
   // Change selected nav on reload
   useEffect(() => {
     const updateNavbarRefresh = () => {
+      console.log("refresh")
       if("/" !== locations.pathname && locations.pathname.length > 2){
         const currentPage = locations.pathname.split("/")[2].toUpperCase();
         (currentPage === "HOME") ? setSelectedNav(0)
@@ -193,105 +194,6 @@ export default function MenuNavBar(){
     }
     window.addEventListener("load", updateNavbarRefresh);
   });
-  
-  const MyMobile = props => {
-      pageNames.map(({title, color, to, offset}, i) => (
-        <HashLink
-          smooth to={to} // which page to scroll to 
-          key={"linkholder"+i.toString()}
-          >
-          <motion.li
-            animate
-            key = {i}
-            className={"nav-link"}
-            initial="rest"
-            whileHover="show"
-            onTap={() => {
-              setSelectedNav(i);
-              setNavbarCollapse(false);
-              // History tracker for retaining animations
-              history.push((title==="HOME") ? "/" 
-              : (title==="ABOUT") ? ""
-              : `/pages/${title.toLocaleLowerCase()}`);
-
-              // If user clicks on anything other than the homepage or the about page
-              // Set the navbar color to blue (take away transparent class)
-              
-              if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
-                setNavbarColor("");
-              }
-              else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
-                setNavbarColor("navbar-transparent");
-              }
-            }}
-          >
-          {/* If the mapped nav-link is the currently
-              selected link, apply the underline class to it */}
-
-
-          <DomLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} to={
-              (title==="HOME") ? "/" 
-            : (title==="ABOUT") ? "/#about"
-            : `/pages/${title.toLocaleLowerCase()}`}>
-            {title}
-          </DomLink>
-          
-          </motion.li>
-        </HashLink>
-    ))
-  }
-
-  const NotMobile = props => {
-    pageNames.map(({title, color, to, offset}, i) => (
-      <Link
-          to={to} // which page to scroll to 
-          smooth={true} // define scrolling behavior
-          duration={500} //control scrolling speed 1000 = 1s
-          delay={1000}
-          offset={offset}
-          spy={true}
-          key={"linkholder"+i.toString()}
-          >
-          <motion.li
-            animate
-            key = {i}
-            className={"nav-link"}
-            initial="rest"
-            whileHover="show"
-            onTap={() => {
-              setSelectedNav(i);
-              setNavbarCollapse(false);
-              // History tracker for retaining animations
-              history.push((title==="HOME") ? "/" 
-              : (title==="ABOUT") ? ""
-              : `/pages/${title.toLocaleLowerCase()}`);
-
-              // If user clicks on anything other than the homepage or the about page
-              // Set the navbar color to blue (take away transparent class)
-              
-              if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
-                setNavbarColor("");
-              }
-              else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
-                setNavbarColor("navbar-transparent");
-              }
-            }}
-          >
-          {/* If the mapped nav-link is the currently
-              selected link, apply the underline class to it */}
-
-
-          <DomLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} to={
-              (title==="HOME") ? "/" 
-            : (title==="ABOUT") ? "/#about"
-            : `/pages/${title.toLocaleLowerCase()}`}>
-            {title}
-          </DomLink>
-          
-          </motion.li>
-        </Link>
-      ))
-  }
 
   return (
     <Navbar expanded={navbarCollapse} fixed="top" variant="dark" expand="lg" className={navbarColor}>
@@ -307,48 +209,24 @@ export default function MenuNavBar(){
       pageNames.map(({title, color, to, offset}, i) => (
         <HashLink
           smooth to={to} // which page to scroll to 
-          key={"linkholder"+i.toString()}
+          className={"nav-link"}
+          onClick={() => {
+            setNavbarCollapse(false); // collapse navbar
+
+            // set up navbar transparency listeners
+            if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
+              setNavbarColor("");
+            }
+            else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
+              setNavbarColor("navbar-transparent");
+            }
+          }}
           >
-          <motion.li
-            animate
-            key = {i}
-            className={"nav-link"}
-            initial="rest"
-            whileHover="show"
-            onTap={() => {
-              setSelectedNav(i);
-              setNavbarCollapse(false);
-              // History tracker for retaining animations
-              history.push((title==="HOME") ? "/" 
-              : (title==="ABOUT") ? ""
-              : `/pages/${title.toLocaleLowerCase()}`);
-
-              // If user clicks on anything other than the homepage or the about page
-              // Set the navbar color to blue (take away transparent class)
-              
-              if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
-                setNavbarColor("");
-              }
-              else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
-                setNavbarColor("navbar-transparent");
-              }
-            }}
-          >
-          {/* If the mapped nav-link is the currently
-              selected link, apply the underline class to it */}
-
-
-          <HashLink key={"my_dom_link"} className={(navbarClass === "ml-auto vertical-nav nav-links") ? ((i === selectedNav) ? ("dom-link mobile-underline") : ("dom-link")) : ("dom-link")} smooth to={
-              (title==="HOME") ? "/" 
-            : (title==="ABOUT") ? "/#aboutDest"
-            : `/pages/${title.toLocaleLowerCase()}`}>
             {title}
-          </HashLink>
-          
-          </motion.li>
         </HashLink>
-    ))}
+          ))}
             </ol>
+            
           </AnimateSharedLayout>
         </motion.Nav>
       </Navbar.Collapse>
