@@ -35,7 +35,7 @@
     "webpack-node-externals": "^3.0.0"
   },
   "name": "kk9s",
-  "homepage": "https://kk9s.com",
+  "homepage": "https://braxtonmills.com/kk9s",
   "version": "1.0.0",
   "description": "Code for kk9s.com",
   "main": "App.js",
