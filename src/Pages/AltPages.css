@@ -276,6 +276,7 @@ a:hover {
   border-color: rgb(197, 197, 197);
   resize: none;
   padding-right: 0;
+  font-family: firasans-light;
   font-size: 1rem;
   color: #888;
 }

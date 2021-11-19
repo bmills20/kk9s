@@ -52,7 +52,7 @@ export default class App extends React.Component {
             <div>
               <Route exact path="/" component={About}></Route>
             </div>  
-            <div>
+            <div className="partners-wrapper">
               <Route exact path="/pages/services" component={Services}></Route>
             </div>
             <div className="approach-wrapper">
