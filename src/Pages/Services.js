@@ -32,7 +32,7 @@ export default function About() {  var controls = useAnimation();
     <Element id="servicesDest" className="servicesDest" name="servicesDest">
       
       <motion.div intial="rest" animate="show" className="about">
-        <h1 className="text-left aboutHeader">SERVICES</h1>
+        <h1 className="text-left aboutHeader">Services</h1>
         <p className="text-left aboutPara">We offer in-home or on-site (problem environments) training for your dog. We always
 start with a Foundations session as a minimum to establish and reiterate fundamentals for
 the dog and all members of the household. Most issues require a Foundations session and

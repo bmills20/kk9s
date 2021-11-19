@@ -157,7 +157,7 @@ export default function Home() {
 
 
   return (
-  <Element name="homeTop" id="homeTop">
+  <Element name="homeTop" id="homeDest">
     <div name="home" className="splash">
       <div className="main-content">
       <motion.div variants={mainContent} initial={showAnimation ? "rest" : "show"} animate="show">

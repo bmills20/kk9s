@@ -250,11 +250,11 @@ a:hover {
   margin: 2rem 2rem 0 2rem;
 }
 
-.contact-container .contact-title h4 {
-  margin-top: 2rem;
+.ksubheader {
+  margin-top: 1rem;
   font-family: firasans-light;
   color: #444;
-  font-size: 1.5em;
+  font-size: 1.4rem;
   margin-bottom: 0;
 }
 
@@ -696,6 +696,10 @@ select#subject.form-control{
   padding: 0 20px;
 }
 
+#testimonialsDest > div:nth-child(2) > div.blockquote{
+  margin: 1rem auto 3rem auto;
+}
+
 /* Blockquote main style */
 .blockquote {
    position: relative;
@@ -786,9 +790,8 @@ select#subject.form-control{
 }
 
 .testimonials-header {
-  margin-bottom: 2rem;
+  text-align: center;
   padding: 1rem 0 1rem 0;
-  margin: 11vw 0 0 1rem;
 }
 .testimonial-full-container {
   box-sizing: border-box;

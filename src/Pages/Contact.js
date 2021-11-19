@@ -8,7 +8,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import axios from 'axios';
 import emailjs from 'emailjs-com';
 emailjs.init("user_yo6KuVh7XCD3rc0vwVhqL")
-const dotenv = require('dotenv');
+import dotenv from 'dotenv';
 dotenv.config()
 //const dotenv = require('dotenv').config()
 
@@ -92,10 +92,10 @@ export default function Contact() {
     setMounted(true)
   },[]) */
   return(
-      <Container name="contactTop" className="contact-container">
+      <Container name="contactTop" className="contact-container" id="contactDest">
         <div className="contact-title">
           <h1>Contact Us</h1>
-          <h4>Have a question about our services or about KK9s? Ask away below!</h4>
+          <h4 className="ksubheader">Have a question about our services or about KK9s?<br/>Ask away below!</h4>
         </div>
           <br />
           <Form ref={form} id="contact-form" onSubmit={sendEmail}>

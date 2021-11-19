@@ -161,10 +161,10 @@ export default function Testimonials() {
     document.body.className="testimonials-body";
 
     return (
-        
-        <div className="d-flex justify-content-center flex-column">
+        <div className="about">
+        <div className="d-flex justify-content-center flex-column" id="testimonialsDest">
             <div className="testimonials-header">
-                <h1 className="text-left">Testimonials</h1>
+                <h1 className="text-center">Testimonials</h1>
                 <h4 style={{fontFamily: "firasans-italic"}}>See what our customers have been saying about their experience with Kinga's K9s!</h4>
             </div>
             {/* <h3 className="testimonials-blurb">Quite simply, she read him like a book.</h3> */}
@@ -225,6 +225,7 @@ export default function Testimonials() {
                 title={"Puppy Litter"}
                 text={litterTest}
             />}
+        </div>
         </div>
     );
 }

@@ -18,7 +18,6 @@ import * as Scroll from "react-scroll";
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll';
 import {isMobile} from 'react-device-detect';
 import {HashLink} from 'react-router-hash-link';
-import { render } from "ejs";
 
 
 const navbarInitial = {
@@ -43,6 +42,18 @@ export default function MenuNavBar(){
   const [navbarClass, setNavbarClass] = useState("ml-auto horizontal-nav nav-links");
   const [navbarCollapse, setNavbarCollapse] = useState(false);
   const [underline, setUnderline] = useState(0);
+
+  const scrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -100; 
+    window.scrollTo({ top: yCoordinate + yOffset}); 
+  }
+
+  const smoothScrollWithOffset = (el) => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -100; 
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' }); 
+  }
 
 
   let history = useHistory();
@@ -81,43 +92,43 @@ export default function MenuNavBar(){
     {
       title: "HOME",
       color: "#FFF",
-      to: "",
+      to: "/#homeDest",
       offset: -100
     },
     {
       title: "ABOUT",
       color: "#FFF",
-      to: "#aboutDest",
+      to: "/#aboutDest",
       offset: -100
     },
     {
       title: "APPROACH",
       color: "#FFF",
-      to: "/pages/approach",
+      to: "/pages/approach#approachDest",
       offset: -100
     },
     {
       title: "SERVICES",
       color: "#FFF",
-      to: "/pages/services",
+      to: "/pages/services#servicesDest",
       offset: -75
     },
     {
       title: "PARTNERS",
       color: "#FFF",
-      to: "/pages/partners",
+      to: "/pages/partners#partnersDest",
       offset: -120
     },
     {
       title: "TESTIMONIALS",
       color: "#FFF",
-      to: "/pages/testimonials",
+      to: "/pages/testimonials#testimonialsDest",
       offset: -75
     },
     {
       title: "CONTACT",
       color: "#FFF",
-      to: "/pages/contact",
+      to: "/pages/contact#contactDest",
       offset: 0
     }
   ];
@@ -207,9 +218,11 @@ export default function MenuNavBar(){
             <ol className={navbarClass}>
               {
       pageNames.map(({title, color, to, offset}, i) => (
+        title === "ABOUT" ?
         <HashLink
-          smooth to={to} // which page to scroll to 
+          to={to} // which page to scroll to 
           className={"nav-link"}
+          scroll={el => smoothScrollWithOffset(el)}
           onClick={() => {
             setNavbarCollapse(false); // collapse navbar
 
@@ -222,7 +235,30 @@ export default function MenuNavBar(){
             }
           }}
           >
+            <a className="dom-link">
             {title}
+            </a>
+        </HashLink>
+        :
+        <HashLink
+          to={to} // which page to scroll to 
+          className={"nav-link"}
+          scroll={el => scrollWithOffset(el)}
+          onClick={() => {
+            setNavbarCollapse(false); // collapse navbar
+
+            // set up navbar transparency listeners
+            if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
+              setNavbarColor("");
+            }
+            else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
+              setNavbarColor("navbar-transparent");
+            }
+          }}
+          >
+            <a className="dom-link">
+            {title}
+            </a>
         </HashLink>
           ))}
             </ol>

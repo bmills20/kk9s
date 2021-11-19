@@ -452,6 +452,10 @@ h1.text-left {
     font-family: firasans-medium;
 }
 
+h1.text-center{
+    font-family: firasans-medium;
+}
+
 .checkmark-container {
     display: flex;
     margin-top: 1vh;

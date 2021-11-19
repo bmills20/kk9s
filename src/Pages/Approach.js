@@ -38,7 +38,7 @@ export default function Approach() {
   document.body.style="none";
 
   return (
-      <Container name="approachTop" className="approach">
+      <Container name="approachTop" className="approach" id="approachDest">
       
         <div className="approach-header-section">
           <Container className="approach-header">

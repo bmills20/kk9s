@@ -15,7 +15,7 @@ export default function Partners() {
   document.body.className="partners-body";
 
   return (
-    <Container name="partnersTop" className="partners-container">
+    <Container name="partnersTop" className="partners-container" id="partnersDest">
       <Suspense>
       <h1>Partners</h1>
       <div className="partners-logos">
