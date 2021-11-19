@@ -92,7 +92,6 @@ export default function About() {
               </p>
               
             </div>
-            <HashLink smooth to={"/#homeTop"}>Test</HashLink>
           </div>
       </motion.div>
     </Element>
