@@ -430,7 +430,7 @@ Button.splashButton {
 .aboutHeader {
     margin-top: 5%;
     
-    font-family: firasans-bold;
+    font-family: firasans-medium;
     font-size: 2.0em;
 }
 
@@ -492,6 +492,11 @@ p.text-left {
         width: 80%;
     }
 
+}
+@media only screen and (max-width: 900px) {
+    .aboutHeader{
+        text-align: center;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
