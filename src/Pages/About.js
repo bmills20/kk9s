@@ -54,12 +54,6 @@ export default function About() {
   // Upon scrolling down to the about section, use async and promises to begin
   // the 3 animation variant sequence
   useEffect(() => {
-    /*const sequence = async () => {
-      if (picInView) {
-        await picControls.start(picInitial.show);
-      }
-    };
-    sequence();*/
     if(picInView){
       picControls.start("show");
     }

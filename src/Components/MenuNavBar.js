@@ -69,7 +69,7 @@ export default function MenuNavBar(){
   }
 
   const updateNavbarColor = useCallback(event => {
-    if(("/" === locations.pathname) || ("/kk9s/pages/approach" === location.pathname)){
+    if(("/" === locations.pathname) || ("/pages/approach" === location.pathname)){
       if (
         document.documentElement.scrollTop > 299 ||
         document.body.scrollTop > 299
@@ -93,42 +93,49 @@ export default function MenuNavBar(){
       title: "HOME",
       color: "#FFF",
       to: "/#homeDest",
+      pkey: 0,
       offset: -100
     },
     {
       title: "ABOUT",
       color: "#FFF",
       to: "/#aboutDest",
+      pkey: 1,
       offset: -100
     },
     {
       title: "APPROACH",
       color: "#FFF",
-      to: "/pages/approach#approachDest",
+      to: "/pages/approach",
+      pkey: 2,
       offset: -100
     },
     {
       title: "SERVICES",
       color: "#FFF",
-      to: "/pages/services#servicesDest",
+      to: "/pages/services",
+      pkey: 3,
       offset: -75
     },
     {
       title: "PARTNERS",
       color: "#FFF",
-      to: "/pages/partners#partnersDest",
+      to: "/pages/partners",
+      pkey: 4,
       offset: -120
     },
     {
       title: "TESTIMONIALS",
       color: "#FFF",
-      to: "/pages/testimonials#testimonialsDest",
+      to: "/pages/testimonials",
+      pkey: 5,
       offset: -75
     },
     {
       title: "CONTACT",
       color: "#FFF",
-      to: "/pages/contact#contactDest",
+      to: "/pages/contact",
+      pkey: 6,
       offset: 0
     }
   ];
@@ -223,14 +230,14 @@ export default function MenuNavBar(){
           to={to} // which page to scroll to 
           className={"nav-link"}
           scroll={el => smoothScrollWithOffset(el)}
-          onClick={() => {
+          onClick={(pkey) => {
             setNavbarCollapse(false); // collapse navbar
 
             // set up navbar transparency listeners
-            if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
+            if((pkey !== 0 && pkey !== 1 && pkey !==2 ) && navbarColor === "navbar-transparent"){
               setNavbarColor("");
             }
-            else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
+            else if((pkey === 0 || pkey === 1 || pkey === 2 ) && navbarColor === ""){
               setNavbarColor("navbar-transparent");
             }
           }}
@@ -244,14 +251,14 @@ export default function MenuNavBar(){
           to={to} // which page to scroll to 
           className={"nav-link"}
           scroll={el => scrollWithOffset(el)}
-          onClick={() => {
+          onClick={(pkey) => {
             setNavbarCollapse(false); // collapse navbar
-
+            window.scrollTo(0,0);
             // set up navbar transparency listeners
-            if((i !== 0 && i !== 1 && i!==2 ) && navbarColor === "navbar-transparent"){
+            if((pkey !== 0 && pkey !== 1 && pkey!==2 ) && navbarColor === "navbar-transparent"){
               setNavbarColor("");
             }
-            else if((i === 0 || i === 1 || i === 2 ) && navbarColor === ""){
+            else if((pkey === 0 || pkey === 1 || pkey === 2 ) && navbarColor === ""){
               setNavbarColor("navbar-transparent");
             }
           }}
