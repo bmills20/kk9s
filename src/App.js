@@ -46,27 +46,13 @@ export default class App extends React.Component {
         <div className="page-container">
           <MenuNavBar />
           <main role="main" /*className="container"*/>
-             <div>
               <Route exact path="/" component={Home}></Route>
-            </div>
-            <div>
               <Route exact path="/" component={About}></Route>
-            </div>  
-            <div className="partners-wrapper">
               <Route exact path="/pages/services" component={Services}></Route>
-            </div>
-            <div className="approach-wrapper">
               <Route exact path="/pages/approach" component={Approach}></Route>
-            </div>
-            <div className="partners-wrapper">
               <Route exact path="/pages/partners" component={Partners}></Route>
-            </div>
-            <div className="testimonials-wrapper">
               <Route exact path="/pages/testimonials" component={Testimonials}></Route>
-            </div>
-            <div className="contact-wrapper">
               <Route exact path="/pages/contact" component={Contact}></Route>
-            </div>
           </main>
          </div>
       </BrowserRouter>

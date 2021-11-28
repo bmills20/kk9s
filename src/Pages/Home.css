@@ -431,7 +431,7 @@ Button.splashButton {
     margin-top: 5%;
     
     font-family: firasans-medium;
-    font-size: 2.0em;
+    font-size: 3rem;
 }
 
 /* .aboutContainer {
@@ -458,9 +458,10 @@ h1.text-center{
 
 .checkmark-container {
     display: flex;
-    margin-top: 1vh;
+    margin-top: 1.5rem;
     flex-direction: column;
     font-size: 1em;
+    padding-bottom: 3rem;
 }
 
 .checkmark-container .text-left{

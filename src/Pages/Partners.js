@@ -17,7 +17,7 @@ export default function Partners() {
   return (
     <Container name="partnersTop" className="partners-container" id="partnersDest">
       <Suspense>
-      <h1>Partners</h1>
+      <h1 style={{textAlign: "center"}}>Partners</h1>
       <div className="partners-logos">
         <ul>
           <li>
