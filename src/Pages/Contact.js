@@ -9,6 +9,7 @@ import axios from 'axios';
 import emailjs from 'emailjs-com';
 emailjs.init("user_yo6KuVh7XCD3rc0vwVhqL")
 import dotenv from 'dotenv';
+import GreenCheckmark from '../images/green_checkmark.png';
 dotenv.config()
 //const dotenv = require('dotenv').config()
 
@@ -37,7 +38,13 @@ export default function Contact() {
       e.preventDefault();
       
       //emailjs.sendForm(process.env.SID, process.env.TID, form.current, process.env.UID)
-      emailjs.sendForm('service_if0fk6b', 'template_0x5smzj', form.current)
+      /* 
+        Test creds: service_01rb2ak
+        Test template: template_imq2x8l
+        Prod creds: service_if0fk6b
+        Prod template: template_0x5smzj
+      */
+      emailjs.sendForm('service_01rb2ak', 'template_imq2x8l', form.current)
         .then((result) => {
             setEmailSent(!emailSent);
             console.log(result.text);
@@ -233,19 +240,32 @@ export default function Contact() {
                   />
               </Form.Group>
               <div className="recaptcha">
-              <ReCAPTCHA
+              {!emailSent && <ReCAPTCHA
                 sitekey="6LdLI8wcAAAAAOmqdS0M0FjeAsxtbmuqSaDrrGQo"
                 onChange={onChange}
                 className="reCAPTCHER"
-              />
+              />}
   </div>
-              <Button variant="outline-light" value="Send" type="submit">
+              {!emailSent && <Button variant="outline-light" value="Send" type="submit">
                   Submit
-              </Button>
-              <div>
-                {mailSent && <div className="success"><br/>Thank you! Your inquiry has been sent; we will be in touch shortly.<br/><br/>A copy of your message has been sent to the email you provided.</div>}
-                {isError && <div className="error"><br/>Error: message failed to send.<br/> Please check your internet connection and try again.</div>}
-              </div>
+              </Button>}
+              <React.Fragment>
+                {emailSent && <div className="success">
+                  <div className="check-container">
+                    <img src={GreenCheckmark} className="green-checkmark"/>
+                  </div>
+                  <div className="text-container">
+                    <h3 className="text-left"> Success!</h3>
+                    <p className="text-left">Thank you! Your inquiry has been sent; we will be in touch shortly.<br/>
+                    A copy of your message has been sent to the email you provided.</p>
+                  </div>
+                </div>}
+                {isError && <div className="error">
+                  <h3>Error</h3>
+                  Error: message failed to send.<br/>
+                  Please check your internet connection and try again.
+                </div>}
+              </React.Fragment>
               
           </Form>
           {/* <form ref={form} onSubmit={sendEmail}>
